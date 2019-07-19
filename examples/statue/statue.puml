@@ -1,0 +1,52 @@
+@startuml
+hide empty methods
+hide empty attributes
+hide circle
+skinparam classAttributeIconSize 0
+class _r1563516990r4_ as " "
+_r1563516990r4_ : a <http://schema.org/Person>
+_r1563516990r4_ : <http://schema.org/name> "@NewsCompact"
+_r1563516990r4_ : <http://schema.org/sameAs>\n  "https://twitter.com/NewsCompact",\n  "https://twitter.com/Robkearney1981"
+class _r1563516990r6_ as " "
+_r1563516990r6_ : <http://schema.org/headline> "Islamist attack on Ain El Fouara Fountain in Algeria"
+_r1563516990r6_ : <http://schema.org/locationCreated> "Sétif, Algeria"
+_r1563516990r6_ : <http://schema.org/locationEntity> "https://www.geonames.org/2481700/setif.html"
+_r1563516990r6_ : <http://schema.org/url> "https://www.facebook.com/watch/?v=1167007826768723"
+class _r1563516990r1_ as " "
+_r1563516990r1_ : a <http://schema.org/Organization>
+_r1563516990r1_ : <http://schema.org/name> "BBC Reality check team"
+_r1563516990r1_ : <http://schema.org/sameAs> "https://twitter.com/bbcrealitycheck"
+_r1563516990r1_ : <http://schema.org/url> "https://twitter.com/bbcrealitycheck"
+class _r1563516990r7_ as " "
+_r1563516990r7_ : a <http://schema.org/Organization>
+_r1563516990r7_ : <http://schema.org/comment> "This incident took place in Setif, Algiers..."
+_r1563516990r7_ : <http://schema.org/name> "WeVerify"
+_r1563516990r7_ : <http://schema.org/sameAs> "https://twitter.com/Weverify/"
+_r1563516990r7_ : <http://schema.org/url>\n  "https://factcheck.afp.com/did-muslim-refugee-vandalize-statue-virgin-mary-italy-false",\n  "https://observers.france24.com/en/20171219-man-algeria-attacks-naked-female-statue"
+class _r1563516990r5_ as " "
+_r1563516990r5_ : a <http://schema.org/VideoObject>
+_r1563516990r5_ -down-> _r1563516990r6_ : <http://schema.org/associatedMedia>
+_r1563516990r5_ -down-> _r1563516990r7_ : <http://schema.org/author>
+_r1563516990r5_ : <http://schema.org/datePublished> "2019-05-27"
+class _r1563516990r0_ as " "
+_r1563516990r0_ : a <http://schema.org/ClaimReview>
+_r1563516990r0_ -down-> _r1563516990r1_ : <http://schema.org/author>
+class _r1563516990r2_ as " "
+_r1563516990r0_ -down-> _r1563516990r2_ : <http://schema.org/itemReviewed>
+_r1563516990r0_ : <http://schema.org/@subtype> "Debunk"
+_r1563516990r0_ : <http://schema.org/claimReviewed> "A muslim migrant destroying a nude statue in Italy."
+_r1563516990r0_ : <http://schema.org/datePublished> "2019-05-27"
+_r1563516990r0_ : <http://schema.org/reviewBody> "This claim is false. The scene shows"
+_r1563516990r0_ : <http://schema.org/url> "https://www.bbc.com/news/world-europe-48345019"
+class _r1563516990r3_ as " "
+_r1563516990r3_ : <http://schema.org/alternateName> "false"
+_r1563516990r3_ : <http://schema.org/caption> "A muslim migrant destroying a statue in Italy, because part of the body is showing #Europe does not know what is coming their way in next 5 to 15 years #EUelections2019 #EU #NWO"
+_r1563516990r3_ : <http://schema.org/image> "https://ichef.bbci.co.uk/news/624/cpsprodpb/9DE0/production/_107061404_statue_fake.png-nc.png"
+_r1563516990r3_ : <http://schema.org/reviewBody> "The caption of the video posted by one Twitter account[..] the incident did not take place in Italy"
+_r1563516990r3_ : <http://schema.org/spatial> "Italy"
+_r1563516990r3_ : <http://schema.org/url> "https://twitter.com/NewsCompact/status/1124611407213940736"
+_r1563516990r2_ : a <http://schema.org/VideoObject>
+_r1563516990r2_ -down-> _r1563516990r5_ : <http://schema.org/itemOriginal>
+_r1563516990r2_ -down-> _r1563516990r3_ : <http://schema.org/associatedMedia>
+_r1563516990r2_ -down-> _r1563516990r4_ : <http://schema.org/author>
+@enduml

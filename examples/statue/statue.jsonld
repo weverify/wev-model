@@ -1,0 +1,70 @@
+{
+  "@context": {
+    "@base":"http://weverify.org/data/",
+    "@vocab":"http://schema.org/"
+  },
+  "@graph" :{
+  "@type": "ClaimReview",
+  "subtype": "Debunk",
+  "datePublished": "2019-05-27",
+  "url": "https://www.bbc.com/news/world-europe-48345019",
+  "author": {
+    "@type": "Organization",
+    "name": "BBC Reality check team",
+    "sameAs": "https://twitter.com/bbcrealitycheck",
+    "url": "https://twitter.com/bbcrealitycheck"
+  },
+  "claimReviewed": "A muslim migrant destroying a nude statue in Italy.",
+  "reviewBody": "This claim is false. The scene shows a vandalism incident from December 18, 2017 in Algeria. This incident is re-used as part of a disinformation campaign for the 2019 EU elections"
+  ,
+  "itemReviewed": {
+    "@type": "VideoObject",
+    "associatedMedia": {
+        "url": "https://twitter.com/NewsCompact/status/1124611407213940736",
+        "image": "https://ichef.bbci.co.uk/news/624/cpsprodpb/9DE0/production/_107061404_statue_fake.png-nc.png",
+        "caption": "A muslim migrant destroying a statue in Italy, because part of the body is showing #Europe does not know what is coming their way in next 5 to 15 years #EUelections2019 #EU #NWO" ,
+        "spatial": "Italy",
+        "reviewBody": "The caption of the video posted by one Twitter account, which received thousands of views and shares, reads: \"A muslim #migrant destroying a statue in #Italy, because part of the body is showing. #Europe does not know what is coming their way in next 5 to 15 years. However, the incident did not take place in Italy - the statue in the video was part of the Ain El Fouara fountain in Setif, Algeria. Various media outlets, including an Egyptian television station, news agency Agence France Presse (AFP) and TV network France24, reported on the incident in Algeria at the time, which took place in December 2017. Reports at that time contained footage resembling the video posted recently.",
+        "alternateName": "false"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "@NewsCompact",
+        "sameAs": [
+          "https://twitter.com/NewsCompact",
+          "https://twitter.com/Robkearney1981"
+        ]
+    },
+    "itemOriginal": {
+    "@type": "VideoObject",
+    "associatedMedia": {
+        "url": "https://www.facebook.com/watch/?v=1167007826768723",
+        "headline": "Islamist attack on Ain El Fouara Fountain in Algeria",
+        "locationCreated": "Sétif, Algeria",
+        "locationEntity": "https://www.geonames.org/2481700/setif.html"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Muhammad Syed",
+        "jobTitle": "President, ex-Muslims of North America",
+        "sameAs": [
+          "https://www.facebook.com/motheatheist/"
+        ]
+    },
+    "author": {
+        "@type": "Organization",
+        "name": "WeVerify",
+        "sameAs": [
+          "https://twitter.com/Weverify/"
+        ],
+        "comment": "This incident took place in Setif, Algiers, on the 18th of December 2017 when a man, presented as mentally ill according local authorities, attacked the nude statue of the Ain El Fouara fountain (“the spring that gushes out”), with a hammer and a chisel. The Naiad statue, made in 1898 by French sculptor Francis de Saint-Vidal, is an emblematic monument of Setif. The same monument was targeted also in October 2018 when a man tried to vandalize it again before being expelled by a by-passer. At that time, the 2017 video surfaced and was presented as a footage of a muslim migrant vandalizing a Virgin Mary statue in Italy.",
+        "url": [ "https://observers.france24.com/en/20171219-man-algeria-attacks-naked-female-statue",
+"https://factcheck.afp.com/did-muslim-refugee-vandalize-statue-virgin-mary-italy-false"
+        ]
+    },
+    "datePublished": "2019-05-27"
+	}
+  }
+  }
+}
+
