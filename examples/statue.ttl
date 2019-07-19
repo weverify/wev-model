@@ -1,0 +1,118 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix puml:     <http://plantuml.com/ontology#>.
+@prefix schema: <http://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wev: <http://weverify.eu/ontology/> .
+@prefix geoname: <http://sws.geonames.org/> .
+
+# Original is a Tweet
+
+<SocialMediaPosting/1> a schema:SocialMediaPosting ;
+    schema:url <https://twitter.com/NewsCompact/status/1124611407213940736> ;
+    schema:caption "A muslim migrant destroying a statue in Italy, because part of the body is showing #Europe..." ;
+    schema:spatial "Italy" ;
+    schema:author <Person/1> ;
+.
+
+<Person/1> a schema:Person ;
+   schema:name "@NewsCompact";
+   schema:sameAs <https://twitter.com/NewsCompact> ;
+   schema:sameAs <https://twitter.com/Robkearney1981> ;
+.
+
+# The Claim
+
+<Claim/1> a schema:Claim ;
+    schema:text "A muslim migrant destroying a nude statue in Italy." ;
+    schema:appearence <SocialMediaPosting/1> .
+
+#A Claim Review by the WeVerify team
+
+<ClaimReview/1> a schema:ClaimReview ;
+    schema:itemReviewed <Claim/1> ;
+    puml:left <Claim/1>  ;
+    schema:author <Organization/1> ;
+    schema:reviewBody "This claim is false. The scene shows a vandalism incident from December 18, 2017 in Algeria..." ;
+    wev:supportingEvidence <SupportingEvidence/1> ;
+    wev:supportingEvidence <SupportingEvidence/2> ;
+    wev:supportingEvidence <SupportingEvidence/3> ;
+    wev:reviewType <reviewType/Debunk> ; # alternatively we can use schema:additionalType here
+    wev:misleadershipStrategy <strategy/Location> ;
+    puml:right <reviewType/Debunk> ;
+.
+
+<Organization/1> a schema:Organization ;
+   schema:name "WeVerify";
+   schema:sameAs <https://twitter.com/Weverify> ;
+.
+
+# Supporting evidence 1 is a debunk report ;
+
+<SupportingEvidence/1> a wev:SupportingEvidence ;
+    schema:about <Article/1> ;
+    wev:evidenceType <evidence/DebunkReport> ;
+.
+
+<Article/1> a schema:Article ;
+    schema:headline "Did a Muslim refugee vandalize a statue of the Virgin Mary in Italy? False" ;
+    schema:url <https://factcheck.afp.com/did-muslim-refugee-vandalize-statue-virgin-mary-italy-false> ;
+ .
+
+# Supporting evidence 2 is a media article about the original event
+
+<SupportingEvidence/2> a wev:SupportingEvidence ;
+    schema:about <Article/2> ;
+    wev:evidenceType <evidence/AlternativeAccount> ;
+.
+
+<Article/2> a schema:Article ;
+    schema:headline "A man in Algeria attacked a naked female statue with a hammer" ;
+    schema:url <https://observers.france24.com/en/20171219-man-algeria-attacks-naked-female-statue> ;
+ .
+
+#supporting evidence 3 is Facebook post about the event
+
+<SupportingEvidence/3> a wev:SupportingEvidence ;
+    schema:about <SocialMedia/2> ;
+    wev:evidenceType <evidence/AlternativeAccount> ;
+.
+
+<SocialMedia/2> a schema:SocialMediaPosting ;
+    schema:url <https://www.facebook.com/watch/?v=1167007826768723> ;
+.
+
+# Concepts
+
+<evidence/DebunkReport> a skos:Concept ;
+    skos:prefLabel   "Debunk Report" ;
+    skos:description "A report specifically debunking a particular piece of content" ;
+    skos:inScheme <evidence> ;
+.
+
+<evidence/OriginalContent> a skos:Concept ;
+    skos:prefLabel   "Source Content" ;
+    skos:description "The original piece of content believed to be at the source of a manipulative one" ;
+    skos:inScheme <evidence> ;
+.
+
+<evidence/AlternativeAccount> a skos:Concept ;
+    skos:prefLabel   "Alternative Account" ;
+    skos:description "An account of an incident from which the manipulative content is derived" ;
+    skos:inScheme <evidence> ;
+.
+
+<evidence> a skos:ConceptScheme;
+    skos:prefLabel "Supporting Evidence Types" ;
+.
+
+<reviewType/Debunk> a skos:Concept ;
+    skos:prefLabel 'Debunk' ;
+.
+
+<strategy/Location> a skos:Concept ;
+    skos:prefLabel "Location" ;
+    skos:description "Content is reported with different location as the original" ;
+.

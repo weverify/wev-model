@@ -1,0 +1,122 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix puml:     <http://plantuml.com/ontology#>.
+@prefix schema: <http://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wev: <http://weverify.eu/ontology/> .
+@prefix geoname: <http://sws.geonames.org/> .
+
+
+#Original Content is a Facebook post
+
+<SocialMediaPosting/1> a schema:SocialMediaPosting ;
+    schema:url <https://www.facebook.com/groups/370271443401663/permalink/597176477377824/> ;
+    schema:caption "PIQUE NIQUE AU CIMETIERE DE CALAIS \" SOUS LES YEUX DE LA REPUBLIQUE BIENVEILLANTE\"...." ;
+    schema:sharedContent <ImageObject/1> ;
+    schema:author <Person/1> ;
+.
+
+<Person/1> a schema:Person ;
+   schema:name "Nano HB";
+   schema:sameAs <https://www.facebook.com/nano.hb.3572> ;
+.
+
+<ImageObject/1> a schema:ImageObject ;
+    schema:url <https://pbs.twimg.com/media/DXIqpAlXkAEtTtT?format=jpg> ;
+.
+
+# The Claim
+
+<Claim/1> a schema:Claim ;
+    schema:text "Refugees organized a pique-nique in a Cemetary in Calais" ;
+    schema:appearence <SocialMediaPosting/1> .
+
+#A Claim Review by the WeVerify team
+
+<ClaimReview/1> a schema:ClaimReview ;
+    schema:itemReviewed <Claim/1> ;
+    puml:left <Claim/1>  ;
+    schema:author <Organization/1> ;
+    schema:reviewBody "This picture is decontextualized. \n The scene shows migrants in Tovarnik cemetery at the Serbian-Croatian border on the 24 of September 2015. \n This picture has circulated in France to target migrants allegedly having a picnic in the cemetery in the French town of Calais. \n This image has been re-used again during the 2019 EU elections" ;
+    wev:supportingEvidence <SupportingEvidence/1> ;
+    wev:supportingEvidence <SupportingEvidence/2> ;
+    wev:reviewType <reviewType/Debunk> ; # alternatively we can use schema:additionalType here
+    wev:misleadershipStrategy <strategy/Location> ;
+    puml:right <reviewType/Debunk> ;
+.
+
+<SupportingEvidence/1> a wev:SupportingEvidence ;
+    schema:text "Detailed debunking report by AFP fact-checking team";
+    schema:about <Article/1> ;
+    wev:evidenceType <evidence/DebunkReport> ;
+.
+
+<SupportingEvidence/2>  a wev:SupportingEvidence ;
+    schema:text "The Original Photograph. \n AFP team contacted the photographer bla bla.... " ;
+    wev:evidenceType <evidence/OriginalContent> ;
+    schema:about <ImageObject/2> ;
+.
+
+<Organization/1> a schema:Organization ;
+   schema:name "WeVerify";
+   schema:sameAs <https://twitter.com/Weverify> ;
+.
+
+# Supporting Evidence by AFP
+
+<Article/1> a schema:Article ;
+    schema:headline "Non, cette photo ne montre toujours pas un pique-nique dans un cimetière à Calais" ;
+    schema:url <https://factuel.afp.com/non-cette-photo-ne-montre-toujours-pas-un-pique-nique-dans-un-cimetiere-calais> ;
+    schema:author <Organization/2> ;
+.
+
+<Organization/2> a schema:Organization ;
+   schema:name "AFP Factuel";
+   schema:sameAs <https://twitter.com/AFPfactuel> ;
+.
+
+# The original photo
+
+<Person/2> a schema:Person ;
+   schema:name "János Bődey (Index)";
+   schema:jobTitle "photographer" ;
+   schema:sameAs <https://index.hu/szerzo/bodey_janos/> ;
+.
+
+<ImageObject/2> a schema:ImageObject ;
+    schema:url <https://kep.cdn.indexvas.hu/1/0/998/9987/99872/9987261_7c04323572333cf9d9e95b40d3394694_wm.jpg> ;
+    schema:headline "Refugees are waiting between graves" ;
+    schema:locationCreated "Tovarnik, Croatia";
+    schema:locationEntity geoname:11054552 ;
+    schema:author <Person/2> ;
+.
+
+# Concepts
+
+<reviewType/Debunk> a skos:Concept ;
+    skos:prefLabel 'Debunk' ;
+.
+
+<strategy/Location> a skos:Concept ;
+    skos:prefLabel "Location" ;
+    skos:description "Content is reported with different location as the original" ;
+.
+
+
+<evidence/DebunkReport> a skos:Concept ;
+    skos:prefLabel   "Debunk Report" ;
+    skos:description "A report specifically debunking a particular piece of content" ;
+    skos:inScheme <evidence> ;
+.
+
+<evidence/OriginalContent> a skos:Concept ;
+    skos:prefLabel   "Source Content" ;
+    skos:description "The original piece of content believed to be at the source of a manipulative one" ;
+    skos:inScheme <evidence> ;
+.
+
+<evidence> a skos:ConceptScheme;
+    skos:prefLabel "Supporting Evidence Types" ;
+.
