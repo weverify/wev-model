@@ -1,0 +1,58 @@
+@startuml
+hide empty methods
+hide empty attributes
+hide circle
+skinparam classAttributeIconSize 0
+class _r1563517695r3_ as " "
+class _https_pbs_twimg_com_media_DXIqpAlXkAEtTtT_format_jpg_ as "<https://pbs.twimg.com/media/DXIqpAlXkAEtTtT?format=jpg>"
+_r1563517695r3_ -down-> _https_pbs_twimg_com_media_DXIqpAlXkAEtTtT_format_jpg_ : <http://schema.org/image>
+class _https_www_facebook_com_groups_370271443401663_permalink_597176477377824_ as "<https://www.facebook.com/groups/370271443401663/permalink/597176477377824/>"
+_r1563517695r3_ -down-> _https_www_facebook_com_groups_370271443401663_permalink_597176477377824_ : <http://schema.org/url>
+_r1563517695r3_ : <http://schema.org/alternateName> "false"
+_r1563517695r3_ : <http://schema.org/archivedUrl> "https://web.archive.org/web/20190605144955/https://www.facebook.com/groups/370271443401663/permalink/597176477377824/"
+_r1563517695r3_ : <http://schema.org/caption> "PIQUE NIQUE AU CIMETIERE ..."
+_r1563517695r3_ : <http://schema.org/reviewBody> "Une photo ..."
+_r1563517695r3_ : <http://schema.org/spatial> "Calais, France"
+class _r1563517695r1_ as " "
+_r1563517695r1_ : a <http://schema.org/Organization>
+class _https_twitter_com_AFPfactuel_ as "<https://twitter.com/AFPfactuel>"
+_r1563517695r1_ -down-> _https_twitter_com_AFPfactuel_ : <http://schema.org/sameAs>
+_r1563517695r1_ : <http://schema.org/name> "AFP Factuel"
+class _r1563517695r7_ as " "
+_r1563517695r7_ : a <http://schema.org/Organization>
+class _https_twitter_com_Weverify_ as "<https://twitter.com/Weverify/>"
+_r1563517695r7_ -down-> _https_twitter_com_Weverify_ : <http://schema.org/sameAs>
+_r1563517695r7_ : <http://schema.org/comment> "This picture has been used many times in France..."
+_r1563517695r7_ : <http://schema.org/name> "WeVerify"
+class _r1563517695r5_ as " "
+_r1563517695r5_ : a <http://schema.org/ImageObject>
+_r1563517695r5_ -down-> _r1563517695r7_ : <http://schema.org/author>
+class _r1563517695r6_ as " "
+_r1563517695r5_ -down-> _r1563517695r6_ : <http://schema.org/associatedMedia>
+_r1563517695r5_ : <http://schema.org/datePublished> "2019-06-04"^^<http://schema.org/Date>
+class _r1563517695r2_ as " "
+_r1563517695r2_ : a <http://schema.org/imageObject>
+class _r1563517695r4_ as " "
+_r1563517695r2_ -down-> _r1563517695r4_ : <http://schema.org/author>
+_r1563517695r2_ -down-> _r1563517695r5_ : <http://schema.org/itemOriginal>
+_r1563517695r2_ -down-> _r1563517695r3_ : <http://schema.org/associatedMedia>
+class _r1563517695r0_ as " "
+_r1563517695r0_ : a <http://schema.org/ClaimReview>
+class _https_factuel_afp_com_non_cette_photo_ne_montre_toujours_pas_un_pique_nique_dans_un_cimetiere_calais_ as "<https://factuel.afp.com/non-cette-photo-ne-montre-toujours-pas-un-pique-nique-dans-un-cimetiere-calais>"
+_r1563517695r0_ -down-> _https_factuel_afp_com_non_cette_photo_ne_montre_toujours_pas_un_pique_nique_dans_un_cimetiere_calais_ : <http://schema.org/url>
+_r1563517695r0_ -down-> _r1563517695r2_ : <http://schema.org/itemReviewed>
+_r1563517695r0_ -down-> _r1563517695r1_ : <http://schema.org/author>
+_r1563517695r0_ : <http://schema.org/@subtype> "Debunk"
+_r1563517695r0_ : <http://schema.org/claimReviewed> "Non, cette photo ne montre toujours pas un pique-nique dans un cimetière de Calais"
+_r1563517695r0_ : <http://schema.org/datePublished> "2019-06-04"^^<http://schema.org/Date>
+_r1563517695r0_ : <http://schema.org/reviewBody> "This picture is decontextualized. The scene shows ... "
+_r1563517695r4_ : a <http://schema.org/Person>
+class _https_www_facebook_com_nano_hb_3572_ as "<https://www.facebook.com/nano.hb.3572>"
+_r1563517695r4_ -down-> _https_www_facebook_com_nano_hb_3572_ : <http://schema.org/sameAs>
+_r1563517695r4_ : <http://schema.org/name> "Nano HB"
+class _https_kep_cdn_indexvas_hu_1_0_998_9987_99872_9987261_7c04323572333cf9d9e95b40d3394694_wm_jpg_ as "<https://kep.cdn.indexvas.hu/1/0/998/9987/99872/9987261_7c04323572333cf9d9e95b40d3394694_wm.jpg>"
+_r1563517695r6_ -down-> _https_kep_cdn_indexvas_hu_1_0_998_9987_99872_9987261_7c04323572333cf9d9e95b40d3394694_wm_jpg_ : <http://schema.org/url>
+_r1563517695r6_ : <http://schema.org/headline> "Refugees are waiting between graves"
+_r1563517695r6_ : <http://schema.org/locationCreated> "Tovarnik, Croatia"
+_r1563517695r6_ : <http://schema.org/locationEntity> "https://www.geonames.org/11054552/tovarnik.html"
+@enduml
