@@ -7,10 +7,12 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wev: <http://weverify.eu/ontology/> .
 @prefix geoname: <http://sws.geonames.org/> .
+@prefix oa: <http://www.w3.org/ns/oa#>.
 
 #PUML
 
 schema:url a puml:InlineProperty .
+schema:sameAs a puml:InlineProperty .
 
 # Stereotypes (colored circles) for rdfpuml diagrams
 

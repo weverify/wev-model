@@ -16,6 +16,13 @@
     schema:caption "PIQUE NIQUE AU CIMETIERE DE CALAIS \" SOUS LES YEUX DE LA REPUBLIQUE BIENVEILLANTE\"...." ;
     schema:sharedContent <ImageObject/1> ;
     schema:author <Person/1> ;
+    schema:contentLocation <Place/1> ;
+    schema:dateCreated "2018-10-29"^^xsd:date;
+.
+
+<Place/1> a schema:Place ;
+    schema:address "Calais, France" ;
+    schema:sameAs geoname:3029162 ;
 .
 
 <Person/1> a schema:Person ;
@@ -40,23 +47,23 @@
     puml:left <Claim/1>  ;
     schema:author <Organization/1> ;
     schema:reviewBody "This picture is decontextualized. \n The scene shows migrants in Tovarnik cemetery at the Serbian-Croatian border on the 24 of September 2015. \n This picture has circulated in France to target migrants allegedly having a picnic in the cemetery in the French town of Calais. \n This image has been re-used again during the 2019 EU elections" ;
-    wev:supportingEvidence <SupportingEvidence/1> ;
-    wev:supportingEvidence <SupportingEvidence/2> ;
-    wev:reviewType <reviewType/Debunk> ; # alternatively we can use schema:additionalType here
+    schema:hasPart <SupportingEvidence/1> ;
+    schema:hasPart <SupportingEvidence/2> ;
+    schema:additionalType <reviewType/Debunk> ;
     wev:misleadershipStrategy <strategy/Location> ;
     puml:right <reviewType/Debunk> ;
 .
 
-<SupportingEvidence/1> a wev:SupportingEvidence ;
+<SupportingEvidence/1> a wev:SupportingEvidence , schema:CreativeWork;
     schema:text "Detailed debunking report by AFP fact-checking team";
-    schema:about <Article/1> ;
-    wev:evidenceType <evidence/DebunkReport> ;
+    wev:evidence <Article/1> ;
+    schema:additionalType <evidence/DebunkReport> ;
 .
 
-<SupportingEvidence/2>  a wev:SupportingEvidence ;
+<SupportingEvidence/2>  a wev:SupportingEvidence, schema:CreativeWork ;
     schema:text "The Original Photograph. \n AFP team contacted the photographer bla bla.... " ;
-    wev:evidenceType <evidence/OriginalContent> ;
-    schema:about <ImageObject/2> ;
+    schema:additionalType <evidence/OriginalContent> ;
+    wev:evidence <ImageObject/2> ;
 .
 
 <Organization/1> a schema:Organization ;
@@ -88,9 +95,14 @@
 <ImageObject/2> a schema:ImageObject ;
     schema:url <https://kep.cdn.indexvas.hu/1/0/998/9987/99872/9987261_7c04323572333cf9d9e95b40d3394694_wm.jpg> ;
     schema:headline "Refugees are waiting between graves" ;
-    schema:locationCreated "Tovarnik, Croatia";
-    schema:locationEntity geoname:11054552 ;
+    schema:locationCreated <Place/2>  ;
+    schema:dateCreated "2015-09-24"^^xsd:date ;
     schema:author <Person/2> ;
+.
+
+<Place/2> a schema:Place ;
+    schema:address "Tovarnik, Croatia";
+    schema:sameAs geoname:11054552 ;
 .
 
 # Concepts
