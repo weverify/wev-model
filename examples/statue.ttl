@@ -13,8 +13,13 @@
 <SocialMediaPosting/1> a schema:SocialMediaPosting ;
     schema:url <https://twitter.com/NewsCompact/status/1124611407213940736> ;
     schema:caption "A muslim migrant destroying a statue in Italy, because part of the body is showing #Europe..." ;
-    schema:spatial "Italy" ;
+    schema:contentLocation <Place/1> ;
+    schema:dateCreated "2019-05-04T02:47"^^xsd:dateTime ;
     schema:author <Person/1> ;
+.
+
+<Place/1> a schema:Place ;
+    schema:address "Italy" ;
 .
 
 <Person/1> a schema:Person ;
@@ -27,7 +32,13 @@
 
 <Claim/1> a schema:Claim ;
     schema:text "A muslim migrant destroying a nude statue in Italy." ;
-    schema:appearence <SocialMediaPosting/1> .
+    schema:dateCreated "2019-05-04T02:47"^^xsd:dateTime ;
+    schema:author <Person/3> ;
+    schema:appearence <SocialMediaPosting/1> ;
+ .
+
+<Person/3> a schema:Person ;
+.
 
 #A Claim Review by the WeVerify team
 
@@ -35,11 +46,12 @@
     schema:itemReviewed <Claim/1> ;
     puml:left <Claim/1>  ;
     schema:author <Organization/1> ;
+    schema:dateCreated "2019-07-22T00:00"^^xsd:dateTime;
     schema:reviewBody "This claim is false. The scene shows a vandalism incident from December 18, 2017 in Algeria..." ;
-    wev:supportingEvidence <SupportingEvidence/1> ;
-    wev:supportingEvidence <SupportingEvidence/2> ;
-    wev:supportingEvidence <SupportingEvidence/3> ;
-    wev:reviewType <reviewType/Debunk> ; # alternatively we can use schema:additionalType here
+    schema:hasPart <SupportingEvidence/1> ;
+    schema:hasPart <SupportingEvidence/2> ;
+    schema:hasPart <SupportingEvidence/3> ;
+    schema:additionalType <reviewType/Debunk> ;
     wev:misleadershipStrategy <strategy/Location> ;
     puml:right <reviewType/Debunk> ;
 .
@@ -51,37 +63,43 @@
 
 # Supporting evidence 1 is a debunk report ;
 
-<SupportingEvidence/1> a wev:SupportingEvidence ;
+<SupportingEvidence/1> a wev:SupportingEvidence, schema:CreativeWork;
     schema:about <Article/1> ;
-    wev:evidenceType <evidence/DebunkReport> ;
+    schema:additionalType <evidence/DebunkReport> ;
+    schema:dateCreated "2019-07-22T00:00"^^xsd:dateTime ;
 .
 
 <Article/1> a schema:Article ;
     schema:headline "Did a Muslim refugee vandalize a statue of the Virgin Mary in Italy? False" ;
     schema:url <https://factcheck.afp.com/did-muslim-refugee-vandalize-statue-virgin-mary-italy-false> ;
- .
+    schema:dateCreated "2018-10-20T00:31"^^xsd:dateTime ;
+.
 
 # Supporting evidence 2 is a media article about the original event
 
-<SupportingEvidence/2> a wev:SupportingEvidence ;
+<SupportingEvidence/2> a wev:SupportingEvidence, schema:CreativeWork ;
     schema:about <Article/2> ;
-    wev:evidenceType <evidence/AlternativeAccount> ;
+    schema:additionalType <evidence/AlternativeAccount> ;
+    schema:dateCreated "2019-07-22T00:00"^^xsd:dateTime ;
 .
 
 <Article/2> a schema:Article ;
     schema:headline "A man in Algeria attacked a naked female statue with a hammer" ;
     schema:url <https://observers.france24.com/en/20171219-man-algeria-attacks-naked-female-statue> ;
+    schema:dateCreated "2017-12-19T17:03:31"^^xsd:dateTime ;
  .
 
 #supporting evidence 3 is Facebook post about the event
 
-<SupportingEvidence/3> a wev:SupportingEvidence ;
+<SupportingEvidence/3> a wev:SupportingEvidence, schema:CreativeWork ;
     schema:about <SocialMedia/2> ;
-    wev:evidenceType <evidence/AlternativeAccount> ;
+    schema:additionalType <evidence/AlternativeAccount> ;
+    schema:dateCreated "2019-07-22T00:00"^^xsd:dateTime ;
 .
 
 <SocialMedia/2> a schema:SocialMediaPosting ;
     schema:url <https://www.facebook.com/watch/?v=1167007826768723> ;
+    schema:dateCreated "2017-12-19T19:29"^^xsd:dateTime ;
 .
 
 # Concepts
@@ -89,12 +107,6 @@
 <evidence/DebunkReport> a skos:Concept ;
     skos:prefLabel   "Debunk Report" ;
     skos:description "A report specifically debunking a particular piece of content" ;
-    skos:inScheme <evidence> ;
-.
-
-<evidence/OriginalContent> a skos:Concept ;
-    skos:prefLabel   "Source Content" ;
-    skos:description "The original piece of content believed to be at the source of a manipulative one" ;
     skos:inScheme <evidence> ;
 .
 

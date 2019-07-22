@@ -20,6 +20,7 @@
     schema:dateCreated "2018-10-29"^^xsd:date;
 .
 
+
 <Place/1> a schema:Place ;
     schema:address "Calais, France" ;
     schema:sameAs geoname:3029162 ;
