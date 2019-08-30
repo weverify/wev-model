@@ -34,7 +34,7 @@
     schema:text "A muslim migrant destroying a nude statue in Italy." ;
     schema:dateCreated "2019-05-04T02:47"^^xsd:dateTime ;
     schema:author <Person/3> ;
-    schema:appearence <SocialMediaPosting/1> ;
+    schema:appearance <SocialMediaPosting/1> ;
  .
 
 <Person/3> a schema:Person ;

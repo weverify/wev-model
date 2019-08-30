@@ -3,30 +3,34 @@
 
 Examples is from "Ideas for the blockchain database" [document](https://docs.google.com/document/d/1S7PU6D2ULBo8xkPgKiTA9ejE1DVzmbj7dZ1mj5eU7G8) 
 
-![](statue.png)]
+![](statue.png)
 
 
 ### schema:Claim 
 
-The claim represents a statement, without judgement. It can be true otr false. The `schema:appearence` predicate points to the actual manifestations of the claim in various bits of content, described in  schema.org 
+The claim represents a statement, without judgement. It can be true or false. 
+* The `schema:appearance` predicate points to the actual manifestations of the claim in various bits of content, described in Schema.org
+* `schema:text` contains the text of the claim 
+
 
 ```ttl
 <Claim/1> a schema:Claim ;
     schema:text "A muslim migrant destroying a nude statue in Italy." ;
     schema:dateCreated "2019-05-04T02:47"^^xsd:dateTime ;
     schema:author <Person/3> ;
-    schema:appearence <SocialMediaPosting/1> ;
+    schema:appearance <SocialMediaPosting/1> ;
  .
 ```
 
 ### schema:ClaimReview
 
 The claim review is the creative output of a given author, judging a particular claim. The `schema:reviewBody` literal is a textual summary of the review.
+
 We use `schema:hasPart` to link the Review Body to one or more pieces of supporting evidence. 
 
-We use `schema:additionalType` to link the claim review to a skos thesaurus containing the possible types of review (Debunk, Validate etc)
 
-We use (somewhat clunky) a custom predicate `wev:missledershipStrategy` to link to a n item from a SKOS thesaurus containing a specific taxonomy of missleadership strategies. This is not final but a means to illustrate a pattern we can use to add buisness-specific nuances without altering the model. Most aspects can be described using this pattern. 
+Optionally we can use `schema:additionalType` to link the claim review to a skos thesaurus containing the possible types of review (Debunk, Validate etc)
+We can also follow the same pattern to add business-specific nuances without altering the model. To illustrate that here we use a (somewhat clunky) custom predicate `wev:missledershipStrategy` to link to an item from a SKOS thesaurus containing a specific taxonomy of missleadership strategies. They can be "change of location", "altered image" etc... 
 
 
 ```ttl
@@ -66,4 +70,5 @@ This is for now the only extension of Schema in the WEV model
 
 ## Example 2
 
+Here is the example concerning the claim that "Refugees organized a pique-nique in a Cemetery in Calais"
 ![](cemetary.png)

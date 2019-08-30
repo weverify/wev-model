@@ -38,8 +38,8 @@
 # The Claim
 
 <Claim/1> a schema:Claim ;
-    schema:text "Refugees organized a pique-nique in a Cemetary in Calais" ;
-    schema:appearence <SocialMediaPosting/1> .
+    schema:text "Refugees organized a pique-nique in a Cemetery in Calais" ;
+    schema:appearance <SocialMediaPosting/1> .
 
 #A Claim Review by the WeVerify team
 
