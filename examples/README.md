@@ -50,7 +50,7 @@ We can also follow the same pattern to add business-specific nuances without alt
 
 ### wev:SupportingEvidence
 
-Supporting Evidenceis a subclass of `schema:CreativeWork` and is a statement that a given piece of content is evidence supporting a given claim review. 
+Supporting Evidence is a subclass of `schema:CreativeWork` and is a statement that a given piece of content is evidence supporting a given claim review. 
 The `schema:text` literal can be used to write down additional information on the nature of the supporting evidence.
 `schema:additionalType` points to a SKOS thesaurus containing types of supporting evidence, such as "Debunk Report" or "Alternative Account".
 In this example 3 pieces of supporting evidence are linked to the review. 2 are "weaker", representing alternative accounts of the incident, and the third is stronger, a dedicated debunk report of the video. 
@@ -72,4 +72,9 @@ This is for now the only extension of Schema in the WEV model
 ## Example 2
 
 Here is the example concerning the claim that "Refugees organized a pique-nique in a Cemetery in Calais"
+
 ![](cemetary.png)
+
+The `wev:nddId` predicate is the link to the CERTH NDD api, and can be used to query for similar images and, by extensions reviewed claims concerning similar images 
+
+See: <http://mever.iti.gr/ndd/api/v2/images/search/DCD1FF6D413E1B662F88B0E9AC4157E6>
