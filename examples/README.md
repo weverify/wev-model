@@ -73,8 +73,8 @@ This is for now the only extension of Schema in the WEV model
 
 Here is the example concerning the claim that "Refugees organized a pique-nique in a Cemetery in Calais"
 
-![](cemetary.png)
+![](cemetery.png)
 
-The `wev:nddId` predicate is the link to the CERTH NDD api, and can be used to query for similar images and, by extensions reviewed claims concerning similar images 
+The `wev:nddId` predicate in the two `schema:ImageObject` links to the CERTH NDD api, and can be used to query for similar images and, by extensions reviewed claims concerning similar images 
 
 See: <http://mever.iti.gr/ndd/api/v2/images/search/DCD1FF6D413E1B662F88B0E9AC4157E6>
