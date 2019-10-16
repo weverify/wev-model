@@ -11,7 +11,7 @@
 
 #Original Content is a Facebook post
 
-<Appearance/1> a schema:Appearance ;
+<Appearance/1> a schema:CreativeWork ;
     schema:url <https://www.facebook.com/groups/370271443401663/permalink/597176477377824/> ;
     schema:caption "PIQUE NIQUE AU CIMETIERE DE CALAIS \" SOUS LES YEUX DE LA REPUBLIQUE BIENVEILLANTE\"...." ;
     schema:sharedContent <ImageObject/1> ;
@@ -37,15 +37,15 @@
 
 # The Claim
 
-<Claim/Sample/1> a schema:Claim ;
+<Claim/[source]/1> a schema:Claim ;
     schema:text "Refugees organized a pique-nique in a Cemetary in Calais" ;
     schema:appearence <Appearance/1> .
 
 #A Claim Review by the WeVerify team
 
-<ClaimReview/Sample/1> a schema:ClaimReview ;
-    schema:itemReviewed <Claim/Sample/1> ;
-    puml:left <Claim/Sample/1>  ;
+<ClaimReview/[source]/1> a schema:ClaimReview ;
+    schema:itemReviewed <Claim/[source]/1> ;
+    puml:left <Claim/[source]/1>  ;
     schema:author <Organization/1> ;
     schema:reviewBody "This picture is decontextualized. \n The scene shows migrants in Tovarnik cemetery at the Serbian-Croatian border on the 24 of September 2015. \n This picture has circulated in France to target migrants allegedly having a picnic in the cemetery in the French town of Calais. \n This image has been re-used again during the 2019 EU elections" ;
     schema:hasPart <SupportingEvidence/1> ;
@@ -53,7 +53,7 @@
     schema:additionalType <reviewType/Debunk> ;
     wev:disinformationStrategy <strategy/Location> ;
     puml:right <reviewType/Debunk> ;
-    schema:reviewRating <Rating/1> , <Rating/2> ;
+    schema:reviewRating <Rating/Normalized/OTHER> , <Rating/[source]/2> ;
 .
 
 <SupportingEvidence/1> a wev:SupportingEvidence , schema:CreativeWork;
@@ -73,12 +73,12 @@
    schema:sameAs <https://twitter.com/Weverify> ;
 .
 
-<Rating/1> a schema:Rating , wev:NormalizedRating ;
+<Rating/Normalized/OTHER> a schema:Rating , wev:NormalizedRating ;
            schema:bestRating "TRUE" ; 
            schema:ratingValue "OTHER" ;
            schema:worstRating "FALSE" .
 
-<Rating/2> a schema:Rating ;
+<Rating/[source]/2> a schema:Rating ;
            schema:bestRating 5 ;
            schema:ratingValue 2 ;
            schema:worstRating 1 .
