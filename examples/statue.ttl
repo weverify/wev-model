@@ -10,7 +10,7 @@
 
 # Original is a Tweet
 
-<SocialMediaPosting/1> a schema:SocialMediaPosting ;
+<Appearance/1> a schema:Appearance ;
     schema:url <https://twitter.com/NewsCompact/status/1124611407213940736> ;
     schema:caption "A muslim migrant destroying a statue in Italy, because part of the body is showing #Europe..." ;
     schema:contentLocation <Place/1> ;
@@ -30,11 +30,11 @@
 
 # The Claim
 
-<Claim/1> a schema:Claim ;
+<Claim/Sample/1> a schema:Claim ;
     schema:text "A muslim migrant destroying a nude statue in Italy." ;
     schema:dateCreated "2019-05-04T02:47"^^xsd:dateTime ;
     schema:author <Person/3> ;
-    schema:appearence <SocialMediaPosting/1> ;
+    schema:appearence <Appearance/1> ;
  .
 
 <Person/3> a schema:Person ;
@@ -42,9 +42,9 @@
 
 #A Claim Review by the WeVerify team
 
-<ClaimReview/1> a schema:ClaimReview ;
-    schema:itemReviewed <Claim/1> ;
-    puml:left <Claim/1>  ;
+<ClaimReview/Sample/1> a schema:ClaimReview ;
+    schema:itemReviewed <Claim/Sample/1> ;
+    puml:left <Claim/Sample/1>  ;
     schema:author <Organization/1> ;
     schema:dateCreated "2019-07-22T00:00"^^xsd:dateTime;
     schema:reviewBody "This claim is false. The scene shows a vandalism incident from December 18, 2017 in Algeria..." ;
@@ -54,12 +54,23 @@
     schema:additionalType <reviewType/Debunk> ;
     wev:misleadershipStrategy <strategy/Location> ;
     puml:right <reviewType/Debunk> ;
+    schema:reviewRating <Rating/1> , <Rating/2> ;
 .
 
 <Organization/1> a schema:Organization ;
    schema:name "WeVerify";
    schema:sameAs <https://twitter.com/Weverify> ;
 .
+
+<Rating/1> a schema:Review , wev:NormalizedRating ;
+           schema:bestRating "TRUE" ;
+           schema:reviewRating "FALSE" ;
+           schema:worstRating "FALSE" .
+
+<Rating/2> a schema:Review ;
+           schema:bestRating 5 ;
+           schema:reviewRating 1 ;
+           schema:worstRating 1 .
 
 # Supporting evidence 1 is a debunk report ;
 
