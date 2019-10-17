@@ -12,7 +12,9 @@ prefix geoname: <http://sws.geonames.org/>
 construct {
     ?claimUri a schema:Claim ;
               schema:text ?claimReview_claimReviewed ;
-              schema:appearance ?appearance .
+              schema:appearance ?appearance ;
+              schema:dateCreated ?claimReview_datePublished ;
+              schema:author ?authorUri .
 
     ?appearance a schema:CreativeWork , wev:Appearance ;
                schema:url ?creativeWork_author_sameAs ;
@@ -55,6 +57,8 @@ construct {
 base  <http://weverify.eu/resource/>
 
 construct {
+    ?reviewUri schema:hasPart ?eviUri .
+    
     ?eviUri a wev:SupportingEvidence, schema:CreativeWork ;
             schema:additionalType wev:ExternalEvidence ;
             schema:about ?eviItemUri .
@@ -62,6 +66,7 @@ construct {
     ?eviItemUri a schema:CreativeWork ;
             schema:url ?eviLink .
 } where {
+    bind (iri(concat("ClaimReview/", ?claimReview_author_name, "/", ?a)) as ?reviewUri)
     bind(coalesce(replace(replace(?extra_refered_links, "[\\[\\]]", ""), " #", " "), "") as ?eviList)
     ?eviSplit apf:strSplit ( ?eviList ", ")
     bind(if(bound(?eviList), ?eviSplit, ?eviList) as ?eviStr)
