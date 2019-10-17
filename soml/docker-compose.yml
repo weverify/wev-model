@@ -1,0 +1,41 @@
+  version: '3.6'
+
+  services:
+
+    graphdb:
+      image: maven.ontotext.com/platform-graphdb:0.0.4
+      ports:
+        - "9998:7200"
+      environment:
+        GDB_JAVA_OPTS: "-Dgraphdb.append.request.id.headers=true"
+
+    platform-boaas-service:
+      image: maven.ontotext.com/platform-boaas-service:0.0.4    
+      depends_on:
+        - mongodb
+        - graphdb
+      environment:
+        boml.storage.mongodb.endpoint: "mongodb://mongodb:27017"
+        sparql.endpoint.address: "http://graphdb:7200/"
+        sparql.endpoint.repository: "boaas"
+        # Defines the query generation mode: Possible values are: lateral (default), split
+        # Note that lateral mode requires GDB 9.x
+        sparql.optimizations.queryMode: lateral
+      ports:
+        - "9995:8080"
+
+    mongodb:
+      image: mongo:latest
+      ports:
+        - "9997:27017"
+      restart: always
+      command: mongod --bind_ip_all --replSet boaas
+
+    graphiql:
+      image: maven.ontotext.com/platform-graphiql:0.0.4
+      restart: always
+      ports:
+        - "9999:8080"
+      environment:
+        - SERVER_HOST=platform-boaas-service
+        - SERVER_PORT=8080  
