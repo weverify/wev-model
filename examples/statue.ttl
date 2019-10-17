@@ -10,7 +10,7 @@
 
 # Original is a Tweet
 
-<Appearance/2> a schema:CreativeWork ;
+<Appearance/2> a schema:CreativeWork , wev:Appearance ;
     schema:url <https://twitter.com/NewsCompact/status/1124611407213940736> ;
     schema:caption "A muslim migrant destroying a statue in Italy, because part of the body is showing #Europe..." ;
     schema:contentLocation <Place/1> ;

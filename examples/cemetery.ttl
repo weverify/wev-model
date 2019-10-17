@@ -11,7 +11,7 @@
 
 #Original Content is a Facebook post
 
-<Appearance/1> a schema:CreativeWork ;
+<Appearance/1> a schema:CreativeWork , wev:Appearance ;
     schema:url <https://www.facebook.com/groups/370271443401663/permalink/597176477377824/> ;
     schema:caption "PIQUE NIQUE AU CIMETIERE DE CALAIS \" SOUS LES YEUX DE LA REPUBLIQUE BIENVEILLANTE\"...." ;
     schema:sharedContent <ImageObject/1> ;
