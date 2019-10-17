@@ -39,7 +39,7 @@
 
 <Claim/[source]/1> a schema:Claim ;
     schema:text "Refugees organized a pique-nique in a Cemetary in Calais" ;
-    schema:appearence <Appearance/1> .
+    schema:appearance <Appearance/1> .
 
 #A Claim Review by the WeVerify team
 
