@@ -1,0 +1,135 @@
+@startuml
+hide empty methods
+hide empty attributes
+hide circle
+skinparam classAttributeIconSize 0
+class _Person_2_ as "<Person/2>"
+class _Person_2_ <<(A,lightblue)>>
+show _Person_2_ circle
+class _Person_3_ as "<Person/3>"
+class _Person_3_ <<(A,lightblue)>>
+show _Person_3_ circle
+class _Organization_1_ as "<Organization/1>"
+class _Organization_1_ <<(A,lightblue)>>
+show _Organization_1_ circle
+class _Article_3_ as "<Article/3>"
+class _Article_3_ <<(C,red)>>
+show _Article_3_ circle
+class _Article_4_ as "<Article/4>"
+class _Article_4_ <<(C,red)>>
+show _Article_4_ circle
+class _SocialMedia_5_ as "<SocialMedia/5>"
+class _SocialMedia_5_ <<(C,red)>>
+show _SocialMedia_5_ circle
+class _ClaimReview_source_2_ as "<ClaimReview/(source)/2>"
+class _ClaimReview_source_2_ <<(D,lightgreen)>>
+show _ClaimReview_source_2_ circle
+class _Claim_source_2_ as "<Claim/(source)/2>"
+class _Claim_source_2_ <<(D,lightgreen)>>
+show _Claim_source_2_ circle
+class _SupportingEvidence_3_ as "<SupportingEvidence/3>"
+class _SupportingEvidence_3_ <<(D,lightgreen)>>
+show _SupportingEvidence_3_ circle
+class _SupportingEvidence_4_ as "<SupportingEvidence/4>"
+class _SupportingEvidence_4_ <<(D,lightgreen)>>
+show _SupportingEvidence_4_ circle
+class _SupportingEvidence_5_ as "<SupportingEvidence/5>"
+class _SupportingEvidence_5_ <<(D,lightgreen)>>
+show _SupportingEvidence_5_ circle
+class _evidence_DebunkReport_ as "<evidence/DebunkReport>"
+class _evidence_DebunkReport_ <<(I,lightgray)>>
+show _evidence_DebunkReport_ circle
+class _evidence_AlternativeAccount_ as "<evidence/AlternativeAccount>"
+class _evidence_AlternativeAccount_ <<(I,lightgray)>>
+show _evidence_AlternativeAccount_ circle
+class _reviewType_Debunk_ as "<reviewType/Debunk>"
+class _reviewType_Debunk_ <<(I,lightgray)>>
+show _reviewType_Debunk_ circle
+class _strategy_Location_ as "<strategy/Location>"
+class _strategy_Location_ <<(I,lightgray)>>
+show _strategy_Location_ circle
+_evidence_AlternativeAccount_ : a skos:Concept
+class _evidence_ as "<evidence>"
+_evidence_AlternativeAccount_ -down-> _evidence_ : skos:inScheme
+_evidence_AlternativeAccount_ : skos:description "An account of an incident from which the manipulative content is derived"
+_evidence_AlternativeAccount_ : skos:prefLabel "Alternative Account"
+class _Rating_source_1_ as "<Rating/(source)/1>"
+_Rating_source_1_ : a wev:SourceRating, schema:Rating
+_Rating_source_1_ : schema:bestRating 5
+_Rating_source_1_ : schema:ratingValue 1
+_Rating_source_1_ : schema:worstRating 1
+_Person_2_ : a schema:Person
+_Person_2_ : schema:name "@NewsCompact"
+_Person_2_ : schema:sameAs\n  <https://twitter.com/NewsCompact>,\n  <https://twitter.com/Robkearney1981>
+_SupportingEvidence_4_ : a wev:SupportingEvidence, schema:CreativeWork
+_SupportingEvidence_4_ -down-> _Article_4_ : schema:about
+_SupportingEvidence_4_ -down-> _evidence_AlternativeAccount_ : schema:additionalType
+_SupportingEvidence_4_ : schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime
+_strategy_Location_ : a skos:Concept
+_strategy_Location_ : skos:description "Content is reported with different location as the original"
+_strategy_Location_ : skos:prefLabel "Location"
+class _Place_2_ as "<Place/2>"
+_Place_2_ : a schema:Place
+_Place_2_ : schema:address "Italy"
+class _Rating_Normalized_FALSE_ as "<Rating/Normalized/FALSE>"
+_Rating_Normalized_FALSE_ : a schema:Rating, wev:NormalizedRating
+_Rating_Normalized_FALSE_ : schema:bestRating "TRUE"
+_Rating_Normalized_FALSE_ : schema:ratingValue "FALSE"
+_Rating_Normalized_FALSE_ : schema:worstRating "FALSE"
+_ClaimReview_source_2_ : a schema:ClaimReview
+_ClaimReview_source_2_ -down-> _SupportingEvidence_5_ : schema:hasPart
+_ClaimReview_source_2_ -down-> _Rating_Normalized_FALSE_ : schema:reviewRating
+class _Organization_weverify_ as "<Organization/weverify>"
+_ClaimReview_source_2_ -down-> _Organization_weverify_ : schema:author
+_ClaimReview_source_2_ -left-> _Claim_source_2_ : schema:itemReviewed
+_ClaimReview_source_2_ -down-> _SupportingEvidence_4_ : schema:hasPart
+_ClaimReview_source_2_ -down-> _SupportingEvidence_3_ : schema:hasPart
+_ClaimReview_source_2_ -down-> _strategy_Location_ : wev:misleadershipStrategy
+_ClaimReview_source_2_ -right-> _reviewType_Debunk_ : schema:additionalType
+_ClaimReview_source_2_ -down-> _Rating_source_1_ : schema:reviewRating
+_ClaimReview_source_2_ : schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime
+_ClaimReview_source_2_ : schema:reviewBody "This claim is false. The scene shows a vandalism incident from December 18, 2017 in Algeria..."
+_SupportingEvidence_5_ : a wev:SupportingEvidence, schema:CreativeWork
+_SupportingEvidence_5_ -down-> _evidence_AlternativeAccount_ : schema:additionalType
+_SupportingEvidence_5_ -down-> _SocialMedia_5_ : schema:about
+_SupportingEvidence_5_ : schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime
+_evidence_ : a skos:ConceptScheme
+_evidence_ : skos:prefLabel "Supporting Evidence Types"
+_Article_4_ : a schema:Article
+_Article_4_ : schema:dateCreated "2017-12-19T17:03:31"^^xsd:dateTime
+_Article_4_ : schema:headline "A man in Algeria attacked a naked female statue with a hammer"
+_Article_4_ : schema:url <https://observers.france24.com/en/20171219-man-algeria-attacks-naked-female-statue>
+_evidence_DebunkReport_ : a skos:Concept
+_evidence_DebunkReport_ -down-> _evidence_ : skos:inScheme
+_evidence_DebunkReport_ : skos:description "A report specifically debunking a particular piece of content"
+_evidence_DebunkReport_ : skos:prefLabel "Debunk Report"
+_Article_3_ : a schema:Article
+_Article_3_ : schema:dateCreated "2018-10-20T00:31:00"^^xsd:dateTime
+_Article_3_ : schema:headline "Did a Muslim refugee vandalize a statue of the Virgin Mary in Italy? False"
+_Article_3_ : schema:url <https://factcheck.afp.com/did-muslim-refugee-vandalize-statue-virgin-mary-italy-false>
+_Organization_1_ : a schema:Organization
+_Organization_1_ : schema:name "WeVerify"
+_Organization_1_ : schema:sameAs <https://twitter.com/Weverify>
+_SupportingEvidence_3_ : a wev:SupportingEvidence, schema:CreativeWork
+_SupportingEvidence_3_ -down-> _evidence_DebunkReport_ : schema:additionalType
+_SupportingEvidence_3_ -down-> _Article_3_ : schema:about
+_SupportingEvidence_3_ : schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime
+class _Appearance_2_ as "<Appearance/2>"
+_Appearance_2_ : a wev:Appearance, schema:CreativeWork
+_Appearance_2_ -down-> _Person_2_ : schema:author
+_Appearance_2_ -down-> _Place_2_ : schema:contentLocation
+_Appearance_2_ : schema:caption "A muslim migrant destroying a statue in Italy, because part of the body is showing #Europe..."
+_Appearance_2_ : schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime
+_Appearance_2_ : schema:url <https://twitter.com/NewsCompact/status/1124611407213940736>
+_reviewType_Debunk_ : a skos:Concept
+_reviewType_Debunk_ : skos:prefLabel "Debunk"
+_Person_3_ : a schema:Person
+_Claim_source_2_ : a schema:Claim
+_Claim_source_2_ -down-> _Appearance_2_ : schema:appearance
+_Claim_source_2_ -down-> _Person_3_ : schema:author
+_Claim_source_2_ : schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime
+_Claim_source_2_ : schema:text "A muslim migrant destroying a nude statue in Italy."
+_SocialMedia_5_ : a schema:SocialMediaPosting
+_SocialMedia_5_ : schema:dateCreated "2017-12-19T19:29:00"^^xsd:dateTime
+_SocialMedia_5_ : schema:url <https://www.facebook.com/watch/?v=1167007826768723>
+@enduml
