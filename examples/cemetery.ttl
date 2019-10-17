@@ -37,23 +37,21 @@
 
 # The Claim
 
-<Claim/[source]/1> a schema:Claim ;
+<Claim/(source)/1> a schema:Claim ;
     schema:text "Refugees organized a pique-nique in a Cemetary in Calais" ;
     schema:appearance <Appearance/1> .
 
 #A Claim Review by the WeVerify team
 
-<ClaimReview/[source]/1> a schema:ClaimReview ;
-    schema:itemReviewed <Claim/[source]/1> ;
-    puml:left <Claim/[source]/1>  ;
-    schema:author <Organization/1> ;
+<ClaimReview/(source)/1> a schema:ClaimReview ;
+    schema:itemReviewed <Claim/(source)/1> ;
+    schema:author <Organization/weverify> ;
     schema:reviewBody "This picture is decontextualized. \n The scene shows migrants in Tovarnik cemetery at the Serbian-Croatian border on the 24 of September 2015. \n This picture has circulated in France to target migrants allegedly having a picnic in the cemetery in the French town of Calais. \n This image has been re-used again during the 2019 EU elections" ;
     schema:hasPart <SupportingEvidence/1> ;
     schema:hasPart <SupportingEvidence/2> ;
     schema:additionalType <reviewType/Debunk> ;
     wev:disinformationStrategy <strategy/Location> ;
-    puml:right <reviewType/Debunk> ;
-    schema:reviewRating <Rating/Normalized/OTHER> , <Rating/[source]/2> ;
+    schema:reviewRating <Rating/Normalized/OTHER> , <Rating/(source)/2> ;
 .
 
 <SupportingEvidence/1> a wev:SupportingEvidence , schema:CreativeWork;
@@ -78,7 +76,7 @@
            schema:ratingValue "OTHER" ;
            schema:worstRating "FALSE" .
 
-<Rating/[source]/2> a schema:Rating ;
+<Rating/(source)/2> a schema:Rating ;
            schema:bestRating 5 ;
            schema:ratingValue 2 ;
            schema:worstRating 1 .
@@ -144,3 +142,7 @@
 <evidence> a skos:ConceptScheme;
     skos:prefLabel "Supporting Evidence Types" ;
 .
+
+####################
+<ClaimReview/(source)/1> puml:left <Claim/(source)/1>  .
+<ClaimReview/(source)/1> puml:right <reviewType/Debunk> .
