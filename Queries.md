@@ -2,7 +2,7 @@
 
 [Gsheet](https://docs.google.com/spreadsheets/d/1KyhzI7aoNaKKv1pqSzwgbNKYVftlqYfxKQFksDmHYNw/edit#gid=0) with Questions
 
-## What is the the list of all claims in tghe DBKF?
+## What is the the list of all claims in the DBKF?
 
 ```sparql
 PREFIX schema: <http://schema.org/>
