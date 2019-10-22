@@ -13,9 +13,9 @@
 <Appearance/2> a schema:CreativeWork , wev:Appearance ;
     schema:url <https://twitter.com/NewsCompact/status/1124611407213940736> ;
     schema:caption "A muslim migrant destroying a statue in Italy, because part of the body is showing #Europe..." ;
-    schema:contentLocation <Place/1> ;
-    schema:dateCreated "2019-05-04T02:47"^^xsd:dateTime ;
-    schema:author <Person/1> ;
+    schema:contentLocation <Place/2> ;
+    schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime ;
+    schema:author <Person/2> ;
 .
 
 <Place/2> a schema:Place ;
@@ -30,9 +30,9 @@
 
 # The Claim
 
-<Claim/[source]/2> a schema:Claim ;
+<Claim/(source)/2> a schema:Claim ;
     schema:text "A muslim migrant destroying a nude statue in Italy." ;
-    schema:dateCreated "2019-05-04T02:47"^^xsd:dateTime ;
+    schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime ;
     schema:author <Person/3> ;
     schema:appearance <Appearance/2> ;
  .
@@ -42,11 +42,11 @@
 
 #A Claim Review by the WeVerify team
 
-<ClaimReview/[source]/2> a schema:ClaimReview ;
-    schema:itemReviewed <Claim/[source]/2> ;
-    puml:left <Claim/[source]/2>  ;
-    schema:author <Organization/2> ;
-    schema:dateCreated "2019-07-22T00:00"^^xsd:dateTime;
+<ClaimReview/(source)/2> a schema:ClaimReview ;
+    schema:itemReviewed <Claim/(source)/2> ;
+    puml:left <Claim/(source)/2>  ;
+    schema:author <Organization/weverify> ;
+    schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime;
     schema:reviewBody "This claim is false. The scene shows a vandalism incident from December 18, 2017 in Algeria..." ;
     schema:hasPart <SupportingEvidence/3> ;
     schema:hasPart <SupportingEvidence/4> ;
@@ -54,7 +54,7 @@
     schema:additionalType <reviewType/Debunk> ;
     wev:misleadershipStrategy <strategy/Location> ;
     puml:right <reviewType/Debunk> ;
-    schema:reviewRating <Rating/Normalized/FALSE> , <Rating/[source]/1> ;
+    schema:reviewRating <Rating/Normalized/FALSE> , <Rating/(source)/1> ;
 .
 
 <Organization/1> a schema:Organization ;
@@ -62,14 +62,14 @@
    schema:sameAs <https://twitter.com/Weverify> ;
 .
 
-<Rating/Normalized/FALSE> a schema:Review , wev:NormalizedRating ;
+<Rating/Normalized/FALSE> a schema:Rating , wev:NormalizedRating ;
            schema:bestRating "TRUE" ;
-           schema:reviewRating "FALSE" ;
+           schema:ratingValue "FALSE" ;
            schema:worstRating "FALSE" .
 
-<Rating/[source]/1> a schema:Review ;
+<Rating/(source)/1> a schema:Rating, wev:SourceRating  ;
            schema:bestRating 5 ;
-           schema:reviewRating 1 ;
+           schema:ratingValue 1 ;
            schema:worstRating 1 .
 
 # Supporting evidence 3 is a debunk report ;
@@ -77,13 +77,13 @@
 <SupportingEvidence/3> a wev:SupportingEvidence, schema:CreativeWork;
     schema:about <Article/3> ;
     schema:additionalType <evidence/DebunkReport> ;
-    schema:dateCreated "2019-07-22T00:00"^^xsd:dateTime ;
+    schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime ;
 .
 
 <Article/3> a schema:Article ;
     schema:headline "Did a Muslim refugee vandalize a statue of the Virgin Mary in Italy? False" ;
     schema:url <https://factcheck.afp.com/did-muslim-refugee-vandalize-statue-virgin-mary-italy-false> ;
-    schema:dateCreated "2018-10-20T00:31"^^xsd:dateTime ;
+    schema:dateCreated "2018-10-20T00:31:00"^^xsd:dateTime ;
 .
 
 # Supporting evidence 4 is a media article about the original event
@@ -91,7 +91,7 @@
 <SupportingEvidence/4> a wev:SupportingEvidence, schema:CreativeWork ;
     schema:about <Article/4> ;
     schema:additionalType <evidence/AlternativeAccount> ;
-    schema:dateCreated "2019-07-22T00:00"^^xsd:dateTime ;
+    schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime ;
 .
 
 <Article/4> a schema:Article ;
@@ -105,12 +105,12 @@
 <SupportingEvidence/5> a wev:SupportingEvidence, schema:CreativeWork ;
     schema:about <SocialMedia/5> ;
     schema:additionalType <evidence/AlternativeAccount> ;
-    schema:dateCreated "2019-07-22T00:00"^^xsd:dateTime ;
+    schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime ;
 .
 
 <SocialMedia/5> a schema:SocialMediaPosting ;
     schema:url <https://www.facebook.com/watch/?v=1167007826768723> ;
-    schema:dateCreated "2017-12-19T19:29"^^xsd:dateTime ;
+    schema:dateCreated "2017-12-19T19:29:00"^^xsd:dateTime ;
 .
 
 # Concepts
