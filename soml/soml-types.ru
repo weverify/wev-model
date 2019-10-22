@@ -9,7 +9,7 @@ base <http://weverify.eu/resource/>
 insert {
   graph <http://www.ontotext.com/business-object/computed-type> {
     ?x bo:type ?typename
-  } 
+  }
 } where {
   {
     values (?type ?typename) {

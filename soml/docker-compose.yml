@@ -10,7 +10,7 @@
         GDB_JAVA_OPTS: "-Dgraphdb.append.request.id.headers=true"
 
     platform-boaas-service:
-      image: maven.ontotext.com/platform-boaas-service:0.0.4    
+      image: maven.ontotext.com/platform-boaas-service:0.5.0-SNAPSHOT
       depends_on:
         - mongodb
         - graphdb

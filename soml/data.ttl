@@ -1,0 +1,282 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix puml:     <http://plantuml.com/ontology#>.
+@prefix schema: <http://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wev: <http://weverify.eu/ontology/> .
+@prefix geoname: <http://sws.geonames.org/> .
+@base  <http://weverify.eu/resource/> .
+
+
+#Original Content is a Facebook post
+
+<Appearance/1> a schema:CreativeWork , wev:Appearance ;
+    schema:url <https://www.facebook.com/groups/370271443401663/permalink/597176477377824/> ;
+    schema:caption "PIQUE NIQUE AU CIMETIERE DE CALAIS \" SOUS LES YEUX DE LA REPUBLIQUE BIENVEILLANTE\"...." ;
+    schema:sharedContent <ImageObject/1> ;
+    schema:author <Person/1> ;
+    schema:contentLocation <Place/1> ;
+    schema:dateCreated "2018-10-29"^^xsd:date;
+.
+
+
+<Place/1> a schema:Place ;
+    schema:address "Calais, France" ;
+    schema:sameAs geoname:3029162 ;
+.
+
+<Person/1> a schema:Person ;
+   schema:name "Nano HB";
+   schema:sameAs <https://www.facebook.com/nano.hb.3572> ;
+.
+
+<ImageObject/1> a schema:ImageObject ;
+    schema:url <https://pbs.twimg.com/media/DXIqpAlXkAEtTtT?format=jpg> ;
+.
+
+# The Claim
+
+<Claim/(source)/1> a schema:Claim ;
+    schema:text "Refugees organized a pique-nique in a Cemetary in Calais" ;
+    schema:appearance <Appearance/1> .
+
+#A Claim Review by the WeVerify team
+
+<ClaimReview/(source)/1> a schema:ClaimReview ;
+    schema:itemReviewed <Claim/(source)/1> ;
+    schema:author <Organization/weverify> ;
+    schema:reviewBody "This picture is decontextualized. \n The scene shows migrants in Tovarnik cemetery at the Serbian-Croatian border on the 24 of September 2015. \n This picture has circulated in France to target migrants allegedly having a picnic in the cemetery in the French town of Calais. \n This image has been re-used again during the 2019 EU elections" ;
+    schema:hasPart <SupportingEvidence/1> ;
+    schema:hasPart <SupportingEvidence/2> ;
+    schema:additionalType <reviewType/Debunk> ;
+    wev:disinformationStrategy <strategy/Location> ;
+    schema:reviewRating <Rating/Normalized/OTHER> , <Rating/(source)/2> ;
+.
+
+<SupportingEvidence/1> a wev:SupportingEvidence , schema:CreativeWork;
+    schema:text "Detailed debunking report by AFP fact-checking team";
+    wev:evidence <Article/1> ;
+    schema:additionalType <evidence/DebunkReport> ;
+.
+
+<SupportingEvidence/2>  a wev:SupportingEvidence, schema:CreativeWork ;
+    schema:text "The Original Photograph. \n AFP team contacted the photographer bla bla.... " ;
+    schema:additionalType <evidence/OriginalContent> ;
+    wev:evidence <ImageObject/2> ;
+.
+
+<Organization/weverify> a schema:Organization ;
+   schema:name "WeVerify";
+   schema:sameAs <https://twitter.com/Weverify> ;
+.
+
+<Rating/Normalized/OTHER> a schema:Rating , wev:NormalizedRating ;
+           schema:bestRating "TRUE" ;
+           schema:ratingValue "OTHER" ;
+           schema:worstRating "FALSE" .
+
+<Rating/(source)/2> a schema:Rating ;
+           schema:bestRating 5 ;
+           schema:ratingValue 2 ;
+           schema:worstRating 1 .
+
+# Supporting Evidence by AFP
+
+<Article/1> a schema:Article ;
+    schema:headline "Non, cette photo ne montre toujours pas un pique-nique dans un cimetière à Calais" ;
+    schema:url <https://factuel.afp.com/non-cette-photo-ne-montre-toujours-pas-un-pique-nique-dans-un-cimetiere-calais> ;
+    schema:author <Organization/2> ;
+.
+
+<Organization/2> a schema:Organization ;
+   schema:name "AFP Factuel";
+   schema:sameAs <https://twitter.com/AFPfactuel> ;
+.
+
+# The original photo
+
+<Person/2> a schema:Person ;
+   schema:name "János Bődey (Index)";
+   schema:jobTitle "photographer" ;
+   schema:sameAs <https://index.hu/szerzo/bodey_janos/> ;
+.
+
+<ImageObject/2> a schema:ImageObject ;
+    schema:url <https://kep.cdn.indexvas.hu/1/0/998/9987/99872/9987261_7c04323572333cf9d9e95b40d3394694_wm.jpg> ;
+    schema:headline "Refugees are waiting between graves" ;
+    schema:locationCreated <Place/2>  ;
+    schema:dateCreated "2015-09-24"^^xsd:date ;
+    schema:author <Person/2> ;
+.
+
+<Place/2> a schema:Place ;
+    schema:address "Tovarnik, Croatia";
+    schema:sameAs geoname:11054552 ;
+.
+
+# Concepts
+
+<reviewType/Debunk> a skos:Concept ;
+    skos:prefLabel 'Debunk' ;
+.
+
+<strategy/Location> a skos:Concept ;
+    skos:prefLabel "Location" ;
+    skos:description "Content is reported with different location as the original" ;
+.
+
+
+<evidence/DebunkReport> a skos:Concept ;
+    skos:prefLabel   "Debunk Report" ;
+    skos:description "A report specifically debunking a particular piece of content" ;
+    skos:inScheme <evidence> ;
+.
+
+<evidence/OriginalContent> a skos:Concept ;
+    skos:prefLabel   "Source Content" ;
+    skos:description "The original piece of content believed to be at the source of a manipulative one" ;
+    skos:inScheme <evidence> ;
+.
+
+<evidence> a skos:ConceptScheme;
+    skos:prefLabel "Supporting Evidence Types" ;
+.
+
+####################
+<ClaimReview/(source)/1> puml:left <Claim/(source)/1>  .
+<ClaimReview/(source)/1> puml:right <reviewType/Debunk> .
+
+
+# Original is a Tweet
+
+<Appearance/2> a schema:CreativeWork , wev:Appearance ;
+    schema:url <https://twitter.com/NewsCompact/status/1124611407213940736> ;
+    schema:caption "A muslim migrant destroying a statue in Italy, because part of the body is showing #Europe..." ;
+    schema:contentLocation <Place/2> ;
+    schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime ;
+    schema:author <Person/2> ;
+.
+
+<Place/2> a schema:Place ;
+    schema:address "Italy" ;
+.
+
+<Person/2> a schema:Person ;
+   schema:name "@NewsCompact";
+   schema:sameAs <https://twitter.com/NewsCompact> ;
+   schema:sameAs <https://twitter.com/Robkearney1981> ;
+.
+
+# The Claim
+
+<Claim/(source)/2> a schema:Claim ;
+    schema:text "A muslim migrant destroying a nude statue in Italy." ;
+    schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime ;
+    schema:author <Person/3> ;
+    schema:appearance <Appearance/2> ;
+ .
+
+<Person/3> a schema:Person ;
+.
+
+#A Claim Review by the WeVerify team
+
+<ClaimReview/(source)/2> a schema:ClaimReview ;
+    schema:itemReviewed <Claim/(source)/2> ;
+    puml:left <Claim/(source)/2>  ;
+    schema:author <Organization/weverify> ;
+    schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime;
+    schema:reviewBody "This claim is false. The scene shows a vandalism incident from December 18, 2017 in Algeria..." ;
+    schema:hasPart <SupportingEvidence/3> ;
+    schema:hasPart <SupportingEvidence/4> ;
+    schema:hasPart <SupportingEvidence/5> ;
+    schema:additionalType <reviewType/Debunk> ;
+    wev:misleadershipStrategy <strategy/Location> ;
+    puml:right <reviewType/Debunk> ;
+    schema:reviewRating <Rating/Normalized/FALSE> , <Rating/(source)/1> ;
+.
+
+<Organization/1> a schema:Organization ;
+   schema:name "WeVerify";
+   schema:sameAs <https://twitter.com/Weverify> ;
+.
+
+<Rating/Normalized/FALSE> a schema:Rating , wev:NormalizedRating ;
+           schema:bestRating "TRUE" ;
+           schema:ratingValue "FALSE" ;
+           schema:worstRating "FALSE" .
+
+<Rating/(source)/1> a schema:Rating, wev:SourceRating  ;
+           schema:bestRating 5 ;
+           schema:ratingValue 1 ;
+           schema:worstRating 1 .
+
+# Supporting evidence 3 is a debunk report ;
+
+<SupportingEvidence/3> a wev:SupportingEvidence, schema:CreativeWork;
+    schema:about <Article/3> ;
+    schema:additionalType <evidence/DebunkReport> ;
+    schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime ;
+.
+
+<Article/3> a schema:Article ;
+    schema:headline "Did a Muslim refugee vandalize a statue of the Virgin Mary in Italy? False" ;
+    schema:url <https://factcheck.afp.com/did-muslim-refugee-vandalize-statue-virgin-mary-italy-false> ;
+    schema:dateCreated "2018-10-20T00:31:00"^^xsd:dateTime ;
+.
+
+# Supporting evidence 4 is a media article about the original event
+
+<SupportingEvidence/4> a wev:SupportingEvidence, schema:CreativeWork ;
+    schema:about <Article/4> ;
+    schema:additionalType <evidence/AlternativeAccount> ;
+    schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime ;
+.
+
+<Article/4> a schema:Article ;
+    schema:headline "A man in Algeria attacked a naked female statue with a hammer" ;
+    schema:url <https://observers.france24.com/en/20171219-man-algeria-attacks-naked-female-statue> ;
+    schema:dateCreated "2017-12-19T17:03:31"^^xsd:dateTime ;
+ .
+
+#supporting evidence 5 is Facebook post about the event
+
+<SupportingEvidence/5> a wev:SupportingEvidence, schema:CreativeWork ;
+    schema:about <SocialMedia/5> ;
+    schema:additionalType <evidence/AlternativeAccount> ;
+    schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime ;
+.
+
+<SocialMedia/5> a schema:SocialMediaPosting ;
+    schema:url <https://www.facebook.com/watch/?v=1167007826768723> ;
+    schema:dateCreated "2017-12-19T19:29:00"^^xsd:dateTime ;
+.
+
+# Concepts
+
+<evidence/DebunkReport> a skos:Concept ;
+    skos:prefLabel   "Debunk Report" ;
+    skos:description "A report specifically debunking a particular piece of content" ;
+    skos:inScheme <evidence> ;
+.
+
+<evidence/AlternativeAccount> a skos:Concept ;
+    skos:prefLabel   "Alternative Account" ;
+    skos:description "An account of an incident from which the manipulative content is derived" ;
+    skos:inScheme <evidence> ;
+.
+
+<evidence> a skos:ConceptScheme;
+    skos:prefLabel "Supporting Evidence Types" ;
+.
+
+<reviewType/Debunk> a skos:Concept ;
+    skos:prefLabel 'Debunk' ;
+.
+
+<strategy/Location> a skos:Concept ;
+    skos:prefLabel "Location" ;
+    skos:description "Content is reported with different location as the original" ;
+.

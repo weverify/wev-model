@@ -1,21 +1,71 @@
-id:          /boml/WeVerify
-label:       WeVerify Semantic Objects Model
-created:     2019-10-17
-updated:     2019-10-17
+id:          /boml/weverify
+label:       WeVerify
 creator:     http://ontotext.com
-versionInfo: 1.0
+created:     2019-10-16
+updated:     2019-10-16
+versionInfo: 0.2
 
 prefixes:
-  # schema: http://schema.org/ # see vocab_iri below
-  skos:   http://www.w3.org/2004/02/skos/core#
-  wev:    http://weverify.eu/ontology/
+  # common prefixes
+  bo:       "http://www.ontotext.com/business-object/"
+  dc:       "http://purl.org/dc/elements/1.1/"
+  owl:      "http://www.w3.org/2002/07/owl#"
+  puml:     "http://plantuml.com/ontology#"
+  rdf:      "http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  rdfs:     "http://www.w3.org/2000/01/rdf-schema#"
+  xsd:      "http://www.w3.org/2001/XMLSchema#"
+  so:       "http://schema.org/"
+  weverify: "http://weverify.eu/ontology/"
+  puml:     "http://plantuml.com/ontology#"
+  skos:     "http://www.w3.org/2004/02/skos/core#"
+  schema:   "http://schema.org/"
 
 specialPrefixes:
-  base_iri:     http://weverify.eu/resource/
-  vocab_iri:    http://schema.org/
-  vocab_prefix: schema
-  ontology_iri: http://weverify.eu/resource/ontology
-  shape_iri:    http://weverify.eu/resource/shape/
+  base_iri:          http://weverify.eu/resource/
+  vocab_iri:         http://schema.org/
+  vocab_prefix:      schema
+
+types:
+  # GraphQL builtin types
+  int:                {rdf: 'xsd:int',                graphql: Int,                descr: "Signed 32‐bit integer"}
+  double:             {rdf: 'xsd:double',             graphql: Float,              descr: "Signed double-precision 64-bit floating point (IEEE 754-1985)"}
+  string:             {rdf: 'xsd:string',             graphql: String,             descr: "Unicode string, default RDF and BOML datatype"}
+  boolean:            {rdf: 'xsd:boolean',            graphql: Boolean,            descr: "True/false"}
+  iri:                {rdf: 'rdf:Resource',           graphql: ID,                 descr: "IRI of object or external resource (RFC 3978)"}
+
+  # GraphQL extension types
+  long:               {rdf: 'xsd:long',               graphql: Long,               descr: "Signed 64‐bit integer",                           graphqlExtension: true}
+  short:              {rdf: 'xsd:short',              graphql: Short,              descr: "Signed 16‐bit integer",                           graphqlExtension: true}
+  byte:               {rdf: 'xsd:byte',               graphql: Byte,               descr: "Signed 8‐bit integer",                            graphqlExtension: true}
+  unsignedLong:       {rdf: 'xsd:unsignedLong',       graphql: UnsignedLong,       descr: "Unsigned 64‐bit integer",                         graphqlExtension: true}
+  unsignedShort:      {rdf: 'xsd:unsignedShort',      graphql: UnsignedShort,      descr: "Unsigned 16‐bit integer",                         graphqlExtension: true}
+  unsignedByte:       {rdf: 'xsd:unsignedByte',       graphql: UnsignedByte,       descr: "Unsigned 8‐bit integer",                          graphqlExtension: true}
+  decimal:            {rdf: 'xsd:decimal',            graphql: Decimal,            descr: "Decimal, unlimited-precision number",             graphqlExtension: true}
+  integer:            {rdf: 'xsd:integer',            graphql: Integer,            descr: "Integer, unlimited digits",                       graphqlExtension: true}
+  positiveInteger:    {rdf: 'xsd:positiveInteger',    graphql: PositiveInteger,    descr: "Positive integer (>0), unlimited digits",         graphqlExtension: true}
+  nonPositiveInteger: {rdf: 'xsd:nonPositiveInteger', graphql: NonPositiveInteger, descr: "Non-positive integer (<=0), unlimited digits",    graphqlExtension: true}
+  negativeInteger:    {rdf: 'xsd:negativeInteger',    graphql: NegativeInteger,    descr: "Negative integer (<0), unlimited digits",         graphqlExtension: true}
+  nonNegativeInteger: {rdf: 'xsd:nonNegativeInteger', graphql: NonNegativeInteger, descr: "Non-negative integer (>=0), unlimited digits",    graphqlExtension: true}
+  dateTime:           {rdf: 'xsd:dateTime',           graphql: DateTime,           descr: "Date and Time: yyyy-mm-ddThh:mm:ss, no timezone", graphqlExtension: true}
+  time:               {rdf: 'xsd:time',               graphql: Time,               descr: "Time: hh:mm:ss, no timezone",                     graphqlExtension: true}
+  date:               {rdf: 'xsd:date',               graphql: Date,               descr: "Date: yyyy-mm-dd",                                graphqlExtension: true}
+  year:               {rdf: 'xsd:gYear',              graphql: Year,               descr: "Year: yyyy",                                      graphqlExtension: true}
+  yearMonth:          {rdf: 'xsd:gYearMonth',         graphql: YearMonth,          descr: "Year & Month: yyyy-mm",                           graphqlExtension: true}
+
+
+properties:
+  author: {label: "Agent who authored this Creative Work", range: Agent, max: 1}
+  dateCreated: {label: "Date created", range: dateTime}
+  sameAs: {range: iri}
+  text: {label: "Claim Text"}
+  additionalType: {label: "Type", range: "Concept", max: inf}
+  url: {range: iri, max: inf}
+  caption:
+  pattern:
+  prefLabel:
+  inScheme: {range: boolean}
+  description:
+
 
 objects:
 
@@ -55,7 +105,7 @@ objects:
 
   Appearance:
     descr: "Occurrence of a Claim in some CreativeWork (online article or media)"
-    type: [wev:Appearance]
+    type: ["wev:Appearance"]
     prefix: Appearance/
     props:
       url: {range: iri, min: 1}
@@ -75,11 +125,10 @@ objects:
       reviewBody: {min: 1}
       hasPart: {range: SupportingEvidence, min: 1, max: inf}
       additionalType: {range: ReviewType}
-      misleadershipStrategy: {rdfProp: wev:misleadershipStrategy, range: MisleadershipStrategy}
-      reviewRating: Rating
+      misleadershipStrategy: {range: MisleadershipStrategy}
 
   SupportingEvidence:
-    type: [wev:SupportingEvidence]
+    type: ["wev:SupportingEvidence"]
     prefix: SupportingEvidence/
     props:
       about: {range: CreativeWork}
@@ -102,14 +151,12 @@ objects:
       ratingValue: {descr: "Actual rating value", min: 1}
 
   SourceRating:
-    type: [wev:SourceRating]
-    pattern: Review/
+    type: ["wev:SourceRating"]
     inherits: Rating
     descr: "Evaluation of a Claim on a source-specific scale (numeric or categorial)"
 
   NormalizedRating:
-    type: [wev:NormalizedRating]
-    pattern: Review/Normalized/
+    type: ["wev:NormalizedRating"]
     inherits: Rating
     descr: "Evaluation of a Claim on a normalized scale: FALSE, OTHER, TRUE"
 
@@ -119,17 +166,18 @@ objects:
     descr: "A thesaurus (nomenclature)"
     name: prefLabel
     props:
-      prefLabel: {rdfProp: skos:prefLabel, min: 1}
+      skos:prefLabel: {min: 1}
+      prefLabel: {rdfProp: "skos:prefLabel", min: 1}
 
   Concept:
     descr: "A thesaurus (nomenclature) value"
     kind: abstract
-    type: [skos:Concept]
+    type: ["skos:Concept"]
     name: prefLabel
     props:
-      inScheme: {rdfProp: skos:inScheme, range: ConceptScheme, min: 1}
-      prefLabel: {rdfProp: skos:prefLabel, min: 1}
-      description: {rdfProp: skos:description}
+      inScheme: {rdfProp: "skos:inScheme", range: ConceptScheme, min: 1}
+      prefLabel: {rdfProp: "skos:prefLabel", min: 1}
+      description: {rdfProp: "skos:description"}
 
   MisleadershipStrategy:
     descr: "What strategy is used in a misleading claim"
