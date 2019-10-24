@@ -1,0 +1,139 @@
+@startuml
+hide empty methods
+hide empty attributes
+hide circle
+skinparam classAttributeIconSize 0
+class _Person_1_ as "<Person/1>"
+class _Person_1_ <<(A,lightblue)>>
+show _Person_1_ circle
+class _Person_2_ as "<Person/2>"
+class _Person_2_ <<(A,lightblue)>>
+show _Person_2_ circle
+class _Organization_weverify_ as "<Organization/weverify>"
+class _Organization_weverify_ <<(A,lightblue)>>
+show _Organization_weverify_ circle
+class _Organization_2_ as "<Organization/2>"
+class _Organization_2_ <<(A,lightblue)>>
+show _Organization_2_ circle
+class _Article_1_ as "<Article/1>"
+class _Article_1_ <<(C,red)>>
+show _Article_1_ circle
+class _ImageObject_1_ as "<ImageObject/1>"
+class _ImageObject_1_ <<(C,red)>>
+show _ImageObject_1_ circle
+class _ImageObject_2_ as "<ImageObject/2>"
+class _ImageObject_2_ <<(C,red)>>
+show _ImageObject_2_ circle
+class _ClaimReview_source_1_ as "<ClaimReview/(source)/1>"
+class _ClaimReview_source_1_ <<(D,lightgreen)>>
+show _ClaimReview_source_1_ circle
+class _Claim_source_1_ as "<Claim/(source)/1>"
+class _Claim_source_1_ <<(D,lightgreen)>>
+show _Claim_source_1_ circle
+class _SupportingEvidence_1_ as "<SupportingEvidence/1>"
+class _SupportingEvidence_1_ <<(D,lightgreen)>>
+show _SupportingEvidence_1_ circle
+class _SupportingEvidence_2_ as "<SupportingEvidence/2>"
+class _SupportingEvidence_2_ <<(D,lightgreen)>>
+show _SupportingEvidence_2_ circle
+class _reviewType_Debunk_ as "<reviewType/Debunk>"
+class _reviewType_Debunk_ <<(I,lightgray)>>
+show _reviewType_Debunk_ circle
+class _strategy_Location_ as "<strategy/Location>"
+class _strategy_Location_ <<(I,lightgray)>>
+show _strategy_Location_ circle
+class _evidence_DebunkReport_ as "<evidence/DebunkReport>"
+class _evidence_DebunkReport_ <<(I,lightgray)>>
+show _evidence_DebunkReport_ circle
+class _evidence_OriginalContent_ as "<evidence/OriginalContent>"
+class _evidence_OriginalContent_ <<(I,lightgray)>>
+show _evidence_OriginalContent_ circle
+_reviewType_Debunk_ : a skos:Concept
+_reviewType_Debunk_ : skos:prefLabel "Debunk"
+_SupportingEvidence_1_ : a wev:SupportingEvidence, schema:CreativeWork
+_SupportingEvidence_1_ -down-> _Article_1_ : wev:evidence
+_SupportingEvidence_1_ -down-> _evidence_DebunkReport_ : schema:additionalType
+_SupportingEvidence_1_ : schema:text "Detailed debunking report by AFP fact-checking team"
+_Person_2_ : a schema:Person
+_Person_2_ : schema:jobTitle "photographer"
+_Person_2_ : schema:name "János Bődey [Index]"
+_Person_2_ : schema:sameAs <https://index.hu/szerzo/bodey_janos/>
+class _Rating_source_2_ as "<Rating/(source)/2>"
+_Rating_source_2_ : a schema:Rating
+_Rating_source_2_ : schema:bestRating 5
+_Rating_source_2_ : schema:ratingValue 2
+_Rating_source_2_ : schema:worstRating 1
+class _Appearance_1_ as "<Appearance/1>"
+_Appearance_1_ : a wev:Appearance, schema:CreativeWork
+_Appearance_1_ -down-> _ImageObject_1_ : schema:sharedContent
+_Appearance_1_ -down-> _Person_1_ : schema:author
+class _Place_1_ as "<Place/1>"
+_Appearance_1_ -down-> _Place_1_ : schema:contentLocation
+_Appearance_1_ : schema:caption "PIQUE NIQUE AU CIMETIERE DE CALAIS " SOUS LES YEUX DE LA REPUBLIQUE BIENVEILLANTE"...."
+_Appearance_1_ : schema:dateCreated "2018-10-29"^^xsd:date
+_Appearance_1_ : schema:url <https://www.facebook.com/groups/370271443401663/permalink/597176477377824/>
+_evidence_DebunkReport_ : a skos:Concept
+class _evidence_ as "<evidence>"
+_evidence_DebunkReport_ -down-> _evidence_ : skos:inScheme
+_evidence_DebunkReport_ : skos:description "A report specifically debunking a particular piece of content"
+_evidence_DebunkReport_ : skos:prefLabel "Debunk Report"
+_strategy_Location_ : a skos:Concept
+_strategy_Location_ : skos:description "Content is reported with different location as the original"
+_strategy_Location_ : skos:prefLabel "Location"
+_ImageObject_2_ : a schema:ImageObject
+_ImageObject_2_ -down-> _Person_2_ : schema:author
+class _Place_2_ as "<Place/2>"
+_ImageObject_2_ -down-> _Place_2_ : schema:locationCreated
+_ImageObject_2_ : schema:dateCreated "2015-09-24"^^xsd:date
+_ImageObject_2_ : schema:headline "Refugees are waiting between graves"
+_ImageObject_2_ : schema:url <https://kep.cdn.indexvas.hu/1/0/998/9987/99872/9987261_7c04323572333cf9d9e95b40d3394694_wm.jpg>
+_evidence_ : a skos:ConceptScheme
+_evidence_ : skos:prefLabel "Supporting Evidence Types"
+_Organization_weverify_ : a schema:Organization
+_Organization_weverify_ : schema:name "WeVerify"
+_Organization_weverify_ : schema:sameAs <https://twitter.com/Weverify>
+_Article_1_ : a schema:Article
+_Article_1_ -down-> _Organization_2_ : schema:author
+_Article_1_ : schema:headline "Non, cette photo ne montre toujours pas un pique-nique dans un cimetière à Calais"
+_Article_1_ : schema:url <https://factuel.afp.com/non-cette-photo-ne-montre-toujours-pas-un-pique-nique-dans-un-cimetiere-calais>
+_SupportingEvidence_2_ : a wev:SupportingEvidence, schema:CreativeWork
+_SupportingEvidence_2_ -down-> _evidence_OriginalContent_ : schema:additionalType
+_SupportingEvidence_2_ -down-> _ImageObject_2_ : wev:evidence
+_SupportingEvidence_2_ : schema:text "The Original Photograph. \n AFP team contacted the photographer bla bla.... "
+_Organization_2_ : a schema:Organization
+_Organization_2_ : schema:name "AFP Factuel"
+_Organization_2_ : schema:sameAs <https://twitter.com/AFPfactuel>
+_Place_1_ : a schema:Place
+_Place_1_ : schema:address "Calais, France"
+_Place_1_ : schema:sameAs geoname:3029162
+_Person_1_ : a schema:Person
+_Person_1_ : schema:name "Nano HB"
+_Person_1_ : schema:sameAs <https://www.facebook.com/nano.hb.3572>
+_evidence_OriginalContent_ : a skos:Concept
+_evidence_OriginalContent_ -down-> _evidence_ : skos:inScheme
+_evidence_OriginalContent_ : skos:description "The original piece of content believed to be at the source of a manipulative one"
+_evidence_OriginalContent_ : skos:prefLabel "Source Content"
+_Place_2_ : a schema:Place
+_Place_2_ : schema:address "Tovarnik, Croatia"
+_Place_2_ : schema:sameAs geoname:11054552
+class _Rating_Normalized_OTHER_ as "<Rating/Normalized/OTHER>"
+_Rating_Normalized_OTHER_ : a schema:Rating, wev:NormalizedRating
+_Rating_Normalized_OTHER_ : schema:bestRating "TRUE"
+_Rating_Normalized_OTHER_ : schema:ratingValue "OTHER"
+_Rating_Normalized_OTHER_ : schema:worstRating "FALSE"
+_ClaimReview_source_1_ : a schema:ClaimReview
+_ClaimReview_source_1_ -down-> _Rating_source_2_ : schema:reviewRating
+_ClaimReview_source_1_ -down-> _SupportingEvidence_2_ : schema:hasPart
+_ClaimReview_source_1_ -down-> _SupportingEvidence_1_ : schema:hasPart
+_ClaimReview_source_1_ -right-> _reviewType_Debunk_ : schema:additionalType
+_ClaimReview_source_1_ -down-> _strategy_Location_ : wev:disinformationStrategy
+_ClaimReview_source_1_ -left-> _Claim_source_1_ : schema:itemReviewed
+_ClaimReview_source_1_ -down-> _Organization_weverify_ : schema:author
+_ClaimReview_source_1_ -down-> _Rating_Normalized_OTHER_ : schema:reviewRating
+_ClaimReview_source_1_ : schema:reviewBody "This picture is decontextualized. \n The scene shows migrants in Tovarnik cemetery at the Serbian-Croatian border on the 24 of September 2015. \n This picture has circulated in France to target migrants allegedly having a picnic in the cemetery in the French town of Calais. \n This image has been re-used again during the 2019 EU elections"
+_Claim_source_1_ : a schema:Claim
+_Claim_source_1_ -down-> _Appearance_1_ : schema:appearance
+_Claim_source_1_ : schema:text "Refugees organized a pique-nique in a Cemetary in Calais"
+_ImageObject_1_ : a schema:ImageObject
+_ImageObject_1_ : schema:url <https://pbs.twimg.com/media/DXIqpAlXkAEtTtT?format=jpg>
+@enduml

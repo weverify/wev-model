@@ -1,0 +1,153 @@
+id:          /boml/WeVerify
+label:       WeVerify Semantic Objects Model
+created:     2019-10-17
+updated:     2019-10-17
+creator:     http://ontotext.com
+versionInfo: 1.0
+
+prefixes:
+  # schema: http://schema.org/ # see vocab_iri below
+  skos:   http://www.w3.org/2004/02/skos/core#
+  wev:    http://weverify.eu/ontology/
+
+specialPrefixes:
+  base_iri:     http://weverify.eu/resource/
+  vocab_iri:    http://schema.org/
+  vocab_prefix: schema
+  ontology_iri: http://weverify.eu/resource/ontology
+  shape_iri:    http://weverify.eu/resource/shape/
+
+objects:
+
+  # Agents, places
+
+  Agent:
+    kind: abstract
+    name: schema:name
+    props:
+      schema:name: {min: 1}
+      sameAs: {range: iri, max: inf}
+
+  Person:
+    inherits: Agent
+    prefix: Person/
+
+  Organization:
+    inherits: Agent
+    prefix: Organization/
+
+  Place:
+    props:
+      address:
+      sameAs: {range: iri, descr: "Reference to Geonames"}
+
+  # Main business objects
+
+  Claim:
+    descr: "A specific, factually-oriented claim that may be true or false"
+    name: text # Note: this could be quite long, but we still prefer to have it
+    prefix: Claim/
+    props:
+      text: {min: 1}
+      dateCreated: {range: dateTime} # TODO: can this have smaller precision?
+      author: {range: Agent}
+      appearance: {range: Appearance, max: inf}
+
+  Appearance:
+    descr: "Occurrence of a Claim in some CreativeWork (online article or media)"
+    type: [wev:Appearance]
+    prefix: Appearance/
+    props:
+      url: {range: iri, min: 1}
+      caption:
+      contentLocation: {range: Place, max: inf, descr: "Place(s) mentioned in the content"}
+      dateCreated: {range: dateTime} # TODO: can this have smaller precision?
+      author: {range: Agent}
+
+  ClaimReview:
+    descr: "Fact-checking review of a claim made or reported"
+    # name: reviewBody # Too long for this purpose
+    prefix: ClaimReview/
+    props:
+      itemReviewed: {range: Claim, min: 1}
+      author: {range: Agent, min: 1}
+      dateCreated: {range: dateTime}
+      reviewBody: {min: 1}
+      hasPart: {range: SupportingEvidence, min: 1, max: inf}
+      additionalType: {range: ReviewType}
+      misleadershipStrategy: {rdfProp: wev:misleadershipStrategy, range: MisleadershipStrategy}
+      reviewRating: Rating
+
+  SupportingEvidence:
+    type: [wev:SupportingEvidence]
+    prefix: SupportingEvidence/
+    props:
+      about: {range: CreativeWork}
+      text:
+      additionalType: {range: EvidenceType}
+      dateCreated: {range: dateTime} # TODO: can this have smaller precision?
+
+  CreativeWork:
+    props:
+      url: {range: iri, min: 1}
+      text:
+      dateCreated: {range: dateTime} # TODO: can this have smaller precision?
+
+  Rating:
+    kind: abstract
+    descr: "Evaluation of a Claim on a variety of scales (numeric or categorial)"
+    props:
+      bestRating: {descr: "Highest value allowed in this rating system, default 5"}
+      worstRating: {descr: "Lowest value allowed in this rating system, default 1"}
+      ratingValue: {descr: "Actual rating value", min: 1}
+
+  SourceRating:
+    type: [wev:SourceRating]
+    pattern: Review/
+    inherits: Rating
+    descr: "Evaluation of a Claim on a source-specific scale (numeric or categorial)"
+
+  NormalizedRating:
+    type: [wev:NormalizedRating]
+    pattern: Review/Normalized/
+    inherits: Rating
+    descr: "Evaluation of a Claim on a normalized scale: FALSE, OTHER, TRUE"
+
+  # Thesauri
+
+  ConceptScheme:
+    descr: "A thesaurus (nomenclature)"
+    name: prefLabel
+    props:
+      prefLabel: {rdfProp: skos:prefLabel, min: 1}
+
+  Concept:
+    descr: "A thesaurus (nomenclature) value"
+    kind: abstract
+    type: [skos:Concept]
+    name: prefLabel
+    props:
+      inScheme: {rdfProp: skos:inScheme, range: ConceptScheme, min: 1}
+      prefLabel: {rdfProp: skos:prefLabel, min: 1}
+      description: {rdfProp: skos:description}
+
+  MisleadershipStrategy:
+    descr: "What strategy is used in a misleading claim"
+    inherits: Concept
+    typeProp: skos:inScheme
+    type: [strategy]
+    prefix: strategy/
+
+  ReviewType:
+    descr: "Type of ClaimReview"
+    inherits: Concept
+    typeProp: skos:inScheme
+    type: [reviewType]
+    prefix: reviewType/
+
+  EvidenceType:
+    descr: "Type of SupportingEvidence"
+    inherits: Concept
+    typeProp: skos:inScheme
+    type: [evidence]
+    prefix: evidence/
