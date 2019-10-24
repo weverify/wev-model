@@ -16,7 +16,7 @@ construct {
               schema:dateCreated ?claimReview_datePublished ;
               schema:author ?authorUri .
 
-    ?appearance a schema:CreativeWork , wev:Appearance ;
+    ?appearance a wev:Appearance ;
                schema:url ?creativeWork_author_sameAs ;
                schema:author ?creativeWork_author_name ;
                schema:dateCreated ?creativeWork_datePublished .
@@ -34,12 +34,12 @@ construct {
                schema:name ?claimReview_author_name ;
                schema:sameAs ?claimReview_author_url .
 
-    ?normalizedRatingUri a schema:Rating , wev:NormalizedRating ;
+    ?normalizedRatingUri a wev:NormalizedRating ;
                          schema:bestRating "TRUE" ;
                          schema:ratingValue ?rating_alternateName_normalized ;
                          schema:worstRating "FALSE" .
 
-    ?sourceRatingUri a schema:Rating , wev:SourceRating ;
+    ?sourceRatingUri a wev:SourceRating ;
                      schema:bestRating ?rating_bestRating ;
                      schema:ratingValue ?rating_ratingValue ;
                      schema:worstRating ?rating_worstRating .
@@ -59,7 +59,7 @@ base  <http://weverify.eu/resource/>
 construct {
     ?reviewUri schema:hasPart ?eviUri .
     
-    ?eviUri a wev:SupportingEvidence, schema:CreativeWork ;
+    ?eviUri a wev:SupportingEvidence ;
             schema:additionalType wev:ExternalEvidence ;
             schema:about ?eviItemUri .
 
