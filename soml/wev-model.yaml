@@ -63,6 +63,13 @@ objects:
       contentLocation: {range: Place, max: inf, descr: "Place(s) mentioned in the content"}
       dateCreated: {range: dateTime} # TODO: can this have smaller precision?
       author: {range: Agent}
+      sharedContent: {range: CreativeWork, max: inf, descr: "Image, video, or audio clip shared as part of social media posting"}
+
+  CreativeWork: # TODO review props, currently they have only `url`
+    props:
+      url: {range: iri, min: 1}
+      text:
+      dateCreated: {range: dateTime} # TODO: can this have smaller precision?
 
   ClaimReview:
     descr: "Fact-checking review of a claim made or reported"
@@ -82,15 +89,9 @@ objects:
     type: [wev:SupportingEvidence]
     prefix: SupportingEvidence/
     props:
-      about: {range: CreativeWork}
+      about: {range: iri}
       text:
       additionalType: {range: EvidenceType}
-      dateCreated: {range: dateTime} # TODO: can this have smaller precision?
-
-  CreativeWork:
-    props:
-      url: {range: iri, min: 1}
-      text:
       dateCreated: {range: dateTime} # TODO: can this have smaller precision?
 
   Rating:
