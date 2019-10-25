@@ -14,6 +14,7 @@
 
 schema:url a puml:InlineProperty .
 schema:sameAs a puml:InlineProperty .
+schema:about a puml:InlineProperty .
 
 # Stereotypes (colored circles) for rdfpuml diagrams
 
