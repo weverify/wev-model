@@ -27,6 +27,9 @@ objects:
     props:
       schema:name: {min: 1}
       sameAs: {range: iri, max: inf}
+      appearance:  {range: Appearance , inverseAlias: author, max: inf}
+      claim:       {range: Claim      , inverseAlias: author, max: inf}
+      claimReview: {range: ClaimReview, inverseAlias: author, max: inf}
 
   Person:
     inherits: Agent
