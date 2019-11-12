@@ -13,20 +13,22 @@ construct {
     ?claimUri a schema:Claim ;
               schema:text ?claimReview_claimReviewed ;
               schema:appearance ?appearance ;
-              schema:dateCreated ?claimReview_datePublished ;
+              schema:dateCreated ?review_date ;
+              schema:datePublished ?review_date ;
               schema:author ?authorUri .
 
     ?appearance a wev:Appearance ;
                schema:url ?creativeWork_author_sameAs ;
                schema:author ?creativeWork_author_name ;
-               schema:dateCreated ?creativeWork_datePublished .
+               schema:dateCreated ?appearance_date ;
+               schema:datePublished ?appearance_date .
 
     ?reviewUri a schema:ClaimReview ;
                schema:itemReviewed ?claimUri ;
                schema:author ?authorUri ;
                schema:reviewBody ?extra_body ;
-               schema:dateCreated ?claimReview_datePublished ;
-               schema:datePublished ?claimReview_datePublished ;
+               schema:dateCreated ?review_date ;
+               schema:datePublished ?review_date ;
                schema:sameAs ?claimReview_url ;
                schema:reviewRating ?normalizedRatingUri , ?sourceRatingUri .
 
@@ -52,6 +54,8 @@ construct {
     bind (if(bound(?claimReview_author_name), iri(concat("Organization/", encode_for_uri(?claimReview_author_name))), ?UNDEF) as ?authorUri)
     bind (if(bound(?rating_alternateName_normalized), iri(concat("Rating/Normalized/", ?rating_alternateName_normalized)), ?UNDEF) as ?normalizedRatingUri)
     bind (if(bound(?rating_ratingValue), iri(concat("Rating/", ?claimReview_author_name , "/", ?rating_ratingValue)), ?UNDEF) as ?sourceRatingUri)
+    bind(coalesce(xsd:dateTime(?creativeWork_datePublished), xsd:dateTime(strdt(?creativeWork_datePublished, xsd:date))) as ?appearance_date)
+    bind(coalesce(xsd:dateTime(?claimReview_datePublished), xsd:dateTime(strdt(?claimReview_datePublished, xsd:date))) as ?review_date)
 }
 
 base  <http://weverify.eu/resource/>
@@ -66,11 +70,12 @@ construct {
     ?eviItemUri a schema:CreativeWork ;
             schema:url ?eviLink .
 } where {
+    bind (1+"" as ?UNDEF)
     bind (iri(concat("ClaimReview/", ?claimReview_author_name, "/", ?a)) as ?reviewUri)
     bind(coalesce(replace(replace(?extra_refered_links, "[\\[\\]]", ""), " #", " "), "") as ?eviList)
     ?eviSplit apf:strSplit ( ?eviList ", ")
-    bind(if(bound(?eviList), ?eviSplit, ?eviList) as ?eviStr)
-    bind(iri(concat("SupportingEvidence/", struuid())) as ?eviUri)
-    bind(iri(concat("CreativeWork/", struuid())) as ?eviItemUri)
-    bind(coalesce(iri(?eviStr), ?eviStr) as ?eviLink)
+    bind(if(bound(?extra_refered_links), ?eviSplit, ?eviList) as ?eviStr)
+    bind(if(bound(?extra_refered_links), iri(concat("SupportingEvidence/", struuid())), ?UNDEF) as ?eviUri)
+    bind(if(bound(?extra_refered_links), iri(concat("CreativeWork/", struuid())), ?UNDEF) as ?eviItemUri)
+    bind(coalesce(if(regex(?eviStr, "[ |']|^[^?#]+[\\(\\)\\[\\]]|^http[s]*://http") , ?UNDEF, iri(?eviStr)), ?eviStr) as ?eviLink)
 }
