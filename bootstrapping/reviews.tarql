@@ -1,0 +1,40 @@
+base  <http://weverify.eu/resource/>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+prefix puml:     <http://plantuml.com/ontology#>
+prefix schema: <http://schema.org/>
+prefix skos: <http://www.w3.org/2004/02/skos/core#>
+prefix wev: <http://weverify.eu/ontology/>
+prefix geoname: <http://sws.geonames.org/>
+
+
+construct {
+    ?claimUri schema:appearance ?appearance_url .
+    ?appearance_url 
+        schema:author           ?name ;
+        schema:caption          ?content ;
+        schema:dateCreated      ?time ;
+        schema:url              ?web_scraper_start_urlURI .
+        
+
+    ?review_url 
+        schema:itemReviewd      ?claimUri;
+        schema:reviewBody       ?content ;
+        schema:hasPart          ?evidence_url .
+
+    ?evidence_url
+        schema:about            ?web_scraper_start_urlURI ;
+        schema:dateCreated      ?timeTyped ;
+        schema:additionalType   ?additionaType .
+} where {
+    bind (uri(concat("Claim/", "misinfomation/", ?id)) as ?claimUri)
+    bind (if (?type = "fake news", uri(concat("Appearance/", STRUUID())), ?null) as ?appearance_url)
+    bind (if (?type = "debunk", uri(concat("ClaimReview/", ?id)), ?null) as ?review_url)
+    bind (if (?type = "debunk", uri(concat("SupportingEvidence/", STRUUID())), ?null) as ?evidence_url)
+    bind (strdt(?time, xsd:dateTime) as ?timeTyped)
+    bind (if (contains(?web_scraper_start_url, "//twitter"), <evidence/AlternativeAccount>, <evidence/DebunkReport>) as ?additionaType)
+    bind (uri(?web_scraper_start_url) as ?web_scraper_start_urlURI)
+}
+

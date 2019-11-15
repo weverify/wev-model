@@ -1,0 +1,1113 @@
+@prefix puml:  <http://plantuml.com/ontology#> .
+@prefix schema:  <http://schema.org/> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix geoname:  <http://sws.geonames.org/> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix wev:  <http://weverify.eu/ontology/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://weverify.eu/resource/Claim/misinfomation/1>
+        rdf:type     schema:Claim ;
+        schema:text  "Fake Information Going Around About The YouTube Shooting" .
+
+<http://weverify.eu/resource/Claim/misinfomation/2>
+        rdf:type     schema:Claim ;
+        schema:text  "Hurricane Sandy shark & Statue of Liberty" .
+
+<http://weverify.eu/resource/Claim/misinfomation/3>
+        rdf:type     schema:Claim ;
+        schema:text  "Hurricane Harvey- shark in the street" .
+
+<http://weverify.eu/resource/Claim/misinfomation/4>
+        rdf:type     schema:Claim ;
+        schema:text  "child's heart infected with a dog parasite" .
+
+<http://weverify.eu/resource/Claim/misinfomation/5>
+        rdf:type     schema:Claim ;
+        schema:text  "The press pass in this doctored photo is from Apple Daily’s Taiwan bureau, not Hong Kong" .
+
+<http://weverify.eu/resource/Claim/misinfomation/6>
+        rdf:type     schema:Claim ;
+        schema:text  "The man in this photo works for the New York Times and is messaging journalists, not protesters" .
+
+<http://weverify.eu/resource/Claim/misinfomation/7>
+        rdf:type     schema:Claim ;
+        schema:text  "False reports claim US missionary underwent FGM in Kenya (video)" .
+
+<http://weverify.eu/resource/Claim/misinfomation/8>
+        rdf:type     schema:Claim ;
+        schema:text  "This is an old video of a training exercise by South Korean riot police" .
+
+<http://weverify.eu/resource/Claim/misinfomation/9>
+        rdf:type     schema:Claim ;
+        schema:text  "A wildlife photographer’s frustration at the false story circulating alongside her award-winning picture" .
+
+<http://weverify.eu/resource/Claim/misinfomation/10>
+        rdf:type     schema:Claim ;
+        schema:text  "These photos actually show a Hong Kong protester holding a baton after he grabbed it from a police officer" .
+
+<http://weverify.eu/resource/Claim/misinfomation/11>
+        rdf:type     schema:Claim ;
+        schema:text  "This video shows Chinese soldiers at a railway station in Guangzhou, China" .
+
+<http://weverify.eu/resource/Claim/misinfomation/12>
+        rdf:type     schema:Claim ;
+        schema:text  "These whales died in England -- scientists said they did not die from 'man-made trauma'" .
+
+<http://weverify.eu/resource/Claim/misinfomation/13>
+        rdf:type     schema:Claim ;
+        schema:text  "This photo shows a snow-covered mountain in California, not Indonesia" .
+
+<http://weverify.eu/resource/Claim/misinfomation/14>
+        rdf:type     schema:Claim ;
+        schema:text  "The photo actually shows an installation by Cuban artists at Art Basel 2012 in Switzerland" .
+
+<http://weverify.eu/resource/Claim/misinfomation/15>
+        rdf:type     schema:Claim ;
+        schema:text  "This photo shows a man's injured finger after a fight in Taiwan -- it is not related to Hong Kong" .
+
+<http://weverify.eu/resource/Claim/misinfomation/16>
+        rdf:type     schema:Claim ;
+        schema:text  "This photo of pork crisps from Bali has been doctored to add the ‘halal’ label" .
+
+<http://weverify.eu/resource/Claim/misinfomation/17>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show a 110-Pound Squirrel?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/18>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show Pipe-Bombing Suspect Cesar Sayoc With a ‘Known Democrat,’ Proving a Hoax Conspiracy?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/19>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of Tree of Life Synagogue Shooting Victim Rose Mallinger?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/20>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show Trash Left Behind by the Central American Caravan?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/21>
+        rdf:type     schema:Claim ;
+        schema:text  "Do These Photographs Show Central American Caravan Members Traveling by Train and Bus?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/22>
+        rdf:type     schema:Claim ;
+        schema:text  "Do These Photographs Show a Nazi Flag and Homophobic Merchandise at a Trump Rally in Pennsylvania?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/23>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of Hurricane Michael?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/24>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of Nazi SS Troops Shooting a Child?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/25>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of a Florida Airport Flooded During Hurricane Michael?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/26>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of Tom Hanks Wearing an Anti-Trump T-Shirt?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/27>
+        rdf:type     schema:Claim ;
+        schema:text  "Rumors of immigration enforcement during El Paso mass shooting false" .
+
+<http://weverify.eu/resource/Claim/misinfomation/28>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of a ‘Rainbow Butterfly’? (edited pic)" .
+
+<http://weverify.eu/resource/Claim/misinfomation/29>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show Barack Obama Holding a ‘Michelle Obama 2020’ Shirt?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/30>
+        rdf:type     schema:Claim ;
+        schema:text  "Do These Photographs Show a Protester Paid to Disrupt the Kavanaugh Confirmation Hearings?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/31>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of Donald Trump with Tupac Shakur? (edited pic)" .
+
+<http://weverify.eu/resource/Claim/misinfomation/32>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of a Wasted Brett Kavanaugh?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/33>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of Christine Blasey Ford’s Lawyer with Hillary Clinton?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/34>
+        rdf:type     schema:Claim ;
+        schema:text  "Was This Photograph Taken at a Trump Protest?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/35>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show a Nude Man Walking the Runway with a Group of Young Girls?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/36>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of Christine Blasey Ford Partying?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/37>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show Irish Slaves in the United States" .
+
+<http://weverify.eu/resource/Claim/misinfomation/38>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show a Woman Abused by Keith Ellison?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/39>
+        rdf:type     schema:Claim ;
+        schema:text  "This image shows astronauts training and is being used out of context" .
+
+<http://weverify.eu/resource/Claim/misinfomation/40>
+        rdf:type     schema:Claim ;
+        schema:text  "There is no evidence to say why this veteran is crying" .
+
+<http://weverify.eu/resource/Claim/misinfomation/41>
+        rdf:type     schema:Claim ;
+        schema:text  "This photo of an elephant carrying a lion cub is an April Fools' joke" .
+
+<http://weverify.eu/resource/Claim/misinfomation/42>
+        rdf:type     schema:Claim ;
+        schema:text  "This is not a photo of women of the Red Cross landing at Normandy" .
+
+<http://weverify.eu/resource/Claim/misinfomation/43>
+        rdf:type     schema:Claim ;
+        schema:text  "This photo does not show a French police officer pepper spraying a protester" .
+
+<http://weverify.eu/resource/Claim/misinfomation/44>
+        rdf:type     schema:Claim ;
+        schema:text  "This picture doesn’t show a woman making an offensive gesture at Jeremy Corbyn (pic edited)" .
+
+<http://weverify.eu/resource/Claim/misinfomation/45>
+        rdf:type     schema:Claim ;
+        schema:text  "There is no evidence to suggest Nigel Farage was a member of the National Front." .
+
+<http://weverify.eu/resource/Claim/misinfomation/46>
+        rdf:type     schema:Claim ;
+        schema:text  "This image does not show Nigel Farage wearing a gollywog badge (pic edited)" .
+
+<http://weverify.eu/resource/Claim/misinfomation/47>
+        rdf:type     schema:Claim ;
+        schema:text  "This is not a picture of a mum snorting drugs in front of a child" .
+
+<http://weverify.eu/resource/Claim/misinfomation/48>
+        rdf:type     schema:Claim ;
+        schema:text  "There is no EU police force being rolled out in the UK" .
+
+<http://weverify.eu/resource/Claim/misinfomation/49>
+        rdf:type     schema:Claim ;
+        schema:text  "This Diane Abbott poster is fake (edited pic)" .
+
+<http://weverify.eu/resource/Claim/misinfomation/50>
+        rdf:type     schema:Claim ;
+        schema:text  "This image does not show a woman about to be stoned to death under Sharia law" .
+
+<http://weverify.eu/resource/Claim/misinfomation/51>
+        rdf:type     schema:Claim ;
+        schema:text  "This isn’t a picture of Angela Merkel and Adolf Hitler" .
+
+<http://weverify.eu/resource/Claim/misinfomation/52>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this image doesn’t show Merkel, May and the Lithuanian president hanging out as teenagers" .
+
+<http://weverify.eu/resource/Claim/misinfomation/53>
+        rdf:type     schema:Claim ;
+        schema:text  "This picture doesn’t show a horse found living in a flat in Preston" .
+
+<http://weverify.eu/resource/Claim/misinfomation/54>
+        rdf:type     schema:Claim ;
+        schema:text  "There is no evidence to suggest Theresa May said this about lesbianism" .
+
+<http://weverify.eu/resource/Claim/misinfomation/55>
+        rdf:type     schema:Claim ;
+        schema:text  "These Mark Field tweets are fake" .
+
+<http://weverify.eu/resource/Claim/misinfomation/56>
+        rdf:type     schema:Claim ;
+        schema:text  "Donald Tusk’s grandfather was not in the SS" .
+
+<http://weverify.eu/resource/Claim/misinfomation/57>
+        rdf:type     schema:Claim ;
+        schema:text  "This picture does not show Fidel Castro holding Justin Trudeau as a baby" .
+
+<http://weverify.eu/resource/Claim/misinfomation/58>
+        rdf:type     schema:Claim ;
+        schema:text  "This sign saying the tube in summer smells like 16-year-old ham is fake (pic edited)" .
+
+<http://weverify.eu/resource/Claim/misinfomation/59>
+        rdf:type     schema:Claim ;
+        schema:text  "This picture doesn’t show someone wearing a hazmat suit to install 5G" .
+
+<http://weverify.eu/resource/Claim/misinfomation/60>
+        rdf:type     schema:Claim ;
+        schema:text  "This is not a video of “migrant hordes” attacking Danish police" .
+
+<http://weverify.eu/resource/Claim/misinfomation/61>
+        rdf:type     schema:Claim ;
+        schema:text  "This video does not show Muslims in Birmingham attacking cars during Ramadan" .
+
+<http://weverify.eu/resource/Claim/misinfomation/62>
+        rdf:type     schema:Claim ;
+        schema:text  "This video doesn't show a church in Pakistan being burned in retaliation for the New Zealand attacks" .
+
+<http://weverify.eu/resource/Claim/misinfomation/63>
+        rdf:type     schema:Claim ;
+        schema:text  "This video doesn’t show the final moments of the Ethiopian Airlines flight that crashed in March" .
+
+<http://weverify.eu/resource/Claim/misinfomation/64>
+        rdf:type     schema:Claim ;
+        schema:text  "Is Maria Miller really anti-equality?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/65>
+        rdf:type     schema:Claim ;
+        schema:text  "Image Shows ’85 Live Aid Concert, Not Trump Rally" .
+
+<http://weverify.eu/resource/Claim/misinfomation/66>
+        rdf:type     schema:Claim ;
+        schema:text  "Facebook Post Mischaracterizes Cow Study" .
+
+<http://weverify.eu/resource/Claim/misinfomation/67>
+        rdf:type     schema:Claim ;
+        schema:text  "Obama-Rouhani Photo Is Not Real (pic edited)" .
+
+<http://weverify.eu/resource/Claim/misinfomation/68>
+        rdf:type     schema:Claim ;
+        schema:text  "Trump’s Hand Was Over Heart at Bush Funeral" .
+
+<http://weverify.eu/resource/Claim/misinfomation/69>
+        rdf:type     schema:Claim ;
+        schema:text  "This isn’t a real sign at a protest" .
+
+<http://weverify.eu/resource/Claim/misinfomation/70>
+        rdf:type     schema:Claim ;
+        schema:text  "a Japanese woman who converted to Islam" .
+
+<http://weverify.eu/resource/Claim/misinfomation/71>
+        rdf:type     schema:Claim ;
+        schema:text  "a young American girl who got cancer from her vaccines" .
+
+<http://weverify.eu/resource/Claim/misinfomation/72>
+        rdf:type     schema:Claim ;
+        schema:text  "one of the suicide bombers in Sri Lanka’s Easter Sunday 2019 attacks" .
+
+<http://weverify.eu/resource/Claim/misinfomation/73>
+        rdf:type     schema:Claim ;
+        schema:text  "a family that receives $1,400 per week in government welfare payments after arriving in Australia" .
+
+<http://weverify.eu/resource/Claim/misinfomation/74>
+        rdf:type     schema:Claim ;
+        schema:text  "killings by Fulani herders on Nigeria’s Abuja-Jos road" .
+
+<http://weverify.eu/resource/Claim/misinfomation/75>
+        rdf:type     schema:Claim ;
+        schema:text  "environmentalists for trashing a park on Earth Day" .
+
+<http://weverify.eu/resource/Claim/misinfomation/76>
+        rdf:type     schema:Claim ;
+        schema:text  "Youngest Parents in the World" .
+
+<http://weverify.eu/resource/Claim/misinfomation/77>
+        rdf:type     schema:Claim ;
+        schema:text  "SUSAN B. ANTHONY BEING BEATEN IN THE STREETS" .
+
+<http://weverify.eu/resource/Claim/misinfomation/78>
+        rdf:type     schema:Claim ;
+        schema:text  "MICHELLE OBAMA TEXTING DURING THE PLEDGE OF ALLEGIANCE" .
+
+<http://weverify.eu/resource/Claim/misinfomation/79>
+        rdf:type     schema:Claim ;
+        schema:text  "a photo of a deer covered in tumours due to eating plants sprayed with the weedkiller Roundup" .
+
+<http://weverify.eu/resource/Claim/misinfomation/80>
+        rdf:type     schema:Claim ;
+        schema:text  "Photo Shows Woodstock, Not a Trump Rally" .
+
+<http://weverify.eu/resource/Claim/misinfomation/81>
+        rdf:type     schema:Claim ;
+        schema:text  "a giant Japanese emperor moth" .
+
+<http://weverify.eu/resource/Claim/misinfomation/82>
+        rdf:type     schema:Claim ;
+        schema:text  "This flooded classroom was in Kenya, not Nigeria" .
+
+<http://weverify.eu/resource/Claim/misinfomation/83>
+        rdf:type     schema:Claim ;
+        schema:text  "New Zealand’s prime minister wearing a neon burqa" .
+
+<http://weverify.eu/resource/Claim/misinfomation/84>
+        rdf:type     schema:Claim ;
+        schema:text  "Decades-Old Video Doesn’t Show Congresswoman" .
+
+<http://weverify.eu/resource/Claim/misinfomation/85>
+        rdf:type     schema:Claim ;
+        schema:text  "a protest against electronic vote machine tampering in India" .
+
+<http://weverify.eu/resource/Claim/misinfomation/86>
+        rdf:type     schema:Claim ;
+        schema:text  "Muslim protesters eating at a 2019 post-election rally in Jakarta during Ramadan" .
+
+<http://weverify.eu/resource/Claim/misinfomation/87>
+        rdf:type     schema:Claim ;
+        schema:text  "priests calling for the Philippine vice president’s impeachment" .
+
+<http://weverify.eu/resource/Claim/misinfomation/88>
+        rdf:type     schema:Claim ;
+        schema:text  "Donald Trump’s British Fans?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/89>
+        rdf:type     schema:Claim ;
+        schema:text  "Redfern, Australia" .
+
+<http://weverify.eu/resource/Claim/misinfomation/90>
+        rdf:type     schema:Claim ;
+        schema:text  "the same woman after three different mass shootings in America" .
+
+<http://weverify.eu/resource/Claim/misinfomation/91>
+        rdf:type     schema:Claim ;
+        schema:text  "supporters of Rahul Gandhi crying after his election defeat" .
+
+<http://weverify.eu/resource/Claim/misinfomation/92>
+        rdf:type     schema:Claim ;
+        schema:text  "black protesters in Melbourne, Australia" .
+
+<http://weverify.eu/resource/Claim/misinfomation/93>
+        rdf:type     schema:Claim ;
+        schema:text  "US military firing at pirates" .
+
+<http://weverify.eu/resource/Claim/misinfomation/94>
+        rdf:type     schema:Claim ;
+        schema:text  "Video of ‘We Love Trump’ Chant is From 2018" .
+
+<http://weverify.eu/resource/Claim/misinfomation/95>
+        rdf:type     schema:Claim ;
+        schema:text  "QUEEN ELIZABETH CALL TRUMP ‘AN AMAZING PERSON’" .
+
+<http://weverify.eu/resource/Claim/misinfomation/96>
+        rdf:type     schema:Claim ;
+        schema:text  "a man attacking a statue of a woman" .
+
+<http://weverify.eu/resource/Claim/misinfomation/97>
+        rdf:type     schema:Claim ;
+        schema:text  "The role of negative memes" .
+
+<http://weverify.eu/resource/Claim/misinfomation/98>
+        rdf:type     schema:Claim ;
+        schema:text  "French president egged" .
+
+<http://weverify.eu/resource/Claim/misinfomation/99>
+        rdf:type     schema:Claim ;
+        schema:text  "Old protests at Rome's Colosseum" .
+
+<http://weverify.eu/resource/Claim/misinfomation/100>
+        rdf:type     schema:Claim ;
+        schema:text  "Brother and siter in Nipel Earthquake" .
+
+<http://weverify.eu/resource/Claim/misinfomation/101>
+        rdf:type     schema:Claim ;
+        schema:text  "video of a swimming pool during the Nepal earthquake" .
+
+<http://weverify.eu/resource/Claim/misinfomation/102>
+        rdf:type     schema:Claim ;
+        schema:text  "The migrant who Instagrammed his route to Europe" .
+
+<http://weverify.eu/resource/Claim/misinfomation/103>
+        rdf:type     schema:Claim ;
+        schema:text  "A refugee posing as an IS fighter?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/104>
+        rdf:type     schema:Claim ;
+        schema:text  "A photo of Eagles of Death Metal in concert" .
+
+<http://weverify.eu/resource/Claim/misinfomation/105>
+        rdf:type     schema:Claim ;
+        schema:text  "The empty streets of Paris" .
+
+<http://weverify.eu/resource/Claim/misinfomation/106>
+        rdf:type     schema:Claim ;
+        schema:text  "#YouAintNoMuslimBruv tube sign" .
+
+<http://weverify.eu/resource/Claim/misinfomation/107>
+        rdf:type     schema:Claim ;
+        schema:text  "And finally...a husband's extreme act of revenge" .
+
+<http://weverify.eu/resource/Claim/misinfomation/108>
+        rdf:type     schema:Claim ;
+        schema:text  "prescriptions flyers after Brexit" .
+
+<http://weverify.eu/resource/Claim/misinfomation/109>
+        rdf:type     schema:Claim ;
+        schema:text  "milkshake attach brexit-supporter veteran" .
+
+<http://weverify.eu/resource/Claim/misinfomation/110>
+        rdf:type     schema:Claim ;
+        schema:text  "Aluminium in vaccines causes brain damage" .
+
+<http://weverify.eu/resource/Claim/misinfomation/111>
+        rdf:type     schema:Claim ;
+        schema:text  "litter left by Extinction Rebellion environmental protestors in Hyde Park" .
+
+<http://weverify.eu/resource/Claim/misinfomation/112>
+        rdf:type     schema:Claim ;
+        schema:text  "This video of the Trump hotel in Las Vegas has been doctored to include a ‘concentration camps’ banner" .
+
+<http://weverify.eu/resource/Claim/misinfomation/113>
+        rdf:type     schema:Claim ;
+        schema:text  "No, these photos show an Iron Age grave in Iran, German religious artifacts and Iraqi bracelets" .
+
+<http://weverify.eu/resource/Claim/misinfomation/114>
+        rdf:type     schema:Claim ;
+        schema:text  "This is an artist’s illustration of NASA spacecraft Cassini’s last image before it entered Saturn’s atmosphere" .
+
+<http://weverify.eu/resource/Claim/misinfomation/115>
+        rdf:type     schema:Claim ;
+        schema:text  "A pride flag for pedophiles? Someone created one, but no one waves it" .
+
+<http://weverify.eu/resource/Claim/misinfomation/116>
+        rdf:type     schema:Claim ;
+        schema:text  "The footage actually shows a man with a chronic skin disease receiving treatment at a hospital in Kazakhstan" .
+
+<http://weverify.eu/resource/Claim/misinfomation/117>
+        rdf:type     schema:Claim ;
+        schema:text  "This image is actually an AFP photo of an alleged Islamic State group recruiter arrested in Spain" .
+
+<http://weverify.eu/resource/Claim/misinfomation/118>
+        rdf:type     schema:Claim ;
+        schema:text  "This video shows Hong Kong police arresting suspects in a case that has nothing to do with the July 1st protest" .
+
+<http://weverify.eu/resource/Claim/misinfomation/119>
+        rdf:type     schema:Claim ;
+        schema:text  "These images actually show a Vietnamese woman who was stung by a scorpion" .
+
+<http://weverify.eu/resource/Claim/misinfomation/120>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this photo does not show a road built under Philippine President Rodrigo Duterte's flagship infrastructure program" .
+
+<http://weverify.eu/resource/Claim/misinfomation/121>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video does not show Hindu siblings who were assaulted by Muslim men after an attempted rape in India" .
+
+<http://weverify.eu/resource/Claim/misinfomation/122>
+        rdf:type     schema:Claim ;
+        schema:text  "Ignore these ‘polling figures’ on the popularity of Kenya's possible presidential contenders — they didn’t really come from IPSOS" .
+
+<http://weverify.eu/resource/Claim/misinfomation/123>
+        rdf:type     schema:Claim ;
+        schema:text  "No, these are not photos of 'ripe and ready' purple mangoes in northern India" .
+
+<http://weverify.eu/resource/Claim/misinfomation/124>
+        rdf:type     schema:Claim ;
+        schema:text  "No, these photos do not show Donald Trump and Moon Jae-in holding K-pop ‘light sticks’" .
+
+<http://weverify.eu/resource/Claim/misinfomation/125>
+        rdf:type     schema:Claim ;
+        schema:text  "No, these photos do not show Donald Trump and Moon Jae-in holding K-pop ‘light sticks’" .
+
+<http://weverify.eu/resource/Claim/misinfomation/126>
+        rdf:type     schema:Claim ;
+        schema:text  "No, Johannesburg has not banned informal waste collectors" .
+
+<http://weverify.eu/resource/Claim/misinfomation/127>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this image does not show a South African government official playing solitaire on her computer while clients wait" .
+
+<http://weverify.eu/resource/Claim/misinfomation/128>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video does not show Tanzania's president furious with the national football team over their AFCON defeat to Senegal" .
+
+<http://weverify.eu/resource/Claim/misinfomation/129>
+        rdf:type     schema:Claim ;
+        schema:text  "Pakistan’s second tallest man is the victim of a death hoax" .
+
+<http://weverify.eu/resource/Claim/misinfomation/130>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this photo does not show a woman who was assaulted by Indian police" .
+
+<http://weverify.eu/resource/Claim/misinfomation/131>
+        rdf:type     schema:Claim ;
+        schema:text  "No, three Hong Kong celebrities are not protesting in this photo – it’s a doctored image" .
+
+<http://weverify.eu/resource/Claim/misinfomation/132>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video does not show a Kuwaiti singer demanding the construction of a Hindu temple in India" .
+
+<http://weverify.eu/resource/Claim/misinfomation/133>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video does not show an aircraft cabin on a British Airways flight from London to Islamabad" .
+
+<http://weverify.eu/resource/Claim/misinfomation/134>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video does not show methamphetamine smuggled from China" .
+
+<http://weverify.eu/resource/Claim/misinfomation/135>
+        rdf:type     schema:Claim ;
+        schema:text  "No, these photos do not show students walking out of a Philippine opposition senator's speech" .
+
+<http://weverify.eu/resource/Claim/misinfomation/136>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this is not a photo of ‘the first Muslim major general in the United States Air Force’" .
+
+<http://weverify.eu/resource/Claim/misinfomation/137>
+        rdf:type     schema:Claim ;
+        schema:text  "No, these photos do not show Kenyan women protesting against a ‘lack of men to make them pregnant’" .
+
+<http://weverify.eu/resource/Claim/misinfomation/138>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this photo doesn’t show the Nigerian Air Force delivering arms to Fulani herders — it was taken during a military demonstration last year" .
+
+<http://weverify.eu/resource/Claim/misinfomation/139>
+        rdf:type     schema:Claim ;
+        schema:text  "This is a private family home in east Johannesburg. It’s not owned by Julius Malema" .
+
+<http://weverify.eu/resource/Claim/misinfomation/140>
+        rdf:type     schema:Claim ;
+        schema:text  "This doctored image does not really show US President endorsing Filipino politician Ferdinand “Bongbong” Marcos Jr. for president" .
+
+<http://weverify.eu/resource/Claim/misinfomation/141>
+        rdf:type     schema:Claim ;
+        schema:text  "No, these cars did not melt due to hot weather" .
+
+<http://weverify.eu/resource/Claim/misinfomation/142>
+        rdf:type     schema:Claim ;
+        schema:text  "No, Israel's prime minister did not attend this June 2019 summit in Kyrgyzstan" .
+
+<http://weverify.eu/resource/Claim/misinfomation/143>
+        rdf:type     schema:Claim ;
+        schema:text  "This photo does not show 'mistreated' Rohingya children" .
+
+<http://weverify.eu/resource/Claim/misinfomation/144>
+        rdf:type     schema:Claim ;
+        schema:text  "This photo wasn’t taken at a protest against Kenya’s William Ruto this week" .
+
+<http://weverify.eu/resource/Claim/misinfomation/145>
+        rdf:type     schema:Claim ;
+        schema:text  "This is not a photo of Cyclone Vayu" .
+
+<http://weverify.eu/resource/Claim/misinfomation/146>
+        rdf:type     schema:Claim ;
+        schema:text  "This is not a photo of an Indian ruling party candidate dressed like the monkey god Hanuman" .
+
+<http://weverify.eu/resource/Claim/misinfomation/147>
+        rdf:type     schema:Claim ;
+        schema:text  "Photo of bees ‘recovering stolen car’ snapped in Wales, not Kenya" .
+
+<http://weverify.eu/resource/Claim/misinfomation/148>
+        rdf:type     schema:Claim ;
+        schema:text  "This photo does not show a road in the Philippines" .
+
+<http://weverify.eu/resource/Claim/misinfomation/149>
+        rdf:type     schema:Claim ;
+        schema:text  "Photo of convoy not ‘Kenyatta going for haircut’ – it’s hearses carrying MH17 crash victims" .
+
+<http://weverify.eu/resource/Claim/misinfomation/150>
+        rdf:type     schema:Claim ;
+        schema:text  "Meme Uses Litter Photo to Spread Garbage" .
+
+<http://weverify.eu/resource/Claim/misinfomation/151>
+        rdf:type     schema:Claim ;
+        schema:text  "Viral Image Does Not Show O’Rourke" .
+
+<http://weverify.eu/resource/Claim/misinfomation/152>
+        rdf:type     schema:Claim ;
+        schema:text  "Photo of ‘poor’ kids in class not from Kenya’s Pokot region" .
+
+<http://weverify.eu/resource/Claim/misinfomation/153>
+        rdf:type     schema:Claim ;
+        schema:text  "Viral image of homeless camp is old photo of Paris – not present day Los Angeles" .
+
+<http://weverify.eu/resource/Claim/misinfomation/154>
+        rdf:type     schema:Claim ;
+        schema:text  "This is not a photo of a real frozen spider web" .
+
+<http://weverify.eu/resource/Claim/misinfomation/155>
+        rdf:type     schema:Claim ;
+        schema:text  "Photo Not Related to ‘Caravan’" .
+
+<http://weverify.eu/resource/Claim/misinfomation/156>
+        rdf:type     schema:Claim ;
+        schema:text  "Russian Embassy Tweets Misleading Photo of White Helmets in Syria" .
+
+<http://weverify.eu/resource/Claim/misinfomation/157>
+        rdf:type     schema:Claim ;
+        schema:text  "Viral Photo Shows Bill Clinton With Senator, Not Ford" .
+
+<http://weverify.eu/resource/Claim/misinfomation/158>
+        rdf:type     schema:Claim ;
+        schema:text  "Did Senator Elizabeth Warren Perform Nude Pagan Rituals in College?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/159>
+        rdf:type     schema:Claim ;
+        schema:text  "False Caption on Dead Elephant Photo" .
+
+<http://weverify.eu/resource/Claim/misinfomation/160>
+        rdf:type     schema:Claim ;
+        schema:text  "Sarah Palin Facebook meme on climate accord uses unrelated photo of Florida House" .
+
+<http://weverify.eu/resource/Claim/misinfomation/161>
+        rdf:type     schema:Claim ;
+        schema:text  "This video actually shows a test of NASA’s Space Shuttle Rocket Booster, not a rain clouds machine" .
+
+<http://weverify.eu/resource/Claim/misinfomation/162>
+        rdf:type     schema:Claim ;
+        schema:text  "This is not a video of Palestinians protesting" .
+
+<http://weverify.eu/resource/Claim/misinfomation/163>
+        rdf:type     schema:Claim ;
+        schema:text  "The 2007 footage actually shows Donald Trump slapping a professional wrestling executive in a PR stunt" .
+
+<http://weverify.eu/resource/Claim/misinfomation/164>
+        rdf:type     schema:Claim ;
+        schema:text  "This photo of rosaries confiscated at the US-Mexico border was taken in 2015" .
+
+<http://weverify.eu/resource/Claim/misinfomation/165>
+        rdf:type     schema:Claim ;
+        schema:text  "Protesters set fire to Burkina Faso’s parliament in 2014. Why is it trending in Kenya now?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/166>
+        rdf:type     schema:Claim ;
+        schema:text  "A Pakistani fan was not killed in clashes with Afghan fans at the Cricket World Cup" .
+
+<http://weverify.eu/resource/Claim/misinfomation/167>
+        rdf:type     schema:Claim ;
+        schema:text  "Anti-vaccine meme features doctored photo and fabricated quote" .
+
+<http://weverify.eu/resource/Claim/misinfomation/168>
+        rdf:type     schema:Claim ;
+        schema:text  "Viral posts in Nigeria claim this helicopter was picking up a billionaire stuck in traffic. In fact, the video shows a medical evacuation" .
+
+<http://weverify.eu/resource/Claim/misinfomation/169>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this photo does not show Philippine fishing boats being ‘bombed' by a water cannon in the South China Sea" .
+
+<http://weverify.eu/resource/Claim/misinfomation/170>
+        rdf:type     schema:Claim ;
+        schema:text  "This is an impersonator who was arrested in police uniform — not an officer who aided kidnappings in Nigeria" .
+
+<http://weverify.eu/resource/Claim/misinfomation/171>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this is not a photo of a foreign policewoman in Indonesia – it’s a doctored image using the face of a K-Pop star" .
+
+<http://weverify.eu/resource/Claim/misinfomation/172>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this is not a photo of Argentine revolutionary Che Guevara" .
+
+<http://weverify.eu/resource/Claim/misinfomation/173>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this photo does not show Algeria’s goalkeeper training for the AFCON game against Kenya" .
+
+<http://weverify.eu/resource/Claim/misinfomation/174>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this photo does not show cats which actor Keanu Reeves saved from euthanasia" .
+
+<http://weverify.eu/resource/Claim/misinfomation/175>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video does not show Hong Kong citizens queuing at Chinese banks to cancel accounts after mass protests" .
+
+<http://weverify.eu/resource/Claim/misinfomation/176>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this is not a genuine photo of Pakistani cricket players being frisked ahead of a match against India" .
+
+<http://weverify.eu/resource/Claim/misinfomation/177>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video does not show the arrest of the star of a Filipino TV show critical of the police -- it’s clickbait using footage from an unrelated news report" .
+
+<http://weverify.eu/resource/Claim/misinfomation/178>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video does not show an Indian lawmaker from a regional opposition party dancing provocatively with a woman" .
+
+<http://weverify.eu/resource/Claim/misinfomation/179>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video does not show lava flow in Austria" .
+
+<http://weverify.eu/resource/Claim/misinfomation/180>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this is not an Islamabad mansion belonging to Pakistani Prime Minister Imran Khan" .
+
+<http://weverify.eu/resource/Claim/misinfomation/181>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this is not a genuine photo of a woman who gave birth to 17 babies" .
+
+<http://weverify.eu/resource/Claim/misinfomation/182>
+        rdf:type     schema:Claim ;
+        schema:text  "No, a gorilla did not swallow N6.8m in a Nigerian zoo. Here’s how the false story got out" .
+
+<http://weverify.eu/resource/Claim/misinfomation/183>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this is not a video of a car crash in Singapore – the accident actually happened in Thailand" .
+
+<http://weverify.eu/resource/Claim/misinfomation/184>
+        rdf:type     schema:Claim ;
+        schema:text  "This doctored video does not really show a ‘corrupt’ Korean politician being swallowed up by the ground" .
+
+<http://weverify.eu/resource/Claim/misinfomation/185>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this is not a photo of a Philippine fishing boat hit by a Chinese trawler in June 2019" .
+
+<http://weverify.eu/resource/Claim/misinfomation/186>
+        rdf:type     schema:Claim ;
+        schema:text  "After riots in Jakarta, videos that blame or exonerate Thai police for beating up a man emerge – but they’re all misleading" .
+
+<http://weverify.eu/resource/Claim/misinfomation/187>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this Kenyan grandmother was not arrested in 1969" .
+
+<http://weverify.eu/resource/Claim/misinfomation/188>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video – posted days before a mass protest in Hong Kong – does not show a convoy of tanks entering Shenzhen, China" .
+
+<http://weverify.eu/resource/Claim/misinfomation/189>
+        rdf:type     schema:Claim ;
+        schema:text  "No, these photos do not show Muslims in Sri Lanka who converted to Hinduism after demolishing a mosque" .
+
+<http://weverify.eu/resource/Claim/misinfomation/190>
+        rdf:type     schema:Claim ;
+        schema:text  "No, this video does not show people dancing in London to a Hindi song during the 2019 Cricket World Cup" .
+
+<http://weverify.eu/resource/Claim/misinfomation/191>
+        rdf:type     schema:Claim ;
+        schema:text  "No, the El Paso and Dayton mass shootings were not ‘false flag’ operations" .
+
+<http://weverify.eu/resource/Claim/misinfomation/192>
+        rdf:type     schema:Claim ;
+        schema:text  "The New York Post did not ‘change the identity of the El Paso shooter’" .
+
+<http://weverify.eu/resource/Claim/misinfomation/193>
+        rdf:type     schema:Claim ;
+        schema:text  "No proof prescription drugs fuel mass shootings" .
+
+<http://weverify.eu/resource/Claim/misinfomation/194>
+        rdf:type     schema:Claim ;
+        schema:text  "El Paso shooter -- Sam Hyde" .
+
+<http://weverify.eu/resource/Claim/misinfomation/195>
+        rdf:type     schema:Claim ;
+        schema:text  "Unverified pic claimed from El Paso Shooter FB page" .
+
+<http://weverify.eu/resource/Claim/misinfomation/196>
+        rdf:type     schema:Claim ;
+        schema:text  "There is no evidence that anti-fascist activists had anything to do with the El Paso shooting" .
+
+<http://weverify.eu/resource/Claim/misinfomation/197>
+        rdf:type     schema:Claim ;
+        schema:text  "Don't fall for the troll campaign to say the El Paso shooter was a registered Democrat." .
+
+<http://weverify.eu/resource/Claim/misinfomation/198>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Picture of Bill Clinton with Convicted Sex Offender George Nader?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/199>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Picture of a Male-Only Refugee Caravan Heading for U.S. Border?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/200>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Picture of a Cruise Ship Dumping Human Waste Into the Ocean?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/201>
+        rdf:type     schema:Claim ;
+        schema:text  "Are These Pictures of Pigs on a Farm Flooded by Hurricane Florence?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/202>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Picture of Christine Blasey Ford in 1982?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/203>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Picture of an ‘Intense Supercell with a Mass of Tornadoes’ in Kansas?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/204>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Picture of an Unusually Short Giraffe?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/205>
+        rdf:type     schema:Claim ;
+        schema:text  "Did CNN Use the Same Girl in Three Different Refugee Crisis Pictures?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/206>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Picture of Children Giving a Meerkat a Bath?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/207>
+        rdf:type     schema:Claim ;
+        schema:text  "Dad Posted Picture of Baby Holding Gun on Facebook Just Before She Shot Herself?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/208>
+        rdf:type     schema:Claim ;
+        schema:text  "These pictures are from protests in France and Spain, not recent demonstrations in Hong Kong" .
+
+<http://weverify.eu/resource/Claim/misinfomation/209>
+        rdf:type     schema:Claim ;
+        schema:text  "The video was actually filmed in Taiwan in 2018 and shows a man being attacked over debts" .
+
+<http://weverify.eu/resource/Claim/misinfomation/210>
+        rdf:type     schema:Claim ;
+        schema:text  "This video shows Hong Kong police firing tear gas at Kwai Fong station in August 2019" .
+
+<http://weverify.eu/resource/Claim/misinfomation/211>
+        rdf:type     schema:Claim ;
+        schema:text  "This photo of a girl in Jammu and Kashmir was taken in 2016, not August 2019" .
+
+<http://weverify.eu/resource/Claim/misinfomation/212>
+        rdf:type     schema:Claim ;
+        schema:text  "Hong Kong airport has said ‘all lighting operated as normal’" .
+
+<http://weverify.eu/resource/Claim/misinfomation/213>
+        rdf:type     schema:Claim ;
+        schema:text  "The video shows an eruption in the Indonesian city of Bandung, not Jakarta" .
+
+<http://weverify.eu/resource/Claim/misinfomation/214>
+        rdf:type     schema:Claim ;
+        schema:text  "It's an old photo of an actor on a Hong Kong TV show" .
+
+<http://weverify.eu/resource/Claim/misinfomation/215>
+        rdf:type     schema:Claim ;
+        schema:text  "The footage of Syed Ali Shah Geelani is actually from April 2018" .
+
+<http://weverify.eu/resource/Claim/misinfomation/216>
+        rdf:type     schema:Claim ;
+        schema:text  "This video shows Indian and US troops staging a mock drill in 2016, not clashes in Kashmir" .
+
+<http://weverify.eu/resource/Claim/misinfomation/217>
+        rdf:type     schema:Claim ;
+        schema:text  "NOT A Picture Of Keanu Reeves Running Away With Camera From Paparazzi" .
+
+<http://weverify.eu/resource/Claim/misinfomation/218>
+        rdf:type     schema:Claim ;
+        schema:text  "Norway Waking up.. Norway Did NOT Deport Muslims; Crime Rate Drops 31%" .
+
+<http://weverify.eu/resource/Claim/misinfomation/219>
+        rdf:type     schema:Claim ;
+        schema:text  "Fake News: Picture Does NOT Show Muslim Women in Michigan With `Down With USA´ Written On Their Hands" .
+
+<http://weverify.eu/resource/Claim/misinfomation/220>
+        rdf:type     schema:Claim ;
+        schema:text  "Fake News: NOT A Photo of a Shantytown in Los Angeles, California in 2019" .
+
+<http://weverify.eu/resource/Claim/misinfomation/221>
+        rdf:type     schema:Claim ;
+        schema:text  "Fake News: NOT A Picture of Nancy Pelosi, Beto O'Rourke and El Chap" .
+
+<http://weverify.eu/resource/Claim/misinfomation/222>
+        rdf:type     schema:Claim ;
+        schema:text  "Aquaman Actor Jason Momoa NOT Caught Inappropriately Touching Underage Girls Breast On Video" .
+
+<http://weverify.eu/resource/Claim/misinfomation/223>
+        rdf:type     schema:Claim ;
+        schema:text  "Photos Of Children On Cement Floor With Aluminium Blankets NOT Taken During Trump Administration" .
+
+<http://weverify.eu/resource/Claim/misinfomation/224>
+        rdf:type     schema:Claim ;
+        schema:text  "Mislabeled Video Politicizes Drug Problem" .
+
+<http://weverify.eu/resource/Claim/misinfomation/225>
+        rdf:type     schema:Claim ;
+        schema:text  "Fake Mark Twain ‘Quote’ Mocks Voting" .
+
+<http://weverify.eu/resource/Claim/misinfomation/226>
+        rdf:type     schema:Claim ;
+        schema:text  "Photo Shoehorns Misinformation Into Tariff Debate" .
+
+<http://weverify.eu/resource/Claim/misinfomation/227>
+        rdf:type     schema:Claim ;
+        schema:text  "Deceptive Facebook Post Distorts Rally Against Hate" .
+
+<http://weverify.eu/resource/Claim/misinfomation/228>
+        rdf:type     schema:Claim ;
+        schema:text  "Fake Elizabeth Warren Quote About Rape" .
+
+<http://weverify.eu/resource/Claim/misinfomation/229>
+        rdf:type     schema:Claim ;
+        schema:text  "Supposed ‘Child Bride�� Photo Debunked in 2014" .
+
+<http://weverify.eu/resource/Claim/misinfomation/230>
+        rdf:type     schema:Claim ;
+        schema:text  "Meme Fabricates Ocasio-Cortez Firing" .
+
+<http://weverify.eu/resource/Claim/misinfomation/231>
+        rdf:type     schema:Claim ;
+        schema:text  "Social Posts Spin Sanders Photo" .
+
+<http://weverify.eu/resource/Claim/misinfomation/232>
+        rdf:type     schema:Claim ;
+        schema:text  "Old Photo Stirs Up New Immigration Concerns" .
+
+<http://weverify.eu/resource/Claim/misinfomation/233>
+        rdf:type     schema:Claim ;
+        schema:text  "Blackface Photo Doesn’t Show Clintons" .
+
+<http://weverify.eu/resource/Claim/misinfomation/234>
+        rdf:type     schema:Claim ;
+        schema:text  "Doctored Photo Targets New Congresswomen" .
+
+<http://weverify.eu/resource/Claim/misinfomation/235>
+        rdf:type     schema:Claim ;
+        schema:text  "Facebook Posts Misrepresent Photo of Rep. Tlaib" .
+
+<http://weverify.eu/resource/Claim/misinfomation/236>
+        rdf:type     schema:Claim ;
+        schema:text  "The House That Isn’t Nancy Pelosi’s" .
+
+<http://weverify.eu/resource/Claim/misinfomation/237>
+        rdf:type     schema:Claim ;
+        schema:text  "Bloody Border Patrol Photo is Eight Years Old" .
+
+<http://weverify.eu/resource/Claim/misinfomation/238>
+        rdf:type     schema:Claim ;
+        schema:text  "Meme Confuses Lincoln’s Bible With A Quran" .
+
+<http://weverify.eu/resource/Claim/misinfomation/239>
+        rdf:type     schema:Claim ;
+        schema:text  "The Fake Clinton Quote That Won’t Go Away" .
+
+<http://weverify.eu/resource/Claim/misinfomation/240>
+        rdf:type     schema:Claim ;
+        schema:text  "Viral Meme Misidentifies Nazi Guard as Soros" .
+
+<http://weverify.eu/resource/Claim/misinfomation/241>
+        rdf:type     schema:Claim ;
+        schema:text  "Doctored Image Takes Aim at Stacey Abrams" .
+
+<http://weverify.eu/resource/Claim/misinfomation/242>
+        rdf:type     schema:Claim ;
+        schema:text  "False Tale of Vandalism at Kavanaugh Home" .
+
+<http://weverify.eu/resource/Claim/misinfomation/243>
+        rdf:type     schema:Claim ;
+        schema:text  "Viral Photo Doesn’t Show Soros with Ford" .
+
+<http://weverify.eu/resource/Claim/misinfomation/244>
+        rdf:type     schema:Claim ;
+        schema:text  "Meme Misidentifies Stock Image as Kavanaugh Accuser" .
+
+<http://weverify.eu/resource/Claim/misinfomation/245>
+        rdf:type     schema:Claim ;
+        schema:text  "Viral Meme Makes Up Ocasio-Cortez Quote" .
+
+<http://weverify.eu/resource/Claim/misinfomation/246>
+        rdf:type     schema:Claim ;
+        schema:text  "Photo Does Not Show Ronald Reagan with Taliban Leaders" .
+
+<http://weverify.eu/resource/Claim/misinfomation/247>
+        rdf:type     schema:Claim ;
+        schema:text  "Heaven’s Trail Viral Photo" .
+
+<http://weverify.eu/resource/Claim/misinfomation/248>
+        rdf:type     schema:Claim ;
+        schema:text  "Viral Houston Flood Photo Is 14 Years Old" .
+
+<http://weverify.eu/resource/Claim/misinfomation/249>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Real Photo of the Earth from the Moon?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/250>
+        rdf:type     schema:Claim ;
+        schema:text  "Conspiracy Theorists Seem Perplexed by a Photo of Obama and Clooney. Here’s What It Shows" .
+
+<http://weverify.eu/resource/Claim/misinfomation/251>
+        rdf:type     schema:Claim ;
+        schema:text  "A photograph shows Donald and Ivanka Trump with sex offender Jeffrey Epstein." .
+
+<http://weverify.eu/resource/Claim/misinfomation/252>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photo Show ‘Skinhead Cop with a Right-Wing Militia Tattoo’ Arresting a Jewish Protester?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/253>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photo Show Joe Biden with the ‘Grand Wizard of the KKK’?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/254>
+        rdf:type     schema:Claim ;
+        schema:text  "Does a Photograph Depict a Huge Crowd at Trump’s 2019 Orlando Rally?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/255>
+        rdf:type     schema:Claim ;
+        schema:text  "Does a Photograph Prove Trump Knew Sexual Assault Accuser E. Jean Carroll?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/256>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show Barack Obama with Prince Al-Waleed bin Talal?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/257>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show a Migrant Caravan Member Urinating on the U.S. Flag?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/258>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of a Young Donald Trump?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/259>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show Honduran Caravan Members Using an American Red Cross Tent?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/260>
+        rdf:type     schema:Claim ;
+        schema:text  "Is this a Photograph of Worthless Money in the Gutters of Venezuela?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/261>
+        rdf:type     schema:Claim ;
+        schema:text  "Is this a Photograph of a Large Storm Over Sydney?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/262>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Depict an Actual ‘Abortion Barbie’ Doll?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/263>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show a Blood-Stained Quran from the Christchurch, NZ, Attack?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/264>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a ‘Discomforting’ Photograph of Joe Biden with a Boy?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/265>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photo of Alexandria Ocasio-Cortez Being Held Up by Her Legs?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/266>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Capture a Bear Chasing a Cyclist?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/267>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show ‘Women of the Democrat Party’ Wearing KKK Robes?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/268>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photo Show White-Clad Members of the League of Nazi Socialist Women?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/269>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of ‘Turtle Mountain’?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/270>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show an Eagle Cloud Over Jerusalem?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/271>
+        rdf:type     schema:Claim ;
+        schema:text  "Giant Human Skeleton Photographs (edited pic)" .
+
+<http://weverify.eu/resource/Claim/misinfomation/272>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show Barack Obama Dressed as Satan? (edited pic)" .
+
+<http://weverify.eu/resource/Claim/misinfomation/273>
+        rdf:type     schema:Claim ;
+        schema:text  "Is This a Photograph of the ‘Organizer’ of the Immigrant Caravan?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/274>
+        rdf:type     schema:Claim ;
+        schema:text  "Do These Photographs Show a Guitar Graveyard?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/275>
+        rdf:type     schema:Claim ;
+        schema:text  "Does This Photograph Show a Polar Bear Taking Public Transit in Russia?" .
+
+<http://weverify.eu/resource/Claim/misinfomation/276>
+        rdf:type     schema:Claim ;
+        schema:text  "This video actually shows Chinese tanks in Hong Kong in June 2012" .
