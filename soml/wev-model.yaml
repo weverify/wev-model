@@ -55,7 +55,7 @@ objects:
       dateCreated: {range: dateTime} # TODO: can this have smaller precision?
       author: {range: Agent}
       appearance: {range: Appearance, max: inf}
-      review: {label: "Reviews for a Claim", range: ClaimReview, rageCheck:true, max: inf, inverseAlias: "itemReviewed" }
+      review: {label: "Reviews for a Claim", range: ClaimReview, rangeCheck:true, max: inf, inverseAlias: "itemReviewed" }
 
   Appearance:
     descr: "Occurrence of a Claim in some CreativeWork (online article or media)"
