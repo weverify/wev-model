@@ -47,8 +47,9 @@ construct {
                      schema:worstRating ?rating_worstRating .
                
 } where {
-    bind (iri(concat("Claim/", encode_for_uri(?claimReview_author_name), "/", ?a)) as ?claimUri)
-    bind (iri(concat("ClaimReview/", encode_for_uri(?claimReview_author_name), "/", ?a)) as ?reviewUri)
+    bind (replace(replace(str(?claimReview_url), "(/|.html)$", ""), "http.*/([^/]*)", "$1") as ?urlName)
+    bind (iri(concat("Claim/", encode_for_uri(?claimReview_author_name), "/", ?urlName)) as ?claimUri)
+    bind (iri(concat("ClaimReview/", encode_for_uri(?claimReview_author_name), "/", ?a, "/", ?urlName)) as ?reviewUri)
     bind (1+"" as ?UNDEF)
     bind (if(bound(?creativeWork_author_sameAs), iri(concat("Appearance/", struuid())), ?UNDEF) as ?appearance)
     bind (if(bound(?claimReview_author_name), iri(concat("Organization/", encode_for_uri(?claimReview_author_name))), ?UNDEF) as ?authorUri)
@@ -70,8 +71,9 @@ construct {
     ?eviItemUri a schema:CreativeWork ;
             schema:url ?eviLink .
 } where {
-    bind (1+"" as ?UNDEF)
-    bind (iri(concat("ClaimReview/", encode_for_uri(?claimReview_author_name), "/", ?a)) as ?reviewUri)
+    bind (1+"" as ?UNDEF)    
+    bind (replace(replace(str(?claimReview_url), "(/|.html)$", ""), "http.*/([^/]*)", "$1") as ?urlName)
+    bind (iri(concat("ClaimReview/", encode_for_uri(?claimReview_author_name), "/", ?a, "/", ?urlName)) as ?reviewUri)
     bind(coalesce(replace(replace(?extra_refered_links, "[\\[\\]]", ""), " #", " "), "") as ?eviList)
     ?eviSplit apf:strSplit ( ?eviList ", ")
     bind(if(bound(?extra_refered_links), ?eviSplit, ?eviList) as ?eviStr)
