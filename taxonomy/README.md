@@ -6,7 +6,7 @@
 * *curl* - to fetch csv data over http 
 * *sed*  - for basic string manipulation 
 
-## Google sheets to csv
+## Google sheets to CSV
 
 The following Google Sheets contain the source master data 
 * [WEV Taxonomy](https://docs.google.com/spreadsheets/d/17Fmgow6BB0zkBXqk-sWEhoohOjo0bkpD2i4kqr-vjNg/edit#gid=0) Contains all used coded lists and links to the sheets with individual values 
@@ -14,7 +14,7 @@ The following Google Sheets contain the source master data
 We use the chart tools data source protocol to convert them to *CSV* and serve them over *HTTP*. 
 The syntax is as follows:
 
-`https://docs.google.com/spreadsheets/d/{{DOC_ID}}/gviz/tq?tqx=out:csv&gid={{SHEET_ID}}` where `DOC_ID` and `SHEET_ID` are both available form the sheet's url. For example the reviewType  [sheet](https://docs.google.com/spreadsheets/d/17Fmgow6BB0zkBXqk-sWEhoohOjo0bkpD2i4kqr-vjNg/edit#gid=952827375) has
+`https://docs.google.com/spreadsheets/d/{{DOC_ID}}/gviz/tq?tqx=out:csv&gid={{SHEET_ID}}` where `DOC_ID` and `SHEET_ID` are both available form the sheet's url. For example the `reviewType`  [sheet](https://docs.google.com/spreadsheets/d/17Fmgow6BB0zkBXqk-sWEhoohOjo0bkpD2i4kqr-vjNg/edit#gid=952827375) has
  * `DOC_ID=17Fmgow6BB0zkBXqk-sWEhoohOjo0bkpD2i4kqr-vjNg` and 
  * `SHEET_ID=reviewType`
 
