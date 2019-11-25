@@ -1,0 +1,11 @@
+BASE <http://weverify.eu/resource/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+
+construct {
+    ?URI a skos:ConceptScheme ;
+           skos:prefLabel ?label ;
+           skos:definition ?description ;
+    .
+} where {
+    bind(uri(?uri) as ?URI)
+}
