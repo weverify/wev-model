@@ -4,23 +4,18 @@ created:     2019-10-17
 updated:     2019-10-17
 creator:     http://ontotext.com
 versionInfo: 1.0
-
 prefixes:
   # schema: http://schema.org/ # see vocab_iri below
   skos:   http://www.w3.org/2004/02/skos/core#
   wev:    http://weverify.eu/ontology/
-
 specialPrefixes:
   base_iri:     http://weverify.eu/resource/
   vocab_iri:    http://schema.org/
   vocab_prefix: schema
   ontology_iri: http://weverify.eu/resource/ontology
   shape_iri:    http://weverify.eu/resource/shape/
-
 objects:
-
   # Agents, places
-
   Agent:
     kind: abstract
     name: schema:name
@@ -30,22 +25,17 @@ objects:
       appearance:  {range: Appearance , inverseAlias: author, max: inf}
       claim:       {range: Claim      , inverseAlias: author, max: inf}
       claimReview: {range: ClaimReview, inverseAlias: author, max: inf}
-
   Person:
     inherits: Agent
     prefix: Person/
-
   Organization:
     inherits: Agent
     prefix: Organization/
-
   Place:
     props:
       address:
       sameAs: {range: iri, descr: "Reference to Geonames"}
-
   # Main business objects
-
   Claim:
     descr: "A specific, factually-oriented claim that may be true or false"
     name: text # Note: this could be quite long, but we still prefer to have it
@@ -55,8 +45,7 @@ objects:
       dateCreated: {range: dateTime} # TODO: can this have smaller precision?
       author: {range: Agent}
       appearance: {range: Appearance, max: inf}
-      review: {label: "Reviews for a Claim", range: ClaimReview, rangeCheck:true, max: inf, inverseAlias: "itemReviewed" }
-
+      review: {label: "Reviews for a Claim", range: ClaimReview, rangeCheck: true, max: inf, inverseAlias: "itemReviewed" }
   Appearance:
     descr: "Occurrence of a Claim in some CreativeWork (online article or media)"
     type: [wev:Appearance]
@@ -68,13 +57,11 @@ objects:
       dateCreated: {range: dateTime} # TODO: can this have smaller precision?
       author: {range: Agent}
       sharedContent: {range: CreativeWork, max: inf, descr: "Image, video, or audio clip shared as part of social media posting"}
-
   CreativeWork: # TODO review props, currently they have only `url`
     props:
       url: {range: iri, min: 1}
       text:
       dateCreated: {range: dateTime} # TODO: can this have smaller precision?
-
   ClaimReview:
     descr: "Fact-checking review of a claim made or reported"
     # name: reviewBody # Too long for this purpose
@@ -87,8 +74,7 @@ objects:
       hasPart: {range: SupportingEvidence, min: 1, max: inf}
       additionalType: {range: ReviewType}
       misleadershipStrategy: {rdfProp: wev:misleadershipStrategy, range: MisleadershipStrategy}
-      reviewRating: Rating
-
+      reviewRating: {range: Rating}
   SupportingEvidence:
     type: [wev:SupportingEvidence]
     prefix: SupportingEvidence/
@@ -97,7 +83,6 @@ objects:
       text:
       additionalType: {range: EvidenceType}
       dateCreated: {range: dateTime} # TODO: can this have smaller precision?
-
   Rating:
     kind: abstract
     descr: "Evaluation of a Claim on a variety of scales (numeric or categorial)"
@@ -105,27 +90,22 @@ objects:
       bestRating: {descr: "Highest value allowed in this rating system, default 5"}
       worstRating: {descr: "Lowest value allowed in this rating system, default 1"}
       ratingValue: {descr: "Actual rating value", min: 1}
-
   SourceRating:
     type: [wev:SourceRating]
-    pattern: Review/
+    prefix: "Review/"
     inherits: Rating
     descr: "Evaluation of a Claim on a source-specific scale (numeric or categorial)"
-
   NormalizedRating:
     type: [wev:NormalizedRating]
-    pattern: Review/Normalized/
+    prefix: "Review/Normalized/"
     inherits: Rating
     descr: "Evaluation of a Claim on a normalized scale: FALSE, OTHER, TRUE"
-
   # Thesauri
-
   ConceptScheme:
     descr: "A thesaurus (nomenclature)"
     name: prefLabel
     props:
       prefLabel: {rdfProp: skos:prefLabel, min: 1}
-
   Concept:
     descr: "A thesaurus (nomenclature) value"
     kind: abstract
@@ -135,21 +115,18 @@ objects:
       inScheme: {rdfProp: skos:inScheme, range: ConceptScheme, min: 1}
       prefLabel: {rdfProp: skos:prefLabel, min: 1}
       description: {rdfProp: skos:description}
-
   MisleadershipStrategy:
     descr: "What strategy is used in a misleading claim"
     inherits: Concept
     typeProp: skos:inScheme
     type: [strategy]
     prefix: strategy/
-
   ReviewType:
     descr: "Type of ClaimReview"
     inherits: Concept
     typeProp: skos:inScheme
     type: [reviewType]
     prefix: reviewType/
-
   EvidenceType:
     descr: "Type of SupportingEvidence"
     inherits: Concept
