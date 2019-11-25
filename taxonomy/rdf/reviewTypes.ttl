@@ -38,9 +38,3 @@
         skos:prefLabel   "Old Photo" ;
         skos:definition  "The image or video are old" ;
         skos:broader     <http://weverify.eu/resource/reviewType/false> .
-
-<http://weverify.eu/resource/reviewType/reviewType>
-        rdf:type         skos:Concept ;
-        skos:prefLabel   "reviewType" ;
-        skos:definition  "reviewType" ;
-        skos:broader     <http://weverify.eu/resource/reviewType/reviewType> .
