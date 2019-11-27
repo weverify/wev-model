@@ -63,6 +63,7 @@
     schema:itemReviewed <Claim/(source)/2> ;
     puml:left <Claim/(source)/2> ;
     schema:author <Person/DummyReviewer> ;
+    schema:dateCreated "2019-11-27T11:24:18"^^xsd:dateTime ;
     schema:reviewBody "This is totally fake and I should know, I am a fake reviewer for test purposes." ;
     schema:additionalType <reviewType/Debunk> ;
     puml:right <reviewType/Debunk> ;
