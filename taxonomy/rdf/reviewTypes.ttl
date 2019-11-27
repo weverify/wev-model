@@ -14,23 +14,29 @@
 <http://weverify.eu/resource/reviewType/mix>
         rdf:type         skos:Concept ;
         skos:prefLabel   "Mixed" ;
-        skos:definition  "The claim is neither  true nor false" .
+        skos:definition  "The claim is neither true nor false" .
 
 <http://weverify.eu/resource/reviewType/satire>
         rdf:type         skos:Concept ;
         skos:prefLabel   "Satire" ;
         skos:definition  "This is a satirical post" .
 
-<http://weverify.eu/resource/reviewType/exagerated>
+<http://weverify.eu/resource/reviewType/exaggeration>
         rdf:type         skos:Concept ;
-        skos:prefLabel   "Exagerated" ;
-        skos:definition  "The claim is exagerated" ;
+        skos:prefLabel   "Exaggeration" ;
+        skos:definition  "The claim is exaggerated" ;
         skos:broader     <http://weverify.eu/resource/reviewType/mix> .
+
+<http://weverify.eu/resource/reviewType/deepFake>
+        rdf:type         skos:Concept ;
+        skos:prefLabel   "Deep Fake" ;
+        skos:definition  "The image or video is computer generated through deep fake techniques" ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> .
 
 <http://weverify.eu/resource/reviewType/doctoredImage>
         rdf:type         skos:Concept ;
         skos:prefLabel   "Doctored Image" ;
-        skos:definition  "The image has been manipulated " ;
+        skos:definition  "The image or video has been manipulated " ;
         skos:broader     <http://weverify.eu/resource/reviewType/false> .
 
 <http://weverify.eu/resource/reviewType/oldPhoto>
@@ -38,3 +44,15 @@
         skos:prefLabel   "Old Photo" ;
         skos:definition  "The image or video are old" ;
         skos:broader     <http://weverify.eu/resource/reviewType/false> .
+
+<http://weverify.eu/resource/reviewType/misleading>
+        rdf:type         skos:Concept ;
+        skos:prefLabel   "Misleading" ;
+        skos:definition  "The claim is technically correct but implies something incorrect" ;
+        skos:broader     <http://weverify.eu/resource/reviewType/mix> .
+
+<http://weverify.eu/resource/reviewType/unsubstantiated>
+        rdf:type         skos:Concept ;
+        skos:prefLabel   "Unsubstantiated" ;
+        skos:definition  "The claim cannot be substantiated" ;
+        skos:broader     <http://weverify.eu/resource/reviewType/mix> .
