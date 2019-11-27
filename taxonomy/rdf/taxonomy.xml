@@ -1,0 +1,56 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+  <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/doctoredImage">
+    <skos:broader>
+      <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/false">
+        <skos:definition>The claim is false</skos:definition>
+        <skos:prefLabel>False</skos:prefLabel>
+      </skos:Concept>
+    </skos:broader>
+    <skos:definition>The image or video has been manipulated </skos:definition>
+    <skos:prefLabel>Doctored Image</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/true">
+    <skos:definition>The claim is true</skos:definition>
+    <skos:prefLabel>True</skos:prefLabel>
+  </skos:Concept>
+  <skos:ConceptScheme rdf:about="http://weverify.eu/resource/reviewType">
+    <skos:definition>Taxonomy of types of claim reviews</skos:definition>
+    <skos:prefLabel>Review Type </skos:prefLabel>
+  </skos:ConceptScheme>
+  <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/satire">
+    <skos:definition>This is a satirical post</skos:definition>
+    <skos:prefLabel>Satire</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/unsubstantiated">
+    <skos:broader>
+      <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/mix">
+        <skos:definition>The claim is neither true nor false</skos:definition>
+        <skos:prefLabel>Mixed</skos:prefLabel>
+      </skos:Concept>
+    </skos:broader>
+    <skos:definition>The claim cannot be substantiated</skos:definition>
+    <skos:prefLabel>Unsubstantiated</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/deepFake">
+    <skos:broader rdf:resource="http://weverify.eu/resource/reviewType/false"/>
+    <skos:definition>The image or video is computer generated through deep fake techniques</skos:definition>
+    <skos:prefLabel>Deep Fake</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/oldPhoto">
+    <skos:broader rdf:resource="http://weverify.eu/resource/reviewType/false"/>
+    <skos:definition>The image or video are old</skos:definition>
+    <skos:prefLabel>Old Photo</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/exaggeration">
+    <skos:broader rdf:resource="http://weverify.eu/resource/reviewType/mix"/>
+    <skos:definition>The claim is exaggerated</skos:definition>
+    <skos:prefLabel>Exaggeration</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/misleading">
+    <skos:broader rdf:resource="http://weverify.eu/resource/reviewType/mix"/>
+    <skos:definition>The claim is technically correct but implies something incorrect</skos:definition>
+    <skos:prefLabel>Misleading</skos:prefLabel>
+  </skos:Concept>
+</rdf:RDF>
