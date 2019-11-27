@@ -35,6 +35,7 @@
     schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime ;
     schema:author <Person/3> ;
     schema:appearance <Appearance/2> ;
+    schema:appearance <Appearance/3> ;
  .
 
 <Person/3> a schema:Person ;
