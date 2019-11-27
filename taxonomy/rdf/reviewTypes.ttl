@@ -1,0 +1,40 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+
+<http://weverify.eu/resource/reviewType/true>
+        rdf:type         skos:Concept ;
+        skos:prefLabel   "True" ;
+        skos:definition  "The claim is true" .
+
+<http://weverify.eu/resource/reviewType/false>
+        rdf:type         skos:Concept ;
+        skos:prefLabel   "False" ;
+        skos:definition  "The claim is false" .
+
+<http://weverify.eu/resource/reviewType/mix>
+        rdf:type         skos:Concept ;
+        skos:prefLabel   "Mixed" ;
+        skos:definition  "The claim is neither  true nor false" .
+
+<http://weverify.eu/resource/reviewType/satire>
+        rdf:type         skos:Concept ;
+        skos:prefLabel   "Satire" ;
+        skos:definition  "This is a satirical post" .
+
+<http://weverify.eu/resource/reviewType/exagerated>
+        rdf:type         skos:Concept ;
+        skos:prefLabel   "Exagerated" ;
+        skos:definition  "The claim is exagerated" ;
+        skos:broader     <http://weverify.eu/resource/reviewType/mix> .
+
+<http://weverify.eu/resource/reviewType/doctoredImage>
+        rdf:type         skos:Concept ;
+        skos:prefLabel   "Doctored Image" ;
+        skos:definition  "The image has been manipulated " ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> .
+
+<http://weverify.eu/resource/reviewType/oldPhoto>
+        rdf:type         skos:Concept ;
+        skos:prefLabel   "Old Photo" ;
+        skos:definition  "The image or video are old" ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> .
