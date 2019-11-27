@@ -18,6 +18,12 @@
     schema:author "@NewsCompact" ;
 .
 
+<Appearance/3> a schema:CreativeWork, wev:Appearance ;
+    schema:url <https://twitter.com/Nkum007/status/952168888183111680> ;
+    schema:caption "A muslim migrant destroying a statue in Italy , because part of the body is showing .. 👇👇👇Europe does not know what is coming their way in next 5 to 15 years..." ;
+    schema:dateCreated "2018-01-13T05:22:00"^^xsd:dateTime ;
+    schema:author "@Nkum007" .
+
 <Place/2> a schema:Place ;
     schema:address "Italy" ;
 .
@@ -29,6 +35,7 @@
     schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime ;
     schema:author <Person/3> ;
     schema:appearance <Appearance/2> ;
+    schema:appearance <Appearance/3> ;
  .
 
 <Person/3> a schema:Person ;
