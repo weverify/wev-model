@@ -51,24 +51,9 @@
     schema:reviewRating <Rating/Normalized/FALSE> , <Rating/(source)/1> ;
 .
 
-<ClaimReview/(source)/3> a schema:ClaimReview ;
-    schema:itemReviewed <Claim/(source)/2> ;
-    puml:left <Claim/(source)/2> ;
-    schema:author <Person/1> ;
-    schema:dateCreated "2019-11-27T11:24:16"^^xsd:dateTime ;
-    schema:reviewBody "I looked at it, its totally false and I should I am a fictitious test reviewer." ;
-    schema:additionalType <reviewType/Debunk> ;
-    puml:right <reviewType/Debunk> ;
-    schema:reviewRating <Rating/Normalized/FALSE> , <Rating/(source)/1> ;
-.
-
 <Organization/1> a schema:Organization ;
    schema:name "WeVerify";
    schema:sameAs <https://twitter.com/Weverify> ;
-.
-
-<Person/1>a schema:Person ;
-   schema:name "Test Reviewer" ;
 .
 
 <Rating/Normalized/FALSE> a schema:Rating , wev:NormalizedRating ;
