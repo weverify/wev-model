@@ -11,14 +11,6 @@
     <skos:definition>The image or video has been manipulated </skos:definition>
     <skos:prefLabel>Doctored Image</skos:prefLabel>
   </skos:Concept>
-  <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/true">
-    <skos:definition>The claim is true</skos:definition>
-    <skos:prefLabel>True</skos:prefLabel>
-  </skos:Concept>
-  <skos:ConceptScheme rdf:about="http://weverify.eu/resource/reviewType">
-    <skos:definition>Taxonomy of types of claim reviews</skos:definition>
-    <skos:prefLabel>Review Type </skos:prefLabel>
-  </skos:ConceptScheme>
   <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/satire">
     <skos:definition>This is a satirical post</skos:definition>
     <skos:prefLabel>Satire</skos:prefLabel>
@@ -52,5 +44,16 @@
     <skos:broader rdf:resource="http://weverify.eu/resource/reviewType/mix"/>
     <skos:definition>The claim is technically correct but implies something incorrect</skos:definition>
     <skos:prefLabel>Misleading</skos:prefLabel>
+  </skos:Concept>
+  <skos:Concept rdf:about="http://weverify.eu/resource/reviewType/true">
+    <skos:definition>The claim is true</skos:definition>
+    <skos:topConceptOf>
+      <skos:ConceptScheme rdf:about="http://weverify.eu/resource/reviewType">
+        <skos:hasTopConcept rdf:resource="http://weverify.eu/resource/reviewType/true"/>
+        <skos:definition>Taxonomy of types of claim reviews</skos:definition>
+        <skos:prefLabel>Review Type </skos:prefLabel>
+      </skos:ConceptScheme>
+    </skos:topConceptOf>
+    <skos:prefLabel>True</skos:prefLabel>
   </skos:Concept>
 </rdf:RDF>
