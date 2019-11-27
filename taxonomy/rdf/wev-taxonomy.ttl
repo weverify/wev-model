@@ -1,0 +1,63 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+
+<http://weverify.eu/resource/reviewType/unsubstantiated>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/mix> ;
+        skos:definition  "The claim cannot be substantiated" ;
+        skos:prefLabel   "Unsubstantiated" .
+
+<http://weverify.eu/resource/reviewType/false>
+        a                skos:Concept ;
+        skos:definition  "The claim is false" ;
+        skos:prefLabel   "False" .
+
+<http://weverify.eu/resource/reviewType/deepFake>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
+        skos:definition  "The image or video is computer generated through deep fake techniques" ;
+        skos:prefLabel   "Deep Fake" .
+
+<http://weverify.eu/resource/reviewType>
+        a                skos:ConceptScheme ;
+        skos:definition  "Taxonomy of types of claim reviews" ;
+        skos:prefLabel   "Review Type " .
+
+<http://weverify.eu/resource/reviewType/doctoredImage>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
+        skos:definition  "The image or video has been manipulated " ;
+        skos:prefLabel   "Doctored Image" .
+
+<http://weverify.eu/resource/reviewType/exaggeration>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/mix> ;
+        skos:definition  "The claim is exaggerated" ;
+        skos:prefLabel   "Exaggeration" .
+
+<http://weverify.eu/resource/reviewType/oldPhoto>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
+        skos:definition  "The image or video are old" ;
+        skos:prefLabel   "Old Photo" .
+
+<http://weverify.eu/resource/reviewType/mix>
+        a                skos:Concept ;
+        skos:definition  "The claim is neither true nor false" ;
+        skos:prefLabel   "Mixed" .
+
+<http://weverify.eu/resource/reviewType/true>
+        a                skos:Concept ;
+        skos:definition  "The claim is true" ;
+        skos:prefLabel   "True" .
+
+<http://weverify.eu/resource/reviewType/satire>
+        a                skos:Concept ;
+        skos:definition  "This is a satirical post" ;
+        skos:prefLabel   "Satire" .
+
+<http://weverify.eu/resource/reviewType/misleading>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/mix> ;
+        skos:definition  "The claim is technically correct but implies something incorrect" ;
+        skos:prefLabel   "Misleading" .
