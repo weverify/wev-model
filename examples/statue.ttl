@@ -59,9 +59,23 @@
     schema:reviewRating <Rating/Normalized/FALSE> , <Rating/(source)/1> ;
 .
 
-<Organization/1> a schema:Organization ;
+<ClaimReview/(source)/3> a schema:ClaimReview ;
+    schema:itemReviewed <Claim/(source)/2> ;
+    puml:left <Claim/(source)/2> ;
+    schema:author <Person/DummyReviewer> ;
+    schema:reviewBody "This is totally fake and I should know, I am a fake reviewer for test purposes." ;
+    schema:additionalType <reviewType/Debunk> ;
+    puml:right <reviewType/Debunk> ;
+    schema:reviewRating <Rating/Normalized/FALSE> , <Rating/(source)/1> ;
+.
+
+<Organization/weverify> a schema:Organization ;
    schema:name "WeVerify";
    schema:sameAs <https://twitter.com/Weverify> ;
+.
+
+<Person/DummyReviewer> a schema:Person ;
+   schema:name "Dummy Reviewer" ;
 .
 
 <Rating/Normalized/FALSE> a schema:Rating , wev:NormalizedRating ;
