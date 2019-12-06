@@ -47,7 +47,7 @@ objects:
       author: {range: Agent}
       appearance: {range: Appearance, max: inf}
       review: {label: "Reviews for a Claim", range: ClaimReview, rangeCheck: true, max: inf, inverseAlias: "itemReviewed" }
-      popularity: {label: "Popularity of the claim", rdfProp: rank:hasRDFRank5, range: float, rangeCheck:true,  min: 1}
+      popularity: {label: "Popularity of the claim", rdfProp: rank:hasRDFRank5, range: decimal,  min: 1}
   Appearance:
     descr: "Occurrence of a Claim in some CreativeWork (online article or media)"
     type: [wev:Appearance]
