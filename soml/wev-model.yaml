@@ -73,7 +73,7 @@ objects:
       author: {range: Agent, min: 1}
       dateCreated: {range: dateTime}
       reviewBody: {min: 1}
-      hasPart: {range: SupportingEvidence, min: 1, max: inf}
+      hasPart: {range: SupportingEvidence, max: inf}
       additionalType: {range: ReviewType}
       misleadershipStrategy: {rdfProp: wev:misleadershipStrategy, range: MisleadershipStrategy}
       reviewRating: {range: Rating}
