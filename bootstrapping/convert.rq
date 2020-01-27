@@ -67,10 +67,8 @@ construct {
     
     ?eviUri a wev:SupportingEvidence ;
             schema:additionalType wev:ExternalEvidence ;
-            schema:about ?eviItemUri .
+            schema:about ?eviLink .
 
-    ?eviItemUri a schema:CreativeWork ;
-            schema:url ?eviLink .
 } where {
     bind (1+"" as ?UNDEF)    
     #bind (replace(replace(str(?claimReview_url), "(/|.html)$", ""), "http.*/([^/]*)", "$1") as ?urlName)
@@ -80,6 +78,5 @@ construct {
     ?eviSplit apf:strSplit ( ?eviList ", ")
     bind(if(bound(?extra_refered_links), ?eviSplit, ?eviList) as ?eviStr)
     bind(if(bound(?extra_refered_links), iri(concat("SupportingEvidence/", struuid())), ?UNDEF) as ?eviUri)
-    bind(if(bound(?extra_refered_links), iri(concat("CreativeWork/", struuid())), ?UNDEF) as ?eviItemUri)
     bind(coalesce(if(regex(?eviStr, "[ |']|^[^?#]+[\\(\\)\\[\\]]|^http[s]*://http") , ?UNDEF, iri(?eviStr)), ?eviStr) as ?eviLink)
 }
