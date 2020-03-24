@@ -15,35 +15,55 @@
     schema:url <https://perma.cc/5PKB-4USP> ;
     schema:caption "KOBE BRYANT DAUGHTER GIANNA BRYANT AT HOSPITAL" ;
     schema:dateCreated "2020-01-27T14:56:53"^^xsd:dateTime ;
-    schema:author "LovelyF Vlogs" ;
+    schema:author <Organization/LovelyFVlogs> ;
 .
 
 <Appearance/5> a schema:CreativeWork, wev:Appearance;
     schema:url <https://perma.cc/H6LV-VQYQ> ;
     schema:caption "Daughter of Kobe Bryant was brought to hospital // Actual Video" ;
     schema:dateCreated "2020-01-27T14:32:09"^^xsd:dateTime ;
-    schema:author "Akari Deamboy" ;
+    schema:author <Person/AkariDeamboy> ;
 .
 
 <Appearance/6> a schema:CreativeWork, wev:Appearance;
     schema:url <https://perma.cc/DA5T-65PV> ;
     schema:caption "Kobe Bryant daughter at the hospital💔💔#ripkobe #ripgigi" ;
     schema:dateCreated "2020-01-27T23:12:03"^^xsd:dateTime ;
-    schema:author "FN Truly ツ" ;
+    schema:author <Organization/FNTruly> ;
 .
 
 <Appearance/7> a schema:CreativeWork, wev:Appearance;
     schema:url <https://perma.cc/93XR-6Z6D> ;
     schema:caption "Kobe Bryant Daughter GiGi Last Moments In The Hospital RIP" ;
     schema:dateCreated "2020-01-28T01:28:32"^^xsd:dateTime ;
-    schema:author "Official DeeLocz" ;
+    schema:author <Organization/OfficialDeeLocz> ;
 .
 
 <Appearance/8> a schema:CreativeWork, wev:Appearance;
     schema:url <https://perma.cc/24XQ-8DHX> ;
     schema:caption "Kobe Bryant Daughter Gianna Bryant Final Hours" ;
     schema:dateCreated "2020-01-27T14:00:00"^^xsd:dateTime ;
-    schema:author "Viral Updates" ;
+    schema:author <Organization/ViralUpdates> ;
+.
+
+<Organization/LovelyFVlogs> a schema:Organization ;
+    schema:name "LovelyF Vlogs" ;
+.
+
+<Person/AkariDeamboy> a schema:Person ;
+    schema:name "Akari Deamboy" ;
+.
+
+<Organization/FNTruly> a schema:Organization ;
+    schema:name "FN Truly ツ" ;
+.
+
+<Organization/OfficialDeeLocz> a schema:Organization ;
+    schema:name "Official DeeLocz" ;
+.
+
+<Organization/ViralUpdates> a schema:Organization ;
+    schema:name "Viral Updates" ;
 .
 
 # The Claim
