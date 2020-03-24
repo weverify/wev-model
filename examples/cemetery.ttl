@@ -16,9 +16,9 @@
     schema:url <https://www.facebook.com/groups/370271443401663/permalink/597176477377824/> ;
     schema:caption "PIQUE NIQUE AU CIMETIERE DE CALAIS \" SOUS LES YEUX DE LA REPUBLIQUE BIENVEILLANTE\"...." ;
     schema:sharedContent <ImageObject/1> ;
-    schema:author "Nano HB" ;
+    schema:author <Agent/NanoHB> ;
     schema:contentLocation <Place/1> ;
-    schema:dateCreated "2018-10-29"^^xsd:date;
+    schema:dateCreated "2018-10-29T00:00:00"^^xsd:dateTime;
 .
 
 
@@ -61,6 +61,9 @@
     schema:additionalType <evidence/OriginalContent> ;
     schema:about <https://kep.cdn.indexvas.hu/1/0/998/9987/99872/9987261_7c04323572333cf9d9e95b40d3394694_wm.jpg> ;
 .
+
+<Agent/NanoHB> a schema:Agent ;
+   schema:name "Nano HB" .
 
 <Organization/weverify> a schema:Organization ;
    schema:name "WeVerify";
