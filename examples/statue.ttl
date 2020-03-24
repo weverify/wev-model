@@ -16,7 +16,7 @@
     schema:caption "A muslim migrant destroying a statue in Italy, because part of the body is showing #Europe..." ;
     schema:contentLocation <Place/2> ;
     schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime ;
-    schema:author "@NewsCompact" ;
+    schema:author <Organization/NewsCompact> ;
 .
 
 <Appearance/3> a schema:CreativeWork, wev:Appearance ;
@@ -27,6 +27,16 @@
 
 <Place/2> a schema:Place ;
     schema:address "Italy" ;
+.
+
+<Organization/NewsCompact> a trr:Organization ;
+    schema:name "@NewsCompact" ;
+    schema:sameAs <https://twitter.com/NewsCompact> 
+.
+
+<Person/Nkum007> a trr:Person ;
+    schema:name "@Nkum007" ;
+    schema:sameAs <https://twitter.com/Nkum007> ;
 .
 
 # The Claim
@@ -40,6 +50,7 @@
  .
 
 <Person/3> a schema:Person ;
+    schema:name "Unknown User"
 .
 
 #A Claim Review by the WeVerify team
