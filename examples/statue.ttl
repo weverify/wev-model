@@ -29,12 +29,12 @@
     schema:address "Italy" ;
 .
 
-<Organization/NewsCompact> a trr:Organization ;
+<Organization/NewsCompact> a schema:Organization ;
     schema:name "@NewsCompact" ;
     schema:sameAs <https://twitter.com/NewsCompact> 
 .
 
-<Person/Nkum007> a trr:Person ;
+<Person/Nkum007> a schema:Person ;
     schema:name "@Nkum007" ;
     schema:sameAs <https://twitter.com/Nkum007> ;
 .
