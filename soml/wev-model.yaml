@@ -74,6 +74,7 @@ objects:
       dateCreated: {range: dateTime}
       reviewBody: {min: 1}
       hasPart: {range: SupportingEvidence, max: inf}
+      externalUrl: {rdfProp: schema:sameAs}
       additionalType: {range: ReviewType}
       misleadershipStrategy: {rdfProp: wev:misleadershipStrategy, range: MisleadershipStrategy}
       reviewRating: {range: Rating}
