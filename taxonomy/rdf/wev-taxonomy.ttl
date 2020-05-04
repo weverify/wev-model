@@ -1,55 +1,11 @@
 @prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
 
-<http://weverify.eu/resource/reviewType/unsubstantiated>
+<http://weverify.eu/resource/evidenceType/article>
         a                skos:Concept ;
-        skos:broader     <http://weverify.eu/resource/reviewType/mix> ;
-        skos:definition  "The claim cannot be substantiated" ;
-        skos:prefLabel   "Unsubstantiated" .
-
-<http://weverify.eu/resource/reviewType/false>
-        a                skos:Concept ;
-        skos:definition  "The claim is false" ;
-        skos:prefLabel   "False" .
-
-<http://weverify.eu/resource/reviewType/deepFake>
-        a                skos:Concept ;
-        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
-        skos:definition  "The image or video is computer generated through deep fake techniques" ;
-        skos:prefLabel   "Deep Fake" .
-
-<http://weverify.eu/resource/reviewType>
-        a                skos:ConceptScheme ;
-        skos:definition  "Taxonomy of types of claim reviews" ;
-        skos:prefLabel   "Review Type " .
-
-<http://weverify.eu/resource/reviewType/doctoredImage>
-        a                skos:Concept ;
-        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
-        skos:definition  "The image or video has been manipulated " ;
-        skos:prefLabel   "Doctored Image" .
-
-<http://weverify.eu/resource/reviewType/exaggeration>
-        a                skos:Concept ;
-        skos:broader     <http://weverify.eu/resource/reviewType/mix> ;
-        skos:definition  "The claim is exaggerated" ;
-        skos:prefLabel   "Exaggeration" .
-
-<http://weverify.eu/resource/reviewType/oldPhoto>
-        a                skos:Concept ;
-        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
-        skos:definition  "The image or video are old" ;
-        skos:prefLabel   "Old Photo" .
-
-<http://weverify.eu/resource/reviewType/mix>
-        a                skos:Concept ;
-        skos:definition  "The claim is neither true nor false" ;
-        skos:prefLabel   "Mixed" .
-
-<http://weverify.eu/resource/reviewType/true>
-        a                skos:Concept ;
-        skos:definition  "The claim is true" ;
-        skos:prefLabel   "True" .
+        skos:broader     <http://weverify.eu/resource/evidenceType/external> ;
+        skos:definition  "External link to evidence (article)" ;
+        skos:prefLabel   "External Article" .
 
 <http://weverify.eu/resource/reviewType/satire>
         a                skos:Concept ;
@@ -58,6 +14,138 @@
 
 <http://weverify.eu/resource/reviewType/misleading>
         a                skos:Concept ;
-        skos:broader     <http://weverify.eu/resource/reviewType/mix> ;
+        skos:broader     <http://weverify.eu/resource/reviewType/mixed> ;
         skos:definition  "The claim is technically correct but implies something incorrect" ;
         skos:prefLabel   "Misleading" .
+
+<http://weverify.eu/resource/reviewType/tamperedAudio>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
+        skos:definition  "The audio has been modified" ;
+        skos:prefLabel   "Tampered Audio" .
+
+<http://weverify.eu/resource/evidenceType/hyperpartisan>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/evidenceType/internal> ;
+        skos:definition  "Link to Hyperpartisan Detector report" ;
+        skos:prefLabel   "Hyperpartisan Detector" .
+
+<http://weverify.eu/resource/evidenceType/location>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/evidenceType/internal> ;
+        skos:definition  "Link to Location Detector report" ;
+        skos:prefLabel   "Location Detector" .
+
+<http://weverify.eu/resource/evidenceType/sna>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/evidenceType/internal> ;
+        skos:definition  "Link to SNA report" ;
+        skos:prefLabel   "Social Network Analysis" .
+
+<http://weverify.eu/resource/reviewType/tamperedImage>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
+        skos:definition  "The image or video has been manipulated " ;
+        skos:prefLabel   "Tampered Image/Video" .
+
+<http://weverify.eu/resource/reviewType/deepFake>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
+        skos:definition  "The image or video is computer generated through deep fake techniques" ;
+        skos:prefLabel   "Deep Fake" .
+
+<http://weverify.eu/resource/reviewType/decontextualized>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
+        skos:definition  "The image or video is taken out of context" ;
+        skos:prefLabel   "Decontextualized" .
+
+<http://weverify.eu/resource/evidenceType/vidSimilarity>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/evidenceType/internal> ;
+        skos:definition  "Link to VSS report" ;
+        skos:prefLabel   "Video Similarity" .
+
+<http://weverify.eu/resource/score/true>
+        a                skos:Concept ;
+        skos:definition  "The claim is true" ;
+        skos:prefLabel   "True" .
+
+<http://weverify.eu/resource/evidenceType/internal>
+        a                skos:Concept ;
+        skos:definition  "Link to project tool report" ;
+        skos:prefLabel   "WEV Project Tool" .
+
+<http://weverify.eu/resource/reviewType/staged>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/false> ;
+        skos:definition  "The image or video is staged" ;
+        skos:prefLabel   "Staged" .
+
+<http://weverify.eu/resource/reviewType/exaggeration>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/misleading> ;
+        skos:definition  "The claim is exaggerated" ;
+        skos:prefLabel   "Exaggeration" .
+
+<http://weverify.eu/resource/evidenceType/imgSimilarity>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/evidenceType/internal> ;
+        skos:definition  "Link to ISS report" ;
+        skos:prefLabel   "Image Similarity" .
+
+<http://weverify.eu/resource/evidenceType/image>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/evidenceType/external> ;
+        skos:definition  "External link to evidence (image)" ;
+        skos:prefLabel   "External Image" .
+
+<http://weverify.eu/resource/evidenceType/veracity>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/evidenceType/internal> ;
+        skos:definition  "Link to Veracity Classifier Report" ;
+        skos:prefLabel   "Rumor Veracity Classifier" .
+
+<http://weverify.eu/resource/score/mixed>
+        a                skos:Concept ;
+        skos:definition  "The claim is neither true nor false" ;
+        skos:prefLabel   "Mixed" .
+
+<http://weverify.eu/resource/reviewType/unsubstantiated>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/reviewType/mixed> ;
+        skos:definition  "The claim cannot be substantiated" ;
+        skos:prefLabel   "Unsubstantiated" .
+
+<http://weverify.eu/resource/score/false>
+        a                skos:Concept ;
+        skos:definition  "The claim is false" ;
+        skos:prefLabel   "False" .
+
+<http://weverify.eu/resource/evidenceType/caa>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/evidenceType/internal> ;
+        skos:definition  "Link to CAA report" ;
+        skos:prefLabel   "Context Aggregation Assistant" .
+
+<http://weverify.eu/resource/reviewType>
+        a                skos:ConceptScheme ;
+        skos:definition  "Taxonomy of types of claim reviews" ;
+        skos:prefLabel   "Review Type " .
+
+<http://weverify.eu/resource/evidenceType/iva>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/evidenceType/internal> ;
+        skos:definition  "Link to IVA report" ;
+        skos:prefLabel   "Image Verification Assistant" .
+
+<http://weverify.eu/resource/evidenceType/video>
+        a                skos:Concept ;
+        skos:broader     <http://weverify.eu/resource/evidenceType/external> ;
+        skos:definition  "External link to evidence (video)" ;
+        skos:prefLabel   "External Video" .
+
+<http://weverify.eu/resource/evidenceType/external>
+        a                skos:Concept ;
+        skos:definition  "External link to evidence" ;
+        skos:prefLabel   "External" .
