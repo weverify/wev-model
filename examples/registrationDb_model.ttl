@@ -1,0 +1,108 @@
+@base <http://weverify.eu/resource/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix puml:     <http://plantuml.com/ontology#>.
+@prefix schema: <http://schema.org/>.
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix wev: <http://weverify.eu/ontology/> .
+
+# Inference
+schema:member owl:inverseOf schema:memberOf .
+schema:contactPoint owl:inverseOf schema:contactOf .
+
+schema:contactOf rdfs:subPropertyOf schema:memberOf .
+schema:contactPoint rdfs:subPropertyOf schema:member .
+schema:founder rdfs:subPropertyOf schema:contactPoint .
+
+schema:OrganizeAction rdfs:subClassOf schema:Action .
+schema:ApplyAction rdfs:subClassOf schema:OrganizeAction .
+<Status/Rejected> rdfs:subClassOf <Status/Denied> .
+<Status/Revoked> rdfs:subClassOf <Status/Denied> .
+
+# Person
+<Person/1> a schema:Person ;
+          schema:identifier <http://weverify.eu/resource/Person1> ;
+          schema:callSign "Secret Sleuth" ;
+          schema:givenName "John" ;
+          schema:additionalName "C" ;
+          schema:familyName "Doe" ;
+          schema:email "john.c.doe@somewhere.nowhere" ;
+          schema:url <http://secretsleuth.co.uk/debunking> ;
+.
+
+<Person/2> a schema:Person ;
+          schema:identifier <http://weverify.eu/resource/Person2> ;
+          schema:callSign "Da Russian Troll" ;
+          schema:givenName "Made" ;
+          schema:familyName "Up" ;
+          schema:email "asc01ppr@mail.tmp" .
+
+<Person/3> a schema:Person ;
+          schema:identifier <http://weverify.eu/resource/Person3> ;
+          schema:callSign "Onto Org Admin" ;
+          schema:email "debunks.admin@ontotext.com" ;
+          schema:url <http://ontotextcom/debunking/admin> ;
+          schema:memberOf <Organization/1> ;
+          schema:contactOf <Organization/1> ;
+. 
+
+# Organization
+<Organization/1> a schema:Organization ;
+                schema:identifier <http://weverify.eur/resource/Organization1> ;
+                schema:name "OntoPublishing" ;
+                schema:email "factcheckers@ontotext.com" ;
+                schema:sameAs <http://ontotext.com/debunking> ;
+                schema:founder <Person/3> ;
+                schema:contactPoint <Person/4> ;
+                schema:member <Person/5>, <Person/6> ;
+.
+
+# Action: describing the state of Person1's membership in Organization1 as determined by Person3
+<Action/1> a schema:ApplyAction ;
+          schema:agent <Person/3> ;
+          schema:participant <Organization/1> ;
+          schema:object <Person/1> ;
+          schema:actionStatus <Status/Pending> ;
+.
+
+<Action/2> a schema:ApplyAction ; 
+          schema:agent <Person/3> ;
+          schema:participant <Organization/1> ;
+          schema:object <Person/2> ;
+          schema:actionStatus <Status/Rejected> ;
+.
+
+<Action/3> a schema:ApplyAction ;
+          schema:agent <Person/3> ;
+          schema:participant <Organization/1> ;
+          schema:object <Person/3> ;
+          schema:actionStatus <Status/Accepted> ;
+.
+
+# Statuses
+
+<Status/Accepted> a schema:ActionStatusType ;
+                  schema:name "Accepted" ;
+                  schema:description "Person has been accepted into the organization and is a member." ;
+.
+
+<Status/Pending> a schema:ActionStatusType ;
+                 schema:name "Pending" ;
+                 schema:description "Person has requested membership in organization and is awaiting response." ;
+.
+
+<Status/Denied> a schema:ActionStatusType ;
+                schema:name "Denied" ;
+                schema:description "Person's membership is denied by the organization, either rejected initially or revoked later."
+
+<Status/Rejected> a schema:ActionStatusType ;
+                  schema:name "Rejected" ;
+                  schema:description "Person's request for membership has been rejected by an org admit." ;
+.
+
+<Status/Revoked> a schema:ActionStatusType ;
+                 schema:name "Revoked" ;
+                 schema:description "Person's membership has been revoked by an org admin." ;
+.
