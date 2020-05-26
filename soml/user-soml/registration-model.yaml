@@ -1,11 +1,11 @@
-id:          /boml/DBKFRegistration
+id:          /soml/DBKFRegistration
 label:       DBKF Users Semantic Objects Model
 created:     2020-05-12
 updated:     2020-05-12
 creator:     http://ontotext.com
 versionInfo: 1.0
 prefixes:
-  #schema: http://schema.org/ # see vocab_iri below
+  #"schema:" http://schema.org/ # see vocab_iri below
   skos:   http://www.w3.org/2004/02/skos/core#
   wev:    http://weverify.eu/ontology/
 specialPrefixes:
@@ -17,12 +17,12 @@ specialPrefixes:
 objects:
   Person:
     descr: "A journalist or citizen registered in the DBKF system."
-    name: name
-    type: [schema:Person]
+    name: "schema:callSign"
+    type: ["schema:Person"]
     prefix: Person/
     props:
       identifier: {label: "The identifier of the person in FusionAuth", min: 1}
-      displayName: {label: "The name that appears in the DBKF UI for a user's reviews.", rdfProp: schema:callSign, min: 1}
+      displayName: {label: "The name that appears in the DBKF UI for a user's reviews.", rdfProp: "schema:callSign", min: 1}
       givenName: {min: 1}
       additionalName: {label: "Typically middle name(s)."}
       familyName: {min: 1}
@@ -30,12 +30,12 @@ objects:
       url: {label: "Link to user's website, blog or other online platform."}
   Organization:
     descr: "A journalistic organization associated with the DBKF that can grant writing priviliges to authors."
-    name: name
-    type: [schema:Organization]
+    name: "schema:name"
+    type: ["schema:Organization"]
     prefix: Organization/
     props:
       identifier: {label: "The identifier of the organization in FusionAuth.", min: 1}
-      name: {range: text,  min: 1}
+      displayName: {rdfProp: "schema:name",  min: 1}
       email:
       sameAs: {label: "The primary website of the journalistic organization."}
       founder: {label: "The organization's founder is also its top org admin.", range: Person, min: 1}
@@ -43,18 +43,18 @@ objects:
       member: {label: "An author currently affiliated with an organization.", range: Person, min: 1, max: inf}
   Action:
     descr: "An action where an organization admin determines the relatonship between an organization and an author."
-    type: [schema:ApplyAction]
+    type: ["schema:ApplyAction"]
     prefix: Action/
     props:
-      admin: {label: "Org admin performing the action.", range: Person, rdfProp: schema:agent, min: 1} #agent
-      organization: {label: "Organization (possibly) granting writing priviliges.",range: Organization, rdfProp: schema:participant, min: 1}  #participant
-      author: {label: "Author requesting or receiving writing priviliges.", range: Person, rdfProp: schema:object, min: 1} #object
-      status: {label: "Status of the request for priviliges.", range: Action, rdfProp: schema:actionStatus, min: 1} #actionstatus
+      admin: {label: "Org admin performing the action.", range: Person, rdfProp: "schema:agent", min: 1} #agent
+      organization: {label: "Organization (possibly) granting writing priviliges.",range: Organization, rdfProp: "schema:participant", min: 1}  #participant
+      author: {label: "Author requesting or receiving writing priviliges.", range: Person, rdfProp: "schema:object", min: 1} #object
+      status: {label: "Status of the request for priviliges.", range: Action, rdfProp: "schema:actionStatus", min: 1} #actionstatus
   ActionStatusType:
     descr: "The status of the relationship between a person and an organization. The Accepted status is the only one that allows writing on behalf of the organization."
-    name: name
-    type: [schema:ActionStatusType]
+    name: "schema:name"
+    type: ["schema:ActionStatusType"]
     prefix: Status/
     props:
-      name: {label: "The name of the status.", rdfProp: schema:name,  min: 1}
-      description: {rdfProp: schema:description, min: 1}
+      displayName: {label: "The name of the status.", rdfProp: "schema:name",  min: 1}
+      description: {rdfProp: "schema:description", min: 1}
