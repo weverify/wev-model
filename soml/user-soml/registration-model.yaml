@@ -28,6 +28,7 @@ objects:
       familyName: {min: 1}
       email: {min: 1}
       url: {label: "Link to user's website, blog or other online platform."}
+      action: {label: "A membership request submitted by this author.", range: Action, inverseAlias: "schema:object", max: inf}
   Organization:
     descr: "A journalistic organization associated with the DBKF that can grant writing priviliges to authors."
     name: "schema:name"
@@ -41,6 +42,7 @@ objects:
       founder: {label: "The organization's founder is also its top org admin.", range: Person, min: 1}
       contactPoint: {label: "An organization admin that can promote new authors.", range: Person, min: 1, max: inf}
       member: {label: "An author currently affiliated with an organization.", range: Person, min: 1, max: inf}
+      action: {label: "A membership request associated with this organization.", range: Action, inverseAlias: "schema:participant", max: inf}
   Action:
     descr: "An action where an organization admin determines the relatonship between an organization and an author."
     type: ["schema:ApplyAction"]
