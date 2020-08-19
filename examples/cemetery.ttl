@@ -31,6 +31,10 @@
 
 <Claim/(source)/1> a schema:Claim ;
     schema:text "Refugees organized a pique-nique in a Cemetary in Calais" ;
+    schema:author <Organization/weverify> ;
+    schema:publisher <Organization/weverify> ;
+    schema:dateCreated "2019-03-05T00:00:00"^^xsd:dateTime ;
+    schema:datePublished "2019-03-05T00:00:00"^^xsd:dateTime ;
     schema:appearance <Appearance/1> .
 
 #A Claim Review by the WeVerify team
@@ -38,7 +42,9 @@
 <ClaimReview/(source)/1> a schema:ClaimReview ;
     schema:itemReviewed <Claim/(source)/1> ;
     schema:author <Organization/weverify> ;
-    schema:publisher <Organization/weverify> ;
+    schema:publisher <Organization/weverify> ;    
+    schema:dateCreated "2019-03-05T07:30:00"^^xsd:dateTime ;
+    schema:datePublished "2019-03-05T07:30:00"^^xsd:dateTime ;
     schema:reviewBody "This picture is decontextualized. \n The scene shows migrants in Tovarnik cemetery at the Serbian-Croatian border on the 24 of September 2015. \n This picture has circulated in France to target migrants allegedly having a picnic in the cemetery in the French town of Calais. \n This image has been re-used again during the 2019 EU elections" ;
     schema:hasPart <SupportingEvidence/1> ;
     schema:hasPart <SupportingEvidence/2> ;

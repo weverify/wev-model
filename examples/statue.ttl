@@ -44,7 +44,9 @@
 <Claim/(source)/2> a schema:Claim ;
     schema:text "A muslim migrant destroying a nude statue in Italy." ;
     schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime ;
+    schema:datePublished "2019-05-04T02:47:00"^^xsd:dateTime ;
     schema:author <Person/3> ;
+    schema:publisher <Organization/weverify> ;
     schema:appearance <Appearance/2> ;
     schema:appearance <Appearance/3> ;
  .
@@ -58,9 +60,10 @@
 <ClaimReview/(source)/2> a schema:ClaimReview ;
     schema:itemReviewed <Claim/(source)/2> ;
     puml:left <Claim/(source)/2>  ;
-    schema:author <Organization/weverify> ;
+    schema:author <Person/3> ;
     schema:publisher <Organization/weverify> ;
     schema:dateCreated "2019-07-22T00:00:00"^^xsd:dateTime;
+    schema:datePublished "2019-07-22T00:00:00"^^xsd:dateTime ;
     schema:reviewBody "This claim is false. The scene shows a vandalism incident from December 18, 2017 in Algeria..." ;
     schema:hasPart <SupportingEvidence/3> ;
     schema:hasPart <SupportingEvidence/4> ;
