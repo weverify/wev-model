@@ -14,8 +14,8 @@
 
 <Appearance/1> a schema:CreativeWork , wev:Appearance ;
     schema:url <https://www.facebook.com/groups/370271443401663/permalink/597176477377824/> ;
-    schema:caption "PIQUE NIQUE AU CIMETIERE DE CALAIS \" SOUS LES YEUX DE LA REPUBLIQUE BIENVEILLANTE\"...." ;
-    schema:sharedContent <ImageObject/1> ;
+    schema:abstract "PIQUE NIQUE AU CIMETIERE DE CALAIS \" SOUS LES YEUX DE LA REPUBLIQUE BIENVEILLANTE\"...." ;
+    schema:image <https://pbs.twimg.com/media/DXIqpAlXkAEtTtT?format=jpg> ;
     schema:author <Agent/NanoHB> ;
     schema:contentLocation <Place/1> ;
     schema:dateCreated "2018-10-29T00:00:00"^^xsd:dateTime;
@@ -25,10 +25,6 @@
 <Place/1> a schema:Place ;
     schema:address "Calais, France" ;
     schema:sameAs geoname:3029162 ;
-.
-
-<ImageObject/1> a schema:ImageObject ;
-    schema:url <https://pbs.twimg.com/media/DXIqpAlXkAEtTtT?format=jpg> ;
 .
 
 # The Claim
@@ -42,6 +38,7 @@
 <ClaimReview/(source)/1> a schema:ClaimReview ;
     schema:itemReviewed <Claim/(source)/1> ;
     schema:author <Organization/weverify> ;
+    schema:publisher <Organization/weverify> ;
     schema:reviewBody "This picture is decontextualized. \n The scene shows migrants in Tovarnik cemetery at the Serbian-Croatian border on the 24 of September 2015. \n This picture has circulated in France to target migrants allegedly having a picnic in the cemetery in the French town of Calais. \n This image has been re-used again during the 2019 EU elections" ;
     schema:hasPart <SupportingEvidence/1> ;
     schema:hasPart <SupportingEvidence/2> ;
