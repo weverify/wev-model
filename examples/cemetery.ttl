@@ -18,7 +18,9 @@
     schema:image <https://pbs.twimg.com/media/DXIqpAlXkAEtTtT?format=jpg> ;
     schema:author <Agent/NanoHB> ;
     schema:contentLocation <Place/1> ;
-    schema:dateCreated "2018-10-29T00:00:00"^^xsd:dateTime;
+    schema:dateCreated "2018-10-29T00:00:00"^^xsd:dateTime ;
+    schema:inLanguage "fr" ;
+    wev:automaticallyIngested "false"^^xsd:boolean ;
 .
 
 
@@ -35,7 +37,10 @@
     schema:publisher <Organization/weverify> ;
     schema:dateCreated "2019-03-05T00:00:00"^^xsd:dateTime ;
     schema:datePublished "2019-03-05T00:00:00"^^xsd:dateTime ;
-    schema:appearance <Appearance/1> .
+    schema:appearance <Appearance/1> ;
+    schema:inLanguage "en" ;
+    wev:automaticallyIngested "false"^^xsd:boolean ;
+    .
 
 #A Claim Review by the WeVerify team
 
@@ -50,6 +55,8 @@
     schema:hasPart <SupportingEvidence/2> ;
     schema:additionalType <reviewType/Debunk> ;
     wev:disinformationStrategy <strategy/Location> ;
+    schema:inLanguage "en" ;
+    wev:automaticallyIngested "false"^^xsd:boolean ;
     schema:reviewRating <Rating/Normalized/OTHER> , <Rating/(source)/2> ;
 .
 

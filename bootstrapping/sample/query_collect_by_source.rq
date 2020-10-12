@@ -1,0 +1,48 @@
+PREFIX schema: <http://schema.org/>
+insert {
+    graph ?g1 {
+        ?review ?p ?o1 .
+    }
+    graph ?g2 {
+        ?o1 ?p2 ?o2 .
+    }
+    graph ?g3 {
+        ?o2 ?p3 ?o3 .
+    }
+} where {
+    {
+        select ?review
+        where {
+            {
+                select ?review {
+                    service <repository:WeVerify> {
+                        bind(<http://weverify.eu/resource/Organization/0f350417f66edeb17ba522f134bfff8a> as ?publisher)
+                        ?review a schema:ClaimReview ;
+                                schema:publisher ?publisher .
+                    }
+                } limit 100
+            }
+            filter(rand() < 0.075)
+        } limit 5 
+        # AFP       http://weverify.eu/resource/Organization/db74c36c3130c856ddb65627f06bf63c
+        # Correctiv http://weverify.eu/resource/Organization/d5d35af925c50f9d0b7aafa646181bca
+        # FullFact  http://weverify.eu/resource/Organization/9a3d6edd64f5f7e514147433ca73d87a
+        # Reuters   http://weverify.eu/resource/Organization/7513717dba8b208fe06799dcc54e59e2
+        # Maldita   http://weverify.eu/resource/Organization/0f350417f66edeb17ba522f134bfff8a
+    }
+    service <repository:WeVerify> {
+        graph ?g1 {
+            ?review ?p ?o1 .
+        }
+        optional {
+            graph ?g2 {
+                ?o1 ?p2 ?o2 .
+            }
+            optional {
+                graph ?g3 {
+                    ?o2 ?p3 ?o3 .
+                } 
+            }
+        }
+    }
+}
