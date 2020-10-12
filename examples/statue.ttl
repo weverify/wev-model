@@ -17,13 +17,18 @@
     schema:contentLocation <Place/2> ;
     schema:dateCreated "2019-05-04T02:47:00"^^xsd:dateTime ;
     schema:author <Organization/NewsCompact> ;
+    schema:inLanguage "en" ;
+    wev:automaticallyIngested "false"^^xsd:boolean ;
 .
 
 <Appearance/3> a schema:CreativeWork, wev:Appearance ;
     schema:url <https://twitter.com/Nkum007/status/952168888183111680> ;
     schema:abstract "A muslim migrant destroying a statue in Italy , because part of the body is showing .. 👇👇👇Europe does not know what is coming their way in next 5 to 15 years..." ;
     schema:dateCreated "2018-01-13T05:22:00"^^xsd:dateTime ;
-    schema:author "@Nkum007" .
+    schema:author "@Nkum007" ;
+    schema:inLanguage "en" ;
+    wev:automaticallyIngested "false"^^xsd:boolean ;
+    .
 
 <Place/2> a schema:Place ;
     schema:address "Italy" ;
@@ -49,6 +54,8 @@
     schema:publisher <Organization/weverify> ;
     schema:appearance <Appearance/2> ;
     schema:appearance <Appearance/3> ;
+    schema:inLanguage "en" ;
+    wev:automaticallyIngested "false"^^xsd:boolean ;
  .
 
 <Person/3> a schema:Person ;
@@ -72,6 +79,8 @@
     wev:misleadershipStrategy <strategy/Location> ;
     puml:right <reviewType/Debunk> ;
     schema:reviewRating <Rating/Normalized/FALSE> , <Rating/(source)/1> ;
+    schema:inLanguage "en" ;
+    wev:automaticallyIngested "false"^^xsd:boolean ;
 .
 
 <ClaimReview/(source)/3> a schema:ClaimReview ;
@@ -83,6 +92,7 @@
     schema:additionalType <reviewType/Debunk> ;
     puml:right <reviewType/Debunk> ;
     schema:reviewRating <Rating/Normalized/FALSE> , <Rating/(source)/1> ;
+    wev:automaticallyIngested "true"^^xsd:boolean ;
 .
 
 <Organization/weverify> a schema:Organization ;
