@@ -51,6 +51,7 @@ objects:
       popularity: {label: "Popularity of the claim", rdfProp: rank:hasRDFRank5, range: decimal}
       language: {label: "Language of the primary text associated with the object.", rdfProp: inLanguage, max: inf, range: string}
       automaticallyIngested: {label: "Records whether this item was automatically ingested or submittted by a person.", rdfProp: wev:automaticallyIngested, range: boolean }
+      lastUpdatedBy: {label: "Records which data service last added information to this item. For internal system use.", rdfProp: wev:lastUpdatedBy, range: string }
   Appearance:
     descr: "Occurrence of a Claim in some CreativeWork (online article or media)"
     type: [wev:Appearance]
@@ -69,6 +70,7 @@ objects:
       containsClaim: {range: Claim, inverseAlias: appearance, min: 1}
       language: {label: "Language of the primary text associated with the object.", rdfProp: inLanguage, max: inf, range: string}
       automaticallyIngested: {label: "Records whether this item was automatically ingested or submittted by a person.", rdfProp: wev:automaticallyIngested, range: boolean }
+      lastUpdatedBy: {label: "Records which data service last added information to this item. For internal system use.", rdfProp: wev:lastUpdatedBy, range: string }
       sharedContent: {label: "DEPRECATED: No data here, use imageLink, videoLink and otherLink properties instead.", range: CreativeWork, max: inf, descr: "Image, video, or audio clip shared as part of social media posting"}
   CreativeWork: # TODO review props, currently they have only `url`
     props:
@@ -93,6 +95,7 @@ objects:
       reviewRating: {range: Rating}
       language: {label: "Language of the primary text associated with the object.", rdfProp: inLanguage, max: inf, range: string}
       automaticallyIngested: {label: "Records whether this item was automatically ingested or submittted by a person.", rdfProp: wev:automaticallyIngested, range: boolean }
+      lastUpdatedBy: {label: "Records which data service last added information to this item. For internal system use.", rdfProp: wev:lastUpdatedBy, range: string }
 
   SupportingEvidence:
     type: [wev:SupportingEvidence]
@@ -102,6 +105,8 @@ objects:
       text:
       additionalType: {range: EvidenceType}
       dateCreated: {range: dateTime} # TODO: can this have smaller precision?
+      lastUpdatedBy: {label: "Records which data service last added information to this item. For internal system use.", rdfProp: wev:lastUpdatedBy, range: string }
+
   Rating:
     kind: abstract
     descr: "Evaluation of a Claim on a variety of scales (numeric or categorial)"
