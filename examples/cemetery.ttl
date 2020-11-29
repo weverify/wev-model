@@ -100,8 +100,11 @@
                          schema:observedNode <Location/1> ;
                          .
 
-<Mention/Location/1> a wev:Mention ;
+<Mention/1> a wev:Mention ;
                      schema:description "Calais" ;
+                     wev:confidence "0.93"^^xsd:decimal ;
+                     wev:startOffset "29"^^xsd:integer ;
+                     wev:endOffset "34"^^xsd:integer ;
                      schema:subjectOf <Appearance/1> ;
                      wev:hasConcept <Location/1> ;
                      .
@@ -109,19 +112,26 @@
 <Location/1> a schema:DefinedTerm ;
              schema:additionalType "Location" ;
              schema:inDefinedTermSet <TermSet/CES> ;
-             schema:termCode "Calais" ;
-             schema:url "https://www.wikidata.org/wiki/Q6454" ;
+             schema:termCode "Q6454" ;
+             schema:name "Calais" ;
+             schema:url <https://www.wikidata.org/wiki/Q6454> ;
              schema:subjectOf <Appearance/1> ;
              .
 
-<Mention/Concept/1> a wev:Mention ;
+<Mention/2> a wev:Mention ;
                     schema:description "CIMETIERE" ;
+                    wev:confidence "0.82"^^xsd:decimal ;
+                    wev:startOffset "15"^^xsd:integer ;
+                    wev:endOffset "24"^^xsd:integer ;
                     schema:subjectOf <Appearance/1> ;
                     wev:hasConcept <Concept/1> ;
                     .
 
-<Mention/Concept/2> a wev:Mention ;
+<Mention/3> a wev:Mention ;
                     schema:description "Cemetary" ;
+                    wev:confidence "0.62"^^xsd:decimal ;
+                    wev:startOffset "38"^^xsd:integer ;
+                    wev:endOffset "46"^^xsd:integer ;
                     schema:subjectOf <Claim/1> ;
                     wev:hasConcept <Concept/1> ;
                     .
@@ -130,6 +140,7 @@
             schema:additionalType "Concept" ;
             schema:inDefinedTermSet <TermSet/spaCy> ;
             schema:termCode "cemetery" ;
+            schema:name "cemetery" ;
             schema:subjectOf <Appearance/1>, <Claim/1> ;
             .
 <TermSet/CES> a schema:DefinedTermSet ;
@@ -171,9 +182,9 @@
 ####################
 <ClaimReview/(source)/1> puml:left <Claim/(source)/1>  .
 <ClaimReview/(source)/1> puml:right <reviewType/Debunk> .
-<Concept/1> puml:left <Mention/Concept/1>
-<Concept/1> puml:right <Mention/Concept/2>
+<Concept/1> puml:left <Mention/2>
+<Concept/1> puml:right <Mention/3>
 <Concept/1> puml:up <Appearance/1>
-<Location/1> puml:left <Mention/Location/1>
+<Location/1> puml:left <Mention/1>
 <Location/1> puml:down <Appearance/1>
 
