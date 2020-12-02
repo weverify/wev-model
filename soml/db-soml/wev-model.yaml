@@ -133,10 +133,10 @@ objects:
     descr: "A specific instance of a concept being mention in the text of a document"
     props:
       description: {descr: "The text that mentions a concept", min: 1}
-      mentionedIn: {desc: "The object that contains the concept mention.", min: 1}
+      mentionedIn: {descr: "The object that contains the concept mention.", min: 1}
       concept: {descr: "The concept that is mentioned", rdfProp: enr:hasConcept, range: DefinedTerm, min: 1}
       producedBy: {descr: "The service or system that produced this annotation.", rdfProp: enr:producedBy, range: SoftwareApplication, min: 1}
-      confidence: {descr: "Confidence in the accuracy of the concept.", rdfOrop: enr:confidence, range: decimal}
+      confidence: {descr: "Confidence in the accuracy of the concept.", rdfProp: enr:confidence, range: decimal}
       relevance: {descr: "Relevance of the concept to the document.", rdfProp: enr:relevance, range: decimal}
       startOffset: {descr: "The beginning offset of the mention in the document text.", range: integer}
       endOffset: {descr: "The end offset of the mention in the document text.", range: integer}
@@ -148,7 +148,7 @@ objects:
     props:
       subtype: {descr: "The type of term.", min: 1}
       code: {descr: "The unique identifier of the concept in the system", rdfProp: termCode, min: 1}
-      name: {descr: "The name of the concept", min: 1}
+      label: {descr: "The name of the concept", rdfProp: schema:name, min: 1}
       termSet: {descr: "The set of concepts produced by a specific enrichment system", range: DefinedTermSet, min: 1, max: inf}
       url: {descr: "The url of the concept in an external system e.g. DBpedia", range: iri}
       mentionedIn: {descr: "An object that mentions the concept.", max: inf}
@@ -158,14 +158,14 @@ objects:
     prefix: TermSet/
     descr: "A list of concepts produced by a specific enrichment system."
     props:
-      name: {descr: "The name of the system that produces this list of concepts.", min: 1}
+      setName: {descr: "The name of the system that produces this list of concepts.", rdfProp: schema:name, min: 1}
 
   SoftwareApplication:
     type: [SoftwareApplication]
     prefix: Software/
     descr: "A system or algorithm used for concept enrichment."
     props:
-      name: {descr: "The name of a system or algorithm.", min: 1}
+      softwareName: {descr: "The name of a system or algorithm.", rdfProp: schema:name, min: 1}
       softwareVersion: {descr: "Detailed description of the version of the software."}
 
   # Thesauri
