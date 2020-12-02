@@ -8,6 +8,7 @@ prefixes:
   # schema: http://schema.org/ # see vocab_iri below
   skos:   http://www.w3.org/2004/02/skos/core#
   wev:    http://weverify.eu/ontology/
+  enr:    http://ontotext.com/enrichments/ontology/
   rank:   http://www.ontotext.com/owlim/RDFRank#
 specialPrefixes:
   base_iri:     http://weverify.eu/resource/
@@ -116,7 +117,7 @@ objects:
       ratingValue: {descr: "Actual rating value", min: 1}
   SourceRating:
     type: [wev:SourceRating]
-    prefix: "Review/"
+    prefix: Review/
     inherits: Rating
     descr: "Evaluation of a Claim on a source-specific scale (numeric or categorial)"
   NormalizedRating:
@@ -126,37 +127,46 @@ objects:
     descr: "Evaluation of a Claim on a normalized scale: FALSE, OTHER, TRUE"
 
   # Enrichments
-  Mention:
-    type: [wev:Mention]
-    prefix: "Mention/"
+  Annotation:
+    type: [enr:Annotation]
+    prefix: Annotation/
     descr: "A specific instance of a concept being mention in the text of a document"
     props:
       description: {descr: "The text that mentions a concept", min: 1}
       mentionedIn: {desc: "The object that contains the concept mention.", min: 1}
-      concept: {descr: "The concept that is mentioned", rdfprop: wev:hasConcept, range: DefinedTerm, min: 1}
-      confidence: {descr: "Confidence in the accuracy of the concept.", rdfprop: wev:confidence, range: decimal}
-      relevance: {descr: "Relevance of the concept to the document.", rdfprop: wev:relevance, range:decimal}
+      concept: {descr: "The concept that is mentioned", rdfProp: enr:hasConcept, range: DefinedTerm, min: 1}
+      producedBy: {descr: "The service or system that produced this annotation.", rdfProp: enr:producedBy, range: SoftwareApplication, min: 1}
+      confidence: {descr: "Confidence in the accuracy of the concept.", rdfOrop: enr:confidence, range: decimal}
+      relevance: {descr: "Relevance of the concept to the document.", rdfProp: enr:relevance, range: decimal}
       startOffset: {descr: "The beginning offset of the mention in the document text.", range: integer}
       endOffset: {descr: "The end offset of the mention in the document text.", range: integer}
 
   DefinedTerm:
     type: [DefinedTerm]
-    prefix: "Concept/"
+    prefix: Concept/
     descr: "A concept recognized by one of the automatic enrichment systems."
     props:
-      type: {descr: "The type of term.", min: 1}
-      code: {descr: "The unique identifier of the concept in the system", rdfprop: termCode, min: 1}
+      subtype: {descr: "The type of term.", min: 1}
+      code: {descr: "The unique identifier of the concept in the system", rdfProp: termCode, min: 1}
       name: {descr: "The name of the concept", min: 1}
-      termSet: {descr: "The set of concepts produced by a specific enrichment system", range: iri}
+      termSet: {descr: "The set of concepts produced by a specific enrichment system", range: DefinedTermSet, min: 1, max: inf}
       url: {descr: "The url of the concept in an external system e.g. DBpedia", range: iri}
       mentionedIn: {descr: "An object that mentions the concept.", max: inf}
 
   DefinedTermSet:
     type: [DefinedTermSet]
-    prefix: "TermSet/"
+    prefix: TermSet/
     descr: "A list of concepts produced by a specific enrichment system."
     props:
       name: {descr: "The name of the system that produces this list of concepts.", min: 1}
+
+  SoftwareApplication:
+    type: [SoftwareApplication]
+    prefix: Software/
+    descr: "A system or algorithm used for concept enrichment."
+    props:
+      name: {descr: "The name of a system or algorithm.", min: 1}
+      softwareVersion: {descr: "Detailed description of the version of the software."}
 
   # Thesauri
   ConceptScheme:

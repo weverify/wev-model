@@ -7,6 +7,7 @@
 @prefix schema: <http://schema.org/>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wev: <http://weverify.eu/ontology/> .
+@prefix enr: <http://ontotext.com/enrichments/ontology/> .
 @prefix geoname: <http://sws.geonames.org/> .
 
 
@@ -91,16 +92,17 @@
            schema:worstRating 1 .
 
 # Enrichment
-<Mention/1> a wev:Mention ;
+<Annotation/1> a enr:Annotation ;
                      schema:description "Calais" ;
-                     wev:confidence "0.93"^^xsd:decimal ;
-                     wev:startOffset "29"^^xsd:integer ;
-                     wev:endOffset "34"^^xsd:integer ;
+                     enr:confidence "0.93"^^xsd:decimal ;
+                     enr:startOffset "29"^^xsd:integer ;
+                     enr:endOffset "34"^^xsd:integer ;
                      schema:subjectOf <Appearance/1> ;
-                     wev:hasConcept <Location/1> ;
+                     enr:hasConcept <Concept/1> ;
+                     enr:producedBy <Software/1> ;
                      .
 
-<Location/1> a schema:DefinedTerm ;
+<Concept/1> a schema:DefinedTerm ;
              schema:additionalType "Location" ;
              schema:inDefinedTermSet <TermSet/CES> ;
              schema:termCode "Q6454" ;
@@ -111,24 +113,26 @@
 
 <Mention/2> a wev:Mention ;
                     schema:description "CIMETIERE" ;
-                    wev:confidence "0.82"^^xsd:decimal ;
-                    wev:startOffset "15"^^xsd:integer ;
-                    wev:endOffset "24"^^xsd:integer ;
+                    enr:confidence "0.82"^^xsd:decimal ;
+                    enr:startOffset "15"^^xsd:integer ;
+                    enr:endOffset "24"^^xsd:integer ;
                     schema:subjectOf <Appearance/1> ;
-                    wev:hasConcept <Concept/1> ;
+                    enr:hasConcept <Concept/2> ;
+                    enr:producedBy <Software/2> ;
                     .
 
 <Mention/3> a wev:Mention ;
                     schema:description "Cemetary" ;
-                    wev:confidence "0.62"^^xsd:decimal ;
-                    wev:startOffset "38"^^xsd:integer ;
-                    wev:endOffset "46"^^xsd:integer ;
+                    enr:confidence "0.62"^^xsd:decimal ;
+                    enr:startOffset "38"^^xsd:integer ;
+                    enr:endOffset "46"^^xsd:integer ;
                     schema:subjectOf <Claim/(source)/1> ;
-                    wev:hasConcept <Concept/1> ;
+                    enr:hasConcept <Concept/2> ;
+                    enr:producedBy <Software/2> ;
                     .
 
-<Concept/1> a schema:DefinedTerm ;
-            schema:additionalType "Concept" ;
+<Concept/2> a schema:DefinedTerm ;
+            schema:additionalType "General" ;
             schema:inDefinedTermSet <TermSet/spaCy> ;
             schema:termCode "cemetery" ;
             schema:name "cemetery" ;
@@ -137,10 +141,29 @@
 <TermSet/CES> a schema:DefinedTermSet ;
               schema:name "CES concepts" ;
               .
+<Software/1> a schema:SoftwareApplication ;
+             schema:name "CES" ;
+             schema:softwareVersion """{
+  "Build-Branch": "UNKNOWN",
+  "Build-Timestamp": "2020-11-15T06:47:46Z",
+  "Implementation-Version": "3.8.3",
+  "Archiver-Version": "Plexus Archiver",
+  "Built-By": "onto",
+  "Git-SHA": "7f53a1f18b236db2a70a987d1cbf0a295e06237e",
+  "Created-By": "Apache Maven 3.6.3",
+  "Build-Jdk": "1.8.0_232",
+  "Manifest-Version": "1.0"
+}""" ;
+             .
 
 <TermSet/spaCy> a schema:DefinedTermSet ;
                 schema:name "spaCy concepts" ;
                 .
+
+<Software/2> a schema:SoftwareApplication ;
+             schema:name "spaCy" ;
+             schema:softwareVersion "en_core_web_sm-3.0.0a0" ;
+             .
 
 # Concepts
 
