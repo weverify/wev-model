@@ -7,7 +7,7 @@
 @prefix schema: <http://schema.org/>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wev: <http://weverify.eu/ontology/> .
-@prefix enr: <http://ontotext.com/enrichments/ontology/> .
+@prefix oeo: <http://ontotext.com/enrichment/ontology/> .
 @prefix geoname: <http://sws.geonames.org/> .
 
 
@@ -92,14 +92,14 @@
            schema:worstRating 1 .
 
 # Enrichment
-<Annotation/1> a enr:Annotation ;
+<Annotation/1> a oeo:Annotation ;
                      schema:description "Calais" ;
-                     enr:confidence "0.93"^^xsd:decimal ;
-                     enr:startOffset "29"^^xsd:integer ;
-                     enr:endOffset "34"^^xsd:integer ;
+                     oeo:confidence "0.93"^^xsd:decimal ;
+                     oeo:startOffset "29"^^xsd:integer ;
+                     oeo:endOffset "34"^^xsd:integer ;
                      schema:subjectOf <Appearance/1> ;
-                     enr:hasConcept <Concept/1> ;
-                     enr:producedBy <Software/1> ;
+                     oeo:hasConcept <Concept/1> ;
+                     oeo:producedBy <Software/1> ;
                      .
 
 <Concept/1> a schema:DefinedTerm ;
@@ -111,25 +111,25 @@
              schema:subjectOf <Appearance/1> ;
              .
 
-<Mention/2> a wev:Mention ;
-                    schema:description "CIMETIERE" ;
-                    enr:confidence "0.82"^^xsd:decimal ;
-                    enr:startOffset "15"^^xsd:integer ;
-                    enr:endOffset "24"^^xsd:integer ;
-                    schema:subjectOf <Appearance/1> ;
-                    enr:hasConcept <Concept/2> ;
-                    enr:producedBy <Software/2> ;
-                    .
+<Annotation/2> a oeo:Annotation ;
+               schema:description "CIMETIERE" ;
+               oeo:confidence "0.82"^^xsd:decimal ;
+               oeo:startOffset "15"^^xsd:integer ;
+               oeo:endOffset "24"^^xsd:integer ;
+               schema:subjectOf <Appearance/1> ;
+               oeo:hasConcept <Concept/2> ;
+               oeo:producedBy <Software/2> ;
+               .
 
-<Mention/3> a wev:Mention ;
-                    schema:description "Cemetary" ;
-                    enr:confidence "0.62"^^xsd:decimal ;
-                    enr:startOffset "38"^^xsd:integer ;
-                    enr:endOffset "46"^^xsd:integer ;
-                    schema:subjectOf <Claim/(source)/1> ;
-                    enr:hasConcept <Concept/2> ;
-                    enr:producedBy <Software/2> ;
-                    .
+<Annotation/3> a oeo:Annotation ;
+               schema:description "Cemetary" ;
+               oeo:confidence "0.62"^^xsd:decimal ;
+               oeo:startOffset "38"^^xsd:integer ;
+               oeo:endOffset "46"^^xsd:integer ;
+               schema:subjectOf <Claim/(source)/1> ;
+               oeo:hasConcept <Concept/2> ;
+               oeo:producedBy <Software/2> ;
+               .
 
 <Concept/2> a schema:DefinedTerm ;
             schema:additionalType "General" ;
@@ -194,5 +194,8 @@
 .
 
 ####################
-<ClaimReview/(source)/1> puml:left <Claim/(source)/1>  .
-<ClaimReview/(source)/1> puml:right <reviewType/Debunk> .
+<Appearance/1> puml:right-hidden <Claim/(source)/1> .
+<ClaimReview/(source)/1> puml:left-hidden <Claim/(source)/1>  .
+<ClaimReview/(source)/1> puml:right-hidden <reviewType/Debunk> .
+<Software/2> puml:down-hidden <Annotation/2> .
+<Software/2> puml:down-hidden <Annotation/3> .
