@@ -1,11 +1,10 @@
 id:          /soml/{{.Values.deployment.platform.sparql_endpoint_repo}}
 label:       "WeVerify Semantic Objects Model"
 created:     2019-10-17
-updated:     2020-10-12
+updated:     2020-12-04
 creator:     http://ontotext.com
 versionInfo: 1.0
 prefixes:
-  # schema: http://schema.org/ # see vocab_iri below
   skos:   http://www.w3.org/2004/02/skos/core#
   wev:    http://weverify.eu/ontology/
   oeo:    http://ontotext.com/enrichment/ontology/
@@ -15,7 +14,6 @@ specialPrefixes:
   vocab_iri:    http://schema.org/
   vocab_prefix: schema
   ontology_iri: http://weverify.eu/resource/ontology
-  shape_iri:    http://weverify.eu/resource/shape/
 objects:
   # Agents, places
   Agent:
@@ -201,3 +199,10 @@ objects:
     #typeProp: "skos:inScheme"
     type: [evidence]
     prefix: evidence/
+rbac:
+  roles:
+    admin:
+      description: "Administrator role, can read, write and delete objects and schema"
+      actions: [
+       "*/*/*"
+      ]
