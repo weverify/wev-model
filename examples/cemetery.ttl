@@ -7,6 +7,7 @@
 @prefix schema: <http://schema.org/>.
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wev: <http://weverify.eu/ontology/> .
+@prefix oeo: <http://ontotext.com/enrichment/ontology/> .
 @prefix geoname: <http://sws.geonames.org/> .
 
 
@@ -90,6 +91,79 @@
            schema:ratingValue 2 ;
            schema:worstRating 1 .
 
+# Enrichment
+<Annotation/1> a oeo:Annotation ;
+                     schema:description "Calais" ;
+                     oeo:confidence "0.93"^^xsd:decimal ;
+                     oeo:startOffset "29"^^xsd:integer ;
+                     oeo:endOffset "34"^^xsd:integer ;
+                     schema:subjectOf <Appearance/1> ;
+                     oeo:hasConcept <Concept/1> ;
+                     oeo:producedBy <Software/1> ;
+                     .
+
+<Concept/1> a schema:DefinedTerm ;
+             schema:additionalType "Location" ;
+             schema:inDefinedTermSet <TermSet/CES> ;
+             schema:termCode "Q6454" ;
+             schema:name "Calais" ;
+             schema:url <https://www.wikidata.org/wiki/Q6454> ;
+             schema:subjectOf <Appearance/1> ;
+             .
+
+<Annotation/2> a oeo:Annotation ;
+               schema:description "CIMETIERE" ;
+               oeo:confidence "0.82"^^xsd:decimal ;
+               oeo:startOffset "15"^^xsd:integer ;
+               oeo:endOffset "24"^^xsd:integer ;
+               schema:subjectOf <Appearance/1> ;
+               oeo:hasConcept <Concept/2> ;
+               oeo:producedBy <Software/2> ;
+               .
+
+<Annotation/3> a oeo:Annotation ;
+               schema:description "Cemetary" ;
+               oeo:confidence "0.62"^^xsd:decimal ;
+               oeo:startOffset "38"^^xsd:integer ;
+               oeo:endOffset "46"^^xsd:integer ;
+               schema:subjectOf <Claim/(source)/1> ;
+               oeo:hasConcept <Concept/2> ;
+               oeo:producedBy <Software/2> ;
+               .
+
+<Concept/2> a schema:DefinedTerm ;
+            schema:additionalType "General" ;
+            schema:inDefinedTermSet <TermSet/spaCy> ;
+            schema:termCode "cemetery" ;
+            schema:name "cemetery" ;
+            schema:subjectOf <Appearance/1>, <Claim/(source)/1> ;
+            .
+<TermSet/CES> a schema:DefinedTermSet ;
+              schema:name "CES concepts" ;
+              .
+<Software/1> a schema:SoftwareApplication ;
+             schema:name "CES" ;
+             schema:softwareVersion """{
+  "Build-Branch": "UNKNOWN",
+  "Build-Timestamp": "2020-11-15T06:47:46Z",
+  "Implementation-Version": "3.8.3",
+  "Archiver-Version": "Plexus Archiver",
+  "Built-By": "onto",
+  "Git-SHA": "7f53a1f18b236db2a70a987d1cbf0a295e06237e",
+  "Created-By": "Apache Maven 3.6.3",
+  "Build-Jdk": "1.8.0_232",
+  "Manifest-Version": "1.0"
+}""" ;
+             .
+
+<TermSet/spaCy> a schema:DefinedTermSet ;
+                schema:name "spaCy concepts" ;
+                .
+
+<Software/2> a schema:SoftwareApplication ;
+             schema:name "spaCy" ;
+             schema:softwareVersion "en_core_web_sm-3.0.0a0" ;
+             .
 
 # Concepts
 
@@ -120,5 +194,8 @@
 .
 
 ####################
-<ClaimReview/(source)/1> puml:left <Claim/(source)/1>  .
-<ClaimReview/(source)/1> puml:right <reviewType/Debunk> .
+<Appearance/1> puml:right-hidden <Claim/(source)/1> .
+<ClaimReview/(source)/1> puml:left-hidden <Claim/(source)/1>  .
+<ClaimReview/(source)/1> puml:right-hidden <reviewType/Debunk> .
+<Software/2> puml:down-hidden <Annotation/2> .
+<Software/2> puml:down-hidden <Annotation/3> .

@@ -1,0 +1,172 @@
+@base <http://weverify.eu/resource/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix puml:     <http://plantuml.com/ontology#>.
+@prefix schema: <http://schema.org/>.
+@prefix oeo: <http://ontotext.com/enrichment/ontology/> .
+
+# Enrichment
+
+
+<Annotation/4> a oeo:Annotation ;
+               schema:description "migrant" ;
+               oeo:confidence "0.79"^^xsd:decimal ;
+               oeo:startOffset "9"^^xsd:integer ;
+               oeo:endOffset "16"^^xsd:integer ;
+               schema:subjectOf <Appearance/2> ;
+               oeo:hasConcept <Concept/3> ;
+               oeo:producedBy <Software/2> ;
+               .
+
+<Annotation/5> a oeo:Annotation ;
+               schema:description "migrant" ;
+               oeo:confidence "0.72"^^xsd:decimal ;
+               oeo:startOffset "9"^^xsd:integer ;
+               oeo:endOffset "16"^^xsd:integer ;
+               schema:subjectOf <Claim/(source)/2> ;
+               oeo:hasConcept <Concept/3> ;
+               oeo:producedBy <Software/2> ;
+               .
+
+<Concept/3> a schema:DefinedTerm ;
+            schema:additionalType "General" ;
+            schema:inDefinedTermSet <TermSet/spaCy> ;
+            schema:termCode "migrant" ;
+            schema:name "migrant" ;
+            schema:subjectOf <Appearance/2>, <Claim/(source)/2> ;
+            .
+
+
+<Annotation/6> a oeo:Annotation ;
+               schema:description "Italy" ;
+               oeo:confidence "0.94"^^xsd:decimal ;
+               oeo:startOffset "40"^^xsd:integer ;
+               oeo:endOffset "45"^^xsd:integer ;
+               schema:subjectOf <Appearance/2> ;
+               oeo:hasConcept <Concept/4> ;
+               oeo:producedBy <Software/1> ;
+               .
+
+<Annotation/7> a oeo:Annotation ;
+               schema:description "Italy" ;
+               oeo:confidence "0.95"^^xsd:decimal ;
+               oeo:startOffset "45"^^xsd:integer ;
+               oeo:endOffset "50"^^xsd:integer ;
+               schema:subjectOf <Claim/(source)/2> ;
+               oeo:hasConcept <Concept/4> ;
+               oeo:producedBy <Software/1> ;
+               .
+
+
+<Concept/4> a schema:DefinedTerm ;
+            schema:additionalType "Location" ;
+	    schema:inDefinedTermSet <TermSet/CES> ;
+	    schema:termCode "Q38" ;
+	    schema:name "Italy" ;
+	    schema:subjectOf <Appearance/2>, <Claim/(source)/2> ;
+	    .
+
+
+<Annotation/8> a oeo:Annotation ;
+               schema:description "Italy" ;
+               oeo:confidence "0.80"^^xsd:decimal ;
+               oeo:startOffset "84"^^xsd:integer ;
+               oeo:endOffset "90"^^xsd:integer ;
+               schema:subjectOf <Appearance/2> ;
+               oeo:hasConcept <Concept/5> ;
+               oeo:producedBy <Software/1> ;
+               .
+
+<Concept/5> a schema:DefinedTerm ;
+            schema:additionalType "Location" ;
+	    schema:inDefinedTermSet <TermSet/CES> ;
+	    schema:termCode "Q46" ;
+	    schema:name "Europe" ;
+	    schema:subjectOf <Appearance/2>, <Claim/(source)/2> ;
+	    .
+
+<Annotation/9> a oeo:Annotation ;
+               schema:description "vandalism" ;
+               oeo:confidence "0.62"^^xsd:decimal ;
+               oeo:startOffset "39"^^xsd:integer ;
+               oeo:endOffset "47"^^xsd:integer ;
+               schema:subjectOf <ClaiReview/(source)/2> ;
+               oeo:hasConcept <Concept/6> ;
+               oeo:producedBy <Software/2> ;
+               .
+
+<Concept/6> a schema:DefinedTerm ;
+            schema:additionalType "General" ;
+	    schema:inDefinedTermSet <TermSet/spaCy> ;
+	    schema:termCode "vandalism" ;
+	    schema:name "vandalism" ;
+	    schema:subjectOf <ClaimReview/(source)/2> ;
+	    .
+
+<Annotation/10> a oeo:Annotation ;
+               schema:description "Italy" ;
+               oeo:confidence "0.91"^^xsd:decimal ;
+               oeo:startOffset "84"^^xsd:integer ;
+               oeo:endOffset "90"^^xsd:integer ;
+               schema:subjectOf <Appearance/2> ;
+               oeo:hasConcept <Concept/5> ;
+               oeo:producedBy <Software/1> ;
+               .
+
+<Concept/7> a schema:DefinedTerm ;
+            schema:additionalType "Location" ;
+	    schema:inDefinedTermSet <TermSet/CES> ;
+	    schema:termCode "Q262" ;
+	    schema:name "Algeria" ;
+	    schema:subjectOf <ClaimReview/(source)/2> ;
+	    .
+
+<TermSet/CES> a schema:DefinedTermSet ;
+              schema:name "CES concepts" ;
+              .
+<Software/1> a schema:SoftwareApplication ;
+             schema:name "CES" ;
+             schema:softwareVersion """{
+  "Build-Branch": "UNKNOWN",
+  "Build-Timestamp": "2020-11-15T06:47:46Z",
+  "Implementation-Version": "3.8.3",
+  "Archiver-Version": "Plexus Archiver",
+  "Built-By": "onto",
+  "Git-SHA": "7f53a1f18b236db2a70a987d1cbf0a295e06237e",
+  "Created-By": "Apache Maven 3.6.3",
+  "Build-Jdk": "1.8.0_232",
+  "Manifest-Version": "1.0"
+}""" ;
+             .
+
+<TermSet/spaCy> a schema:DefinedTermSet ;
+                schema:name "spaCy concepts" ;
+                .
+
+<Software/2> a schema:SoftwareApplication ;
+             schema:name "spaCy" ;
+             schema:softwareVersion "en_core_web_sm-3.0.0a0" ;
+             .
+
+##########################
+<TermSet/spaCy> puml:left-hidden <Concept/3> .
+<TermSet/CES> puml:left-hidden <Concept/4> .
+<TermSet/CES> puml:left-hidden <Concept/5> .
+<TermSet/spaCy> puml:left-hidden <Concept/6> .
+<TermSet/CES> puml:left-hidden <Concept/7> .
+<Software/2> puml:right-hidden <Annotation/4> .
+<Software/2> puml:right-hidden <Annotation/5> .
+<Software/1> puml:right-hidden <Annotation/6> .
+<Software/1> puml:right-hidden <Annotation/7> .
+<Software/1> puml:right-hidden <Annotation/8> .
+<Software/2> puml:right-hidden <Annotation/9> .
+<Software/1> puml:right-hidden <Annotation/10> .
+<Concept/3> puml:left-hidden <Annotation/4> .
+<Concept/3> puml:left-hidden <Annotation/5> .
+<Concept/4> puml:left-hidden <Annotation/6> .
+<Concept/4> puml:left-hidden <Annotation/7> .
+<Concept/5> puml:left-hidden <Annotation/8> .
+<Concept/6> puml:left-hidden <Annotation/9> .
+<Concept/7> puml:left-hidden <Annotation/10> .
+<Concept/3> puml:up-hidden <Concept/4> .
+<Concept/5> puml:up-hidden <Concept/6> .
+<Concept/4> puml:up-hidden <Concept/7> .

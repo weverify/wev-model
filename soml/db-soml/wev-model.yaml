@@ -1,20 +1,19 @@
 id:          /soml/{{.Values.deployment.platform.sparql_endpoint_repo}}
 label:       "WeVerify Semantic Objects Model"
 created:     2019-10-17
-updated:     2020-10-12
+updated:     2020-12-04
 creator:     http://ontotext.com
 versionInfo: 1.0
 prefixes:
-  # schema: http://schema.org/ # see vocab_iri below
   skos:   http://www.w3.org/2004/02/skos/core#
   wev:    http://weverify.eu/ontology/
+  oeo:    http://ontotext.com/enrichment/ontology/
   rank:   http://www.ontotext.com/owlim/RDFRank#
 specialPrefixes:
   base_iri:     http://weverify.eu/resource/
   vocab_iri:    http://schema.org/
   vocab_prefix: schema
   ontology_iri: http://weverify.eu/resource/ontology
-  shape_iri:    http://weverify.eu/resource/shape/
 objects:
   # Agents, places
   Agent:
@@ -37,40 +36,44 @@ objects:
       address:
       sameAs: {range: iri, descr: "Reference to Geonames"}
   # Main business objects
+  TextDocument:
+    descr: "A superclass interface for objects that contain text which might be enriched with concepts and annotation."
+    kind: abstract
+    props:
+      dateCreated: {range: dateTime} # TODO: can this have smaller precision?
+      automaticallyIngested: {label: "Records whether this item was automatically ingested or submittted by a person.", rdfProp: wev:automaticallyIngested, range: boolean }
+      language: {label: "Language of the primary text associated with the object.", rdfProp: inLanguage, max: inf, range: string}
+      mentions: {descr: "Direct link to concepts in the text of the document.", range: DefinedTerm, inverseAlias: mentionedIn, max: inf}
+      annotation: {descr: "Link to annotations in the text of the document.", range: Annotation, inverseAlias: occursIn, max: inf}
+      lastUpdatedBy: {label: "Records which data service last added information to this item. For internal system use.", rdfProp: wev:lastUpdatedBy, range: string }
   Claim:
     descr: "A specific, factually-oriented claim that may be true or false"
     name: text # Note: this could be quite long, but we still prefer to have it
     prefix: Claim/
+    inherits: TextDocument
     props:
       text: {min: 1}
-      dateCreated: {range: dateTime} # TODO: can this have smaller precision?
       author: {range: Agent}
       publisher: {range: Organization}
       appearance: {range: Appearance, max: inf}
       review: {label: "Reviews for a Claim", range: ClaimReview, rangeCheck: true, max: inf, inverseAlias: "itemReviewed" }
       popularity: {label: "Popularity of the claim", rdfProp: rank:hasRDFRank5, range: decimal}
-      language: {label: "Language of the primary text associated with the object.", rdfProp: inLanguage, max: inf, range: string}
-      automaticallyIngested: {label: "Records whether this item was automatically ingested or submittted by a person.", rdfProp: wev:automaticallyIngested, range: boolean }
-      lastUpdatedBy: {label: "Records which data service last added information to this item. For internal system use.", rdfProp: wev:lastUpdatedBy, range: string }
   Appearance:
     descr: "Occurrence of a Claim in some CreativeWork (online article or media)"
     type: [wev:Appearance]
     prefix: Appearance/
+    inherits: TextDocument
     props:
       url: {range: string, min: 1}
       archiveUrl: {range: iri}
       schema:type: {rdfProp: schema:additionalType}
       caption: {rdfProp: schema:abstract}
       contentLocation: {label: "DEPRECATED: Currently only exists in example data and should not be used.", range: Place, max: inf, descr: "Place(s) mentioned in the content"}
-      dateCreated: {range: dateTime} # TODO: can this have smaller precision?
       imageLink: {max: inf}
       videoLink: {max: inf}
       otherLink: {max: inf}
       author: {range: Agent}
       containsClaim: {range: Claim, inverseAlias: appearance, min: 1}
-      language: {label: "Language of the primary text associated with the object.", rdfProp: inLanguage, max: inf, range: string}
-      automaticallyIngested: {label: "Records whether this item was automatically ingested or submittted by a person.", rdfProp: wev:automaticallyIngested, range: boolean }
-      lastUpdatedBy: {label: "Records which data service last added information to this item. For internal system use.", rdfProp: wev:lastUpdatedBy, range: string }
       sharedContent: {label: "DEPRECATED: No data here, use imageLink, videoLink and otherLink properties instead.", range: CreativeWork, max: inf, descr: "Image, video, or audio clip shared as part of social media posting"}
   CreativeWork: # TODO review props, currently they have only `url`
     props:
@@ -79,13 +82,12 @@ objects:
       dateCreated: {range: dateTime} # TODO: can this have smaller precision?
   ClaimReview:
     descr: "Fact-checking review of a claim made or reported"
-    # name: reviewBody # Too long for this purpose
     prefix: ClaimReview/
+    inherits: TextDocument
     props:
       itemReviewed: {range: Claim, min: 1}
       author: {range: Agent, min: 1}
       publisher: {range: Organization}
-      dateCreated: {range: dateTime}
       reviewBody: {min: 1}
       reviewHtml:
       hasPart: {range: SupportingEvidence, max: inf}
@@ -93,9 +95,6 @@ objects:
       additionalType: {range: ReviewType}
       misleadershipStrategy: {rdfProp: wev:misleadershipStrategy, range: MisleadershipStrategy}
       reviewRating: {range: Rating}
-      language: {label: "Language of the primary text associated with the object.", rdfProp: inLanguage, max: inf, range: string}
-      automaticallyIngested: {label: "Records whether this item was automatically ingested or submittted by a person.", rdfProp: wev:automaticallyIngested, range: boolean }
-      lastUpdatedBy: {label: "Records which data service last added information to this item. For internal system use.", rdfProp: wev:lastUpdatedBy, range: string }
 
   SupportingEvidence:
     type: [wev:SupportingEvidence]
@@ -116,7 +115,7 @@ objects:
       ratingValue: {descr: "Actual rating value", min: 1}
   SourceRating:
     type: [wev:SourceRating]
-    prefix: "Review/"
+    prefix: Review/
     inherits: Rating
     descr: "Evaluation of a Claim on a source-specific scale (numeric or categorial)"
   NormalizedRating:
@@ -124,6 +123,49 @@ objects:
     prefix: "Review/Normalized/"
     inherits: Rating
     descr: "Evaluation of a Claim on a normalized scale: FALSE, OTHER, TRUE"
+
+  # Enrichments
+  Annotation:
+    type: [oeo:Annotation]
+    prefix: Annotation/
+    descr: "A specific instance of a concept being mention in the text of a document"
+    props:
+      description: {descr: "The text of the annotations", min: 1}
+      occursIn: {descr: "The object where the annotation was discovered.", range: TextDocument, rdfProp: oeo:occursIn, min: 1}
+      concept: {descr: "The concept that is mentioned", rdfProp: oeo:hasConcept, range: DefinedTerm, min: 1}
+      producedBy: {descr: "The service or system that produced this annotation.", rdfProp: oeo:producedBy, range: SoftwareApplication, min: 1}
+      confidence: {descr: "Confidence in the accuracy of the annotation.", rdfProp: oeo:confidence, range: decimal}
+      relevance: {descr: "Relevance of the annotation to the document.", rdfProp: oeo:relevance, range: decimal}
+      startOffset: {descr: "The beginning offset of the mention in the document text.", range: integer}
+      endOffset: {descr: "The end offset of the mention in the document text.", range: integer}
+
+  DefinedTerm:
+    type: [DefinedTerm]
+    prefix: Concept/
+    descr: "A concept recognized by one of the automatic enrichment systems."
+    props:
+      subtype: {descr: "The type of term.", min: 1}
+      code: {descr: "The unique identifier of the concept in the system", rdfProp: termCode, min: 1}
+      label: {descr: "The name of the concept", rdfProp: schema:name, min: 1}
+      termSet: {descr: "The set of concepts produced by a specific enrichment system", range: DefinedTermSet, min: 1, max: inf}
+      url: {descr: "The url of the concept in an external system e.g. DBpedia", range: iri}
+      mentionedIn: {descr: "An object that mentions the concept.", range: TextDocument, max: inf}
+
+  DefinedTermSet:
+    type: [DefinedTermSet]
+    prefix: TermSet/
+    descr: "A list of concepts produced by a specific enrichment system."
+    props:
+      setName: {descr: "The name of the system that produces this list of concepts.", rdfProp: schema:name, min: 1}
+
+  SoftwareApplication:
+    type: [SoftwareApplication]
+    prefix: Software/
+    descr: "A system or algorithm used for concept enrichment."
+    props:
+      softwareName: {descr: "The name of a system or algorithm.", rdfProp: schema:name, min: 1}
+      softwareVersion: {descr: "Detailed description of the version of the software."}
+
   # Thesauri
   ConceptScheme:
     descr: "A thesaurus (nomenclature)"
@@ -157,3 +199,10 @@ objects:
     #typeProp: "skos:inScheme"
     type: [evidence]
     prefix: evidence/
+rbac:
+  roles:
+    admin:
+      description: "Administrator role, can read, write and delete objects and schema"
+      actions: [
+       "*/*/*"
+      ]
