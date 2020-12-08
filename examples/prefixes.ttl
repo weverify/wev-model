@@ -8,6 +8,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix wev: <http://weverify.eu/ontology/> .
 @prefix geoname: <http://sws.geonames.org/> .
+@prefix oeo: <http://ontotext.com/enrichment/ontology/> .
 @prefix oa: <http://www.w3.org/ns/oa#>.
 
 #PUML
