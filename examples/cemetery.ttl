@@ -97,7 +97,7 @@
                      oeo:confidence "0.93"^^xsd:decimal ;
                      oeo:startOffset "29"^^xsd:integer ;
                      oeo:endOffset "34"^^xsd:integer ;
-                     schema:subjectOf <Appearance/1> ;
+                     oeo:occursIn <Appearance/1> ;
                      oeo:hasConcept <Concept/1> ;
                      oeo:producedBy <Software/1> ;
                      .
@@ -108,7 +108,7 @@
              schema:termCode "Q6454" ;
              schema:name "Calais" ;
              schema:url <https://www.wikidata.org/wiki/Q6454> ;
-             schema:subjectOf <Appearance/1> ;
+             schema:mentionedIn <Appearance/1> ;
              .
 
 <Annotation/2> a oeo:Annotation ;
@@ -116,7 +116,7 @@
                oeo:confidence "0.82"^^xsd:decimal ;
                oeo:startOffset "15"^^xsd:integer ;
                oeo:endOffset "24"^^xsd:integer ;
-               schema:subjectOf <Appearance/1> ;
+               oeo:occursIn <Appearance/1> ;
                oeo:hasConcept <Concept/2> ;
                oeo:producedBy <Software/2> ;
                .
@@ -126,7 +126,7 @@
                oeo:confidence "0.62"^^xsd:decimal ;
                oeo:startOffset "38"^^xsd:integer ;
                oeo:endOffset "46"^^xsd:integer ;
-               schema:subjectOf <Claim/(source)/1> ;
+               oeo:occursIn <Claim/(source)/1> ;
                oeo:hasConcept <Concept/2> ;
                oeo:producedBy <Software/2> ;
                .
@@ -136,7 +136,7 @@
             schema:inDefinedTermSet <TermSet/spaCy> ;
             schema:termCode "cemetery" ;
             schema:name "cemetery" ;
-            schema:subjectOf <Appearance/1>, <Claim/(source)/1> ;
+            schema:mentionedIn <Appearance/1>, <Claim/(source)/1> ;
             .
 <TermSet/CES> a schema:DefinedTermSet ;
               schema:name "CES concepts" ;

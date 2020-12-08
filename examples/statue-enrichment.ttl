@@ -12,7 +12,7 @@
                oeo:confidence "0.79"^^xsd:decimal ;
                oeo:startOffset "9"^^xsd:integer ;
                oeo:endOffset "16"^^xsd:integer ;
-               schema:subjectOf <Appearance/2> ;
+               oeo:occursIn <Appearance/2> ;
                oeo:hasConcept <Concept/3> ;
                oeo:producedBy <Software/2> ;
                .
@@ -22,7 +22,7 @@
                oeo:confidence "0.72"^^xsd:decimal ;
                oeo:startOffset "9"^^xsd:integer ;
                oeo:endOffset "16"^^xsd:integer ;
-               schema:subjectOf <Claim/(source)/2> ;
+               oeo:occursIn <Claim/(source)/2> ;
                oeo:hasConcept <Concept/3> ;
                oeo:producedBy <Software/2> ;
                .
@@ -32,7 +32,7 @@
             schema:inDefinedTermSet <TermSet/spaCy> ;
             schema:termCode "migrant" ;
             schema:name "migrant" ;
-            schema:subjectOf <Appearance/2>, <Claim/(source)/2> ;
+            schema:mentionedIn <Appearance/2>, <Claim/(source)/2> ;
             .
 
 
@@ -41,7 +41,7 @@
                oeo:confidence "0.94"^^xsd:decimal ;
                oeo:startOffset "40"^^xsd:integer ;
                oeo:endOffset "45"^^xsd:integer ;
-               schema:subjectOf <Appearance/2> ;
+               oeo:occursIn <Appearance/2> ;
                oeo:hasConcept <Concept/4> ;
                oeo:producedBy <Software/1> ;
                .
@@ -51,7 +51,7 @@
                oeo:confidence "0.95"^^xsd:decimal ;
                oeo:startOffset "45"^^xsd:integer ;
                oeo:endOffset "50"^^xsd:integer ;
-               schema:subjectOf <Claim/(source)/2> ;
+               oeo:occursIn <Claim/(source)/2> ;
                oeo:hasConcept <Concept/4> ;
                oeo:producedBy <Software/1> ;
                .
@@ -62,7 +62,7 @@
 	    schema:inDefinedTermSet <TermSet/CES> ;
 	    schema:termCode "Q38" ;
 	    schema:name "Italy" ;
-	    schema:subjectOf <Appearance/2>, <Claim/(source)/2> ;
+	    schema:mentionedIn <Appearance/2>, <Claim/(source)/2> ;
 	    .
 
 
@@ -71,7 +71,7 @@
                oeo:confidence "0.80"^^xsd:decimal ;
                oeo:startOffset "84"^^xsd:integer ;
                oeo:endOffset "90"^^xsd:integer ;
-               schema:subjectOf <Appearance/2> ;
+               oeo:occursIn <Appearance/2> ;
                oeo:hasConcept <Concept/5> ;
                oeo:producedBy <Software/1> ;
                .
@@ -81,7 +81,7 @@
 	    schema:inDefinedTermSet <TermSet/CES> ;
 	    schema:termCode "Q46" ;
 	    schema:name "Europe" ;
-	    schema:subjectOf <Appearance/2>, <Claim/(source)/2> ;
+	    schema:mentionedIn <Appearance/2>, <Claim/(source)/2> ;
 	    .
 
 <Annotation/9> a oeo:Annotation ;
@@ -89,7 +89,7 @@
                oeo:confidence "0.62"^^xsd:decimal ;
                oeo:startOffset "39"^^xsd:integer ;
                oeo:endOffset "47"^^xsd:integer ;
-               schema:subjectOf <ClaiReview/(source)/2> ;
+               oeo:occursIn <ClaiReview/(source)/2> ;
                oeo:hasConcept <Concept/6> ;
                oeo:producedBy <Software/2> ;
                .
@@ -99,7 +99,7 @@
 	    schema:inDefinedTermSet <TermSet/spaCy> ;
 	    schema:termCode "vandalism" ;
 	    schema:name "vandalism" ;
-	    schema:subjectOf <ClaimReview/(source)/2> ;
+	    schema:mentionedIn <ClaimReview/(source)/2> ;
 	    .
 
 <Annotation/10> a oeo:Annotation ;
@@ -107,7 +107,7 @@
                oeo:confidence "0.91"^^xsd:decimal ;
                oeo:startOffset "84"^^xsd:integer ;
                oeo:endOffset "90"^^xsd:integer ;
-               schema:subjectOf <Appearance/2> ;
+               oeo:occursIn <Appearance/2> ;
                oeo:hasConcept <Concept/5> ;
                oeo:producedBy <Software/1> ;
                .
@@ -117,7 +117,7 @@
 	    schema:inDefinedTermSet <TermSet/CES> ;
 	    schema:termCode "Q262" ;
 	    schema:name "Algeria" ;
-	    schema:subjectOf <ClaimReview/(source)/2> ;
+	    schema:mentionedIn <ClaimReview/(source)/2> ;
 	    .
 
 <TermSet/CES> a schema:DefinedTermSet ;
@@ -148,25 +148,30 @@
              .
 
 ##########################
-<TermSet/spaCy> puml:left-hidden <Concept/3> .
-<TermSet/CES> puml:left-hidden <Concept/4> .
-<TermSet/CES> puml:left-hidden <Concept/5> .
-<TermSet/spaCy> puml:left-hidden <Concept/6> .
+<TermSet/spaCy> puml:top-hidden <Concept/3> .
+<TermSet/CES> puml:top-hidden <Concept/4> .
+<TermSet/CES> puml:top-hidden <Concept/5> .
+<TermSet/spaCy> puml:top-hidden <Concept/6> .
+<TermSet/CES> puml:top-hidden <Concept/7> .
 <TermSet/CES> puml:left-hidden <Concept/7> .
-<Software/2> puml:right-hidden <Annotation/4> .
-<Software/2> puml:right-hidden <Annotation/5> .
-<Software/1> puml:right-hidden <Annotation/6> .
-<Software/1> puml:right-hidden <Annotation/7> .
-<Software/1> puml:right-hidden <Annotation/8> .
-<Software/2> puml:right-hidden <Annotation/9> .
-<Software/1> puml:right-hidden <Annotation/10> .
-<Concept/3> puml:left-hidden <Annotation/4> .
-<Concept/3> puml:left-hidden <Annotation/5> .
-<Concept/4> puml:left-hidden <Annotation/6> .
-<Concept/4> puml:left-hidden <Annotation/7> .
-<Concept/5> puml:left-hidden <Annotation/8> .
-<Concept/6> puml:left-hidden <Annotation/9> .
-<Concept/7> puml:left-hidden <Annotation/10> .
-<Concept/3> puml:up-hidden <Concept/4> .
-<Concept/5> puml:up-hidden <Concept/6> .
-<Concept/4> puml:up-hidden <Concept/7> .
+<Software/2> puml:top-hidden <Annotation/4> .
+<Software/2> puml:top-hidden <Annotation/5> .
+<Software/2> puml:top-hidden <Annotation/9> .
+<Software/1> puml:top-hidden <Annotation/6> .
+<Software/1> puml:top-hidden <Annotation/7> .
+<Software/1> puml:top-hidden <Annotation/8> .
+<Software/1> puml:top-hidden <Annotation/10> .
+<Concept/3> puml:top-hidden <Annotation/4> .
+<Concept/3> puml:top-hidden <Annotation/5> .
+<Concept/6> puml:top-hidden <Annotation/9> .
+<Concept/4> puml:top-hidden <Annotation/6> .
+<Concept/4> puml:top-hidden <Annotation/7> .
+<Concept/5> puml:top-hidden <Annotation/8> .
+<Concept/7> puml:top-hidden <Annotation/10> .
+<Concept/3> puml:left-hidden <Concept/7> .
+<Concept/4> puml:left-hidden <Concept/5> .
+<Concept/5> puml:left-hidden <Concept/7> .
+oeo:occursIn a puml:InlineProperty .
+schema:mentionedIn a puml:InlineProperty .
+# S2 top A459
+# TSspaCy bottom C36
